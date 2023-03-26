@@ -1,0 +1,30 @@
+@import "../globals";
+
+.heading {
+  width: fit-content;
+  text-align: start;
+  position: relative;
+  margin: 20px;
+  font-size: 30px;
+  text-transform: capitalize;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 40%;
+    height: 6px;
+    background: green;
+    border-radius: 4px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: 0;
+    width: 20%;
+    height: 6px;
+    background: green;
+    border-radius: 4px;
+  }
+}
