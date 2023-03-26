@@ -1,6 +1,12 @@
 import { BrowserRouter, NavLink } from "react-router-dom";
+import { RiPaletteFill } from "react-icons/ri";
 import Router from "./routes";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import ColorPicker from "./ColorPicker";
 const Nav = () => {
+  const [showClrPicker, setShowClrPicker] = useState(false);
+
   return (
     <BrowserRouter>
       <nav>
@@ -68,11 +74,24 @@ const Nav = () => {
         <div className="links">
           <NavLink to={"/"}>home</NavLink>
           <NavLink to={"/about"}>about</NavLink>
-          <NavLink to={"/"}>home</NavLink>
           <NavLink to={"/about"}>about</NavLink>
           <NavLink to={"/about"}>about</NavLink>
+          <div className="clr-icon-parent">
+            <RiPaletteFill
+              title="pick a color"
+              color="var(--main)"
+              style={{ marginLeft: 10 }}
+              onClick={() => setShowClrPicker(!showClrPicker)}
+            />
+            <AnimatePresence mode="wait">
+              {showClrPicker && (
+                <ColorPicker setShowClrPicker={setShowClrPicker} />
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </nav>
+
       <Router />
     </BrowserRouter>
   );
