@@ -1,4 +1,35 @@
+@import "./../variables";
+@import "./../variables";
 .projects-home {
   height: 100vh;
   width: 100%;
+}
+
+section.projects-section {
+  width: 90%;
+  margin: 40px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  figure.projects-fig {
+    background: #000;
+    height: 400px;
+    position: relative;
+  }
+}
+
+.hint {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: green;
+  clip-path: polygon(0 0, 0 25%, 35% 0);
+}
+small {
+  display: inline-block;
+  transform: rotate(-45deg) translate(-10px, 12px);
 }

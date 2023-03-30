@@ -1,13 +1,21 @@
-import { useContext } from "react";
 import ColorContextComponent from "./components/context/colorContext";
 import Nav from "./components/Nav";
+import { useState } from "react";
+import Loading from "./components/loading";
+const App = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
-function App() {
   return (
-    <ColorContextComponent>
-      <Nav />
-    </ColorContextComponent>
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <ColorContextComponent>
+          <Nav />
+        </ColorContextComponent>
+      )}
+    </>
   );
-}
+};
 
 export default App;

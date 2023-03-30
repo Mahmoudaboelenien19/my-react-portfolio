@@ -11,8 +11,8 @@ const ColorPicker = ({
     "var(--grey)",
     "var(--blue)",
     "var(--aqua)",
-    "var(--orange)",
-    "var(--gold)",
+    "var(--red)",
+    "var(--lavender)",
   ];
 
   const { chosenColor, setChosenColor } = useContext(colorContext);

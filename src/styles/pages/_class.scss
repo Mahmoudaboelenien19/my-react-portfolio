@@ -37,31 +37,30 @@
   padding: 8px;
   letter-spacing: 1px;
   border-radius: 4px;
-  text-shadow: 0.5px 0.5px 2px white;
+  text-shadow: 0.5px 0.5px 0.75px black;
   position: relative;
   .btn-span {
     position: relative;
     transition: 0.3s;
     font-weight: bold;
   }
-  &:before {
-    content: "";
-    border-radius: 4px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background: var(--main);
-    transition: 0.3s;
-  }
-  &:hover {
-    .btn-span {
-      color: var(--scroll);
-    }
-  }
-  &:hover:before {
-    width: 100%;
-  }
+  // &:before {
+  //   content: "";
+  //   border-radius: 4px;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 0;
+  //   background: var(--main);
+  //   transition: 0.3s;
+  // }
+  // &:hover {
+  //   .btn-span {
+  //     color: var(--scroll);
+  //   }
+  // }
+  // &:hover:before {
+  //   width: 100%;
+  // }
 }
