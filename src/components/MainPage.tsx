@@ -74,7 +74,7 @@ const MainPage = () => {
 
   return (
     <motion.section
-      className="main-page"
+      id="main-page"
       variants={mainPageVariant}
       initial="start"
       animate="end"
@@ -92,7 +92,7 @@ const MainPage = () => {
 
         <motion.span variants={textVariant} className="major">
           {" "}
-          MERN stack developer{" "}
+          MERN stack developer
         </motion.span>
         <motion.span variants={textVariant} className="message">
           Welcome to my portfolio where I show my projects and skills in web

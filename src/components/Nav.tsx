@@ -49,8 +49,8 @@ const Nav = () => {
         </div>
 
         <div className="links">
-          <NavLink to={"/"}>home</NavLink>
-          <NavLink to={"/about"}>about</NavLink>
+          <NavLink to="#main-page">home</NavLink>
+          <NavLink to="#projects-home">Projects</NavLink>
           <NavLink to={"/about"}>about</NavLink>
           <NavLink to={"/about"}>about</NavLink>
           <div className="clr-icon-parent">

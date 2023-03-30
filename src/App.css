@@ -16,6 +16,12 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px var(--scroll);
 }
@@ -33,7 +39,17 @@ a {
   color: white;
 }
 
-.main-page {
+@media (max-width: 1000px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    font-size: 12px;
+  }
+}
+#main-page {
   width: 100%;
   background: #121111;
   height: 100vh;
@@ -43,13 +59,18 @@ a {
   padding: 0 50px;
   position: relative;
 }
-.main-page .home-content {
+#main-page .home-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
   color: var(--main);
+  white-space: nowrap;
+  font-size: 1rem;
+}
+#main-page .home-content .message {
+  font-size: 0.8rem;
 }
 
 .icons {
@@ -66,6 +87,7 @@ a {
   margin: 10px;
   background: var(--main);
   transition: 0.3s;
+  border-radius: 4px;
 }
 .icons .icon-parent path {
   transition: 0.3s;
@@ -78,13 +100,29 @@ a {
 }
 
 .main-img {
-  height: 500px;
+  height: 400px;
+  position: relative;
+  top: 10px;
 }
 
+@media (max-width: 850px) {
+  .main-page {
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 *::-webkit-scrollbar-track {
@@ -104,6 +142,16 @@ a {
   color: white;
 }
 
+@media (max-width: 1000px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    font-size: 12px;
+  }
+}
 :root {
   --main: white;
   --secondary: black;
@@ -179,6 +227,12 @@ nav .links {
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px var(--scroll);
 }
@@ -196,6 +250,16 @@ a {
   color: white;
 }
 
+@media (max-width: 1000px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    font-size: 12px;
+  }
+}
 .heading {
   width: -moz-fit-content;
   width: fit-content;
@@ -205,18 +269,16 @@ a {
   font-size: 30px;
   text-transform: capitalize;
 }
-.heading:before {
-  content: "";
+.heading .border-one {
   position: absolute;
   top: 110%;
   left: 0;
-  width: 40%;
   height: 6px;
   background: var(--scroll);
   border-radius: 4px;
 }
-.heading:after {
-  content: "";
+.heading .border-two {
+  display: inline-block;
   position: absolute;
   top: 150%;
   left: 0;
@@ -250,6 +312,12 @@ a {
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px var(--scroll);
 }
@@ -267,6 +335,16 @@ a {
   color: white;
 }
 
+@media (max-width: 1000px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    font-size: 12px;
+  }
+}
 :root {
   --main: white;
   --secondary: black;
@@ -311,36 +389,67 @@ a {
   --svg: rgb(211, 191, 152);
 }
 
-.projects-home {
-  height: 100vh;
+#projects-home {
   width: 100%;
 }
 
 section.projects-section {
   width: 90%;
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  padding: 20px;
+  height: 1000px;
 }
 section.projects-section figure.projects-fig {
   background: #000;
-  height: 400px;
+  height: 300px;
+  width: 90%;
+  margin: 0 auto;
   position: relative;
 }
 
+.small-fig-parent {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: space-between;
+  gap: 20px;
+}
+.small-fig-parent.small {
+  height: 500px;
+  width: 30vw;
+}
+
 .hint {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  background: green;
-  -webkit-clip-path: polygon(0 0, 0 25%, 35% 0);
-          clip-path: polygon(0 0, 0 25%, 35% 0);
+  width: 12vw;
+  height: 12vw;
+  -webkit-clip-path: polygon(38% 0, 85% 0, 0 85%, 0 38%);
+          clip-path: polygon(38% 0, 85% 0, 0 85%, 0 38%);
+  background: var(--scroll);
+  opacity: 0.6;
 }
 
 small {
   display: inline-block;
-  transform: rotate(-45deg) translate(-10px, 12px);
+  align-self: center;
+  transform: rotate(-45deg) translateY(-3vw);
+  font-size: 0.9rem;
+  color: white;
+  text-shadow: 0.5px 0.5px 0.75px black;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .hint {
+    width: 20vw;
+    height: 20vw;
+  }
+  .hint small {
+    transform: rotate(-45deg) translateY(-5vw);
+  }
 }/*# sourceMappingURL=App.css.map */

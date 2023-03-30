@@ -4,10 +4,10 @@ import Projects from "./Projects";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <MainPage />
       <Projects />
-    </div>
+    </>
   );
 };
 
