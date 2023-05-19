@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -53,6 +54,16 @@ a {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 12px;
+}
+.loading .loading-content {
+  letter-spacing: 1px;
+  color: transparent;
+  background: linear-gradient(150deg, var(--svg), var(--scroll));
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-background-clip: text;
 }/*# sourceMappingURL=loading.css.map */

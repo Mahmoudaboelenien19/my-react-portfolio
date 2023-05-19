@@ -1,7 +1,9 @@
 import ColorContextComponent from "./components/context/colorContext";
 import Nav from "./components/Nav";
-import { useState } from "react";
+import React, { useState } from "react";
 import Loading from "./components/loading";
+import Home from "./components/Home";
+import "./App.scss";
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,6 +14,7 @@ const App = () => {
       ) : (
         <ColorContextComponent>
           <Nav />
+          <Home />
         </ColorContextComponent>
       )}
     </>

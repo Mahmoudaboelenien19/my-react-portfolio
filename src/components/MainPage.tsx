@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { GrLinkedinOption } from "react-icons/gr";
 import { AiOutlineWhatsApp, AiFillGithub } from "react-icons/ai";
 import { colorContext } from "./context/colorContext";

@@ -4,15 +4,17 @@ const Loading = () => {
     start: {},
   };
 
+  const opaciyVariant = {
+    start: { opacity: 0, y: 40 },
+    end: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 1.6, duration: 0.4 },
+    },
+  };
   return (
     <div className="loading">
-      <svg
-        width="116"
-        height="45"
-        viewBox="0 0 116 45"
-        // fill="none"
-        // xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="116" height="45" viewBox="0 0 116 45">
         <motion.path
           d="M9.64 44C8.64 44 7.18 44 5.26 44C3.38 44 2.1 43.86 1.42 43.58C0.74 43.3 0.4 42.86 0.4 42.26V4.4C0.4 3.48 1.62 2.76 4.06 2.24C6.54 1.68 9.18 1.4 11.98 1.4C14.78 1.4 16.78 1.76 17.98 2.48C19.18 3.2 19.88 3.96 20.08 4.76L24.16 20.6H24.7L28.54 5.48C28.82 4.4 30.12 3.46 32.44 2.66C34.8 1.82 37.38 1.4 40.18 1.4C42.98 1.4 45.04 1.62 46.36 2.06C47.72 2.5 48.4 3.06 48.4 3.74V42.26C48.4 42.78 47.26 43.2 44.98 43.52C42.7 43.84 39.92 44 36.64 44C33.36 44 31.72 43.42 31.72 42.26C31.72 39.1 32.06 33.48 32.74 25.4H32.2L29.08 41.06C28.96 41.66 28.46 42.1 27.58 42.38C26.74 42.66 25.46 42.8 23.74 42.8C22.02 42.8 20.96 42.68 20.56 42.44C20.2 42.2 19.96 41.74 19.84 41.06L16.6 25.4H16.06C16.78 33.64 17.14 39.26 17.14 42.26C17.14 43.3 14.64 43.88 9.64 44Z"
           //   fill="url(#paint0_linear_1_3)"
@@ -62,6 +64,15 @@ const Loading = () => {
           </linearGradient>
         </defs>
       </svg>
+
+      <motion.span
+        variants={opaciyVariant}
+        initial="start"
+        animate="end"
+        className="loading-content"
+      >
+        It's Mahmoud Abo Elenien's Portfolio
+      </motion.span>
     </div>
   );
 };

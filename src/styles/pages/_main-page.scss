@@ -55,9 +55,16 @@
 }
 
 @media (max-width: 850px) {
-  .main-page {
+  #main-page {
     height: fit-content;
     flex-direction: column;
     gap: 10px;
+    button {
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
+    img {
+      margin-top: 40px;
+    }
   }
 }

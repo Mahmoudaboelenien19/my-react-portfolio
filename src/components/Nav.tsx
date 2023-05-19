@@ -5,10 +5,11 @@ import { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import ColorPicker from "./ColorPicker";
 import { colorContext } from "./context/colorContext";
+import { NavHashLink } from "react-router-hash-link";
+
 const Nav = () => {
   const [showClrPicker, setShowClrPicker] = useState(false);
   const { chosenColor } = useContext(colorContext);
-
   return (
     <BrowserRouter>
       <nav>
@@ -49,9 +50,12 @@ const Nav = () => {
         </div>
 
         <div className="links">
-          <NavLink to="#main-page">home</NavLink>
-          <NavLink to="#projects-home">Projects</NavLink>
-          <NavLink to={"/about"}>about</NavLink>
+          <NavHashLink smooth to="#main-page">
+            home
+          </NavHashLink>
+          <NavHashLink smooth to="#projects-home">
+            Projects
+          </NavHashLink>
           <NavLink to={"/about"}>about</NavLink>
           <div className="clr-icon-parent">
             <RiPaletteFill

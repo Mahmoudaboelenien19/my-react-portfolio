@@ -6,11 +6,11 @@ import Projects from "./Projects";
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="#main-page" element={<MainPage />} />
+      {/* <Route path="/" element={<Home />} /> */}
+      {/* <Route path="#main-page" element={<MainPage />} /> */}
 
       <Route path="/about" element={<About />} />
-      <Route path="#projects-home" element={<Projects />} />
+      {/* <Route path="#projects-home" element={<Projects />} /> */}
     </Routes>
   );
 };

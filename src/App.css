@@ -14,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -106,17 +107,25 @@ a {
 }
 
 @media (max-width: 850px) {
-  .main-page {
+  #main-page {
     height: -moz-fit-content;
     height: fit-content;
     flex-direction: column;
     gap: 10px;
+  }
+  #main-page button {
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  #main-page img {
+    margin-top: 40px;
   }
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -225,6 +234,7 @@ nav .links {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -310,6 +320,7 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -361,8 +372,18 @@ a {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 12px;
+}
+.loading .loading-content {
+  letter-spacing: 1px;
+  color: transparent;
+  background: linear-gradient(150deg, var(--svg), var(--scroll));
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-background-clip: text;
 }
 
 :root {
@@ -431,7 +452,7 @@ section.projects-section figure.projects-fig {
   -webkit-clip-path: polygon(38% 0, 85% 0, 0 85%, 0 38%);
           clip-path: polygon(38% 0, 85% 0, 0 85%, 0 38%);
   background: var(--scroll);
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 small {
