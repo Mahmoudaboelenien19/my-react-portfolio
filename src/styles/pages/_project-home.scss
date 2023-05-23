@@ -15,6 +15,7 @@ section.projects-section {
     width: 90%;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
   }
 }
 .small-fig-parent {
@@ -30,35 +31,25 @@ section.projects-section {
   }
 }
 .hint {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12vw;
-  height: 12vw;
-  clip-path: polygon(38% 0, 85% 0, 0 85%, 0 38%);
-
-  background: var(--scroll);
-  opacity: 0.4;
-}
-small {
   display: inline-block;
-  align-self: center;
-
-  transform: rotate(-45deg) translateY(-3vw);
-  font-size: 0.9rem;
+  padding: 5px 65px;
+  position: absolute;
   color: white;
-  text-shadow: 0.5px 0.5px 0.75px black;
-  letter-spacing: 1px;
+  rotate: -45deg;
+  translate: -50px 10px;
+  background: var(--scroll);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 8px;
 }
 
 @media (max-width: 700px) {
-  .hint {
-    width: 20vw;
-    height: 20vw;
-    small {
-      transform: rotate(-45deg) translateY(-5vw);
-    }
-  }
+  // .hint {
+  //   width: 20vw;
+  //   height: 20vw;
+  //   small {
+  //     transform: rotate(-45deg) translateY(-5vw);
+  //   }
+  // }
 }

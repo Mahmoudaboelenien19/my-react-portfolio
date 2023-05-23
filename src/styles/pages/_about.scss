@@ -1,0 +1,20 @@
+@import "../variables";
+
+.about {
+  margin-top: 60px;
+  height: 200vh;
+  .main-about {
+    // position: relative;
+    // z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    gap: 20px;
+
+    p {
+      width: 60%;
+      text-align: justify;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import CustomOrbitControls from "./components/CustomCamera";
-import MacIcon from "./Mac";
+import Mac from "./Mac";
 
 const MacCom = () => {
   const [reverse, setReverse] = useState(false);
@@ -26,17 +26,16 @@ const MacCom = () => {
 
   return (
     <Canvas>
-      <Stage environment={"city"} intensity={0.4}>
-        <MacIcon />
+      <Mac />
+      <Stage environment={"city"} intensity={0.5}>
+        {/* <Lights /> */}
         <OrbitControls
           ref={controls}
           onUpdate={handleUpdate}
           autoRotate
           enableZoom={false}
-          // maxPolarAngle={Math.PI / 2 - 0.5235} // 30deg in radians
-          // minPolarAngle={-Math.PI / 2 + 0.5235} // -30deg in radians
-          maxAzimuthAngle={Math.PI / 2 - 0.5235}
-          minAzimuthAngle={-Math.PI / 2 - 0.5235}
+          // maxPolarAngle={Math.PI / 2 - 0.5235}
+          // minPolarAngle={-Math.PI / 2 + 0.5235}
         />
       </Stage>
     </Canvas>

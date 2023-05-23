@@ -14,7 +14,6 @@ const App = () => {
       ) : (
         <ColorContextComponent>
           <Nav />
-          <Home />
         </ColorContextComponent>
       )}
     </>

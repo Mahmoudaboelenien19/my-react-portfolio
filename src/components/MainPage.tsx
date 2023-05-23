@@ -5,9 +5,10 @@ import { colorContext } from "./context/colorContext";
 import { motion } from "framer-motion";
 import devImg from "./../assets/developer-pic-1.png";
 import { FaDownload } from "react-icons/fa";
+import { fontVariant, textVariant } from "../assets/MianVariants";
+import Major from "./Major";
 const MainPage = () => {
   const { chosenColor } = useContext(colorContext);
-
   const iconsArr = [
     {
       id: 1,
@@ -43,7 +44,7 @@ const MainPage = () => {
 
   const mainPageVariant = {
     start: { overflow: "hidden" },
-    end: { transition: { staggerChildren: 0.3 } },
+    end: { transition: { delayChildren: 1.1, staggerChildren: 0.3 } },
   };
 
   const imageVariant = {
@@ -55,11 +56,6 @@ const MainPage = () => {
       x: 0,
       opacity: 1,
     },
-  };
-
-  const textVariant = {
-    start: { opacity: 0, x: 400 },
-    end: { opacity: 1, x: 0 },
   };
 
   const opacityVariant = {
@@ -79,21 +75,42 @@ const MainPage = () => {
       initial="start"
       animate="end"
     >
-      <motion.img className="main-img" src={devImg} variants={imageVariant} />
+      <motion.img
+        className="main-img"
+        src={devImg}
+        variants={imageVariant}
+        initial="start"
+        animate="end"
+        transition={{ duration: 0.3 }}
+      />
 
       <div className="home-content">
-        <motion.h2 variants={textVariant}>
-          Hello , I'm
-          <motion.span variants={opacityVariant} style={{ color: chosenColor }}>
-            {" "}
-            Mahmoud
-          </motion.span>
+        <motion.h2>
+          <span style={{ display: "inline-flex" }}>
+            {Array.from("Hello I'm MaHmoud", (letter, i) => {
+              if (letter === " ") {
+                return <span key={i}> &nbsp;</span>;
+              } else {
+                return (
+                  <motion.div
+                    variants={fontVariant}
+                    initial="start"
+                    animate="end"
+                    style={{ color: i >= 10 ? chosenColor : "" }}
+                    className={`${i >= 10 ? "my-name" : ""} ${
+                      i === 12 ? "H-animate" : ""
+                    }`}
+                    key={i}
+                    custom={{ i, delay: 0.05 }}
+                  >
+                    {letter}
+                  </motion.div>
+                );
+              }
+            })}
+          </span>
         </motion.h2>
-
-        <motion.span variants={textVariant} className="major">
-          {" "}
-          MERN stack developer
-        </motion.span>
+        <Major />
         <motion.span variants={textVariant} className="message">
           Welcome to my portfolio where I show my projects and skills in web
           development.

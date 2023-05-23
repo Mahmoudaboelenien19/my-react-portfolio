@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React from "react";
 const Loading = () => {
   const svgVariant = {
     start: {},
@@ -59,8 +60,8 @@ const Loading = () => {
             y2="49"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.325581" stop-color="var(--scroll)" />
-            <stop offset="0.976744" stop-color="#010E00" stop-opacity="0" />
+            <stop offset="0.325581" stopColor="var(--scroll)" />
+            <stop offset="0.976744" stopColor="#010E00" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>

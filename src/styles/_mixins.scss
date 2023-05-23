@@ -1,0 +1,21 @@
+@mixin fexien($width, $weight) {
+  font-family: "Fexien Sans";
+  font-weight: $weight;
+  font-variation-settings: "wdth" $width;
+}
+
+@mixin header-animation($delay, $weight: 650) {
+  animation: animate-head 0.4s linear forwards #{$delay}s;
+  @keyframes animate-head {
+    100% {
+      @include fexien(115, $weight);
+      color: var(--scroll);
+    }
+  }
+}
+
+@mixin kyiv($cont, $mid) {
+  font-family: Kyiv Sans;
+  font-weight: 500;
+  font-variation-settings: "CONT" $cont, "MIDL" $mid;
+}

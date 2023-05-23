@@ -1,3 +1,4 @@
+@import "../mixins";
 #main-page {
   width: 100%;
   background: #121111;
@@ -7,16 +8,68 @@
   justify-content: space-evenly;
   padding: 0 50px;
   position: relative;
-
   .home-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    gap: 20px;
     color: var(--main);
     white-space: nowrap;
     font-size: 1rem;
+    h2 {
+      @include fexien(75, 600);
+      .my-name {
+        @include fexien(75, 800);
+
+        &.H-animate {
+          @include fexien(75, 800);
+
+          @include header-animation(3.5);
+        }
+      }
+    }
+
+    h5 {
+      display: flex;
+      gap: 4px;
+      // margin-left: 20px;
+      letter-spacing: 0.8px;
+      margin-top: -10px;
+      width: fit-content;
+      min-width: 100px;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      .developer {
+        display: flex;
+        @include fexien(75, 800);
+
+        span {
+          @include header-animation(1.5, 800);
+        }
+      }
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        svg {
+          path {
+            fill: var(--scroll);
+          }
+        }
+      }
+      .hider {
+        position: absolute;
+        z-index: 2;
+        top: -10%;
+        height: 120%;
+        width: 164%;
+        background-color: var(--svg);
+      }
+    }
     .message {
       font-size: 0.8rem;
     }

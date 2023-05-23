@@ -3,10 +3,11 @@ import About from "./About";
 import Home from "./Home";
 import MainPage from "./MainPage";
 import Projects from "./Projects";
+import React from "react";
 const Router = () => {
   return (
     <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<Home />} />
       {/* <Route path="#main-page" element={<MainPage />} /> */}
 
       <Route path="/about" element={<About />} />

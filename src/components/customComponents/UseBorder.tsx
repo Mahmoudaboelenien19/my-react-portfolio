@@ -6,10 +6,9 @@ const UseBorder = (ref: MutableRefObject<HTMLSpanElement>) => {
     target: ref,
     offset: ["start end", "end end"],
   });
-  const widthSpan1 = useTransform(scrollYProgress, [0.12, 0.2], [0, 40]);
-  const widthSpan2 = useTransform(scrollYProgress, [0.22, 0.3], [0, 20]);
-  const x = useTransform(scrollYProgress, [0.04, 0.1], [-400, 0]);
-  return [widthSpan1, widthSpan2, x];
+  const widthSpan1 = useTransform(scrollYProgress, [0.04, 0.09], [0, 40]);
+  const widthSpan2 = useTransform(scrollYProgress, [0.091, 0.15], [0, 20]);
+  return [widthSpan1, widthSpan2];
 };
 
 export default UseBorder;
