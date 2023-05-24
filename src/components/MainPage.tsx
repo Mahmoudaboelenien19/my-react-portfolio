@@ -7,6 +7,7 @@ import devImg from "./../assets/developer-pic-1.png";
 import { FaDownload } from "react-icons/fa";
 import { fontVariant, textVariant } from "../assets/MianVariants";
 import Major from "./Major";
+import Background from "./widgets/Background";
 const MainPage = () => {
   const { chosenColor } = useContext(colorContext);
   const iconsArr = [
@@ -75,6 +76,7 @@ const MainPage = () => {
       initial="start"
       animate="end"
     >
+      <Background text={"web Developer"} />
       <motion.img
         className="main-img"
         src={devImg}

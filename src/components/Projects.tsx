@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import UseBorder from "./customComponents/UseBorder";
 import { useScroll, useTransform } from "framer-motion";
 import Header from "./widgets/Header";
+import Background from "./widgets/Background";
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null!);
@@ -22,7 +23,8 @@ const Projects = () => {
   const X_smallFigure2 = useTransform(scrollYProgress, [0.4, 0.45], [200, 0]);
 
   return (
-    <section id="projects-home" ref={sectionRef}>
+    <section id="projects-home " ref={sectionRef}>
+      {/* <Background text={"PORTFOLIO"} pos={"right"} /> */}
       <Header specialLetter={0} head="Portfolio" />
       <section className="projects-section">
         <motion.figure

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
-import { colorContext } from "./context/colorContext";
+import { colorContext } from "../context/colorContext";
 
 const ColorPicker = ({
   setShowClrPicker,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BiPlusMedical } from "react-icons/bi";
-import { textVariant } from "../assets/MianVariants";
+import { opacityVariant, textVariant } from "../assets/MianVariants";
 import { AnimatePresence, motion, useAnimate } from "framer-motion";
 const Major = () => {
   const arr = ["MERN Stack ", "Frontend ", "Backend "];
@@ -10,11 +10,14 @@ const Major = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      setShowDeveloper(false);
       setNum((cur) => handleNums(cur + 1));
-    }, 4000);
+    }, 4800);
     return () => clearTimeout(timer);
   }, [num]);
   const [ref, animate] = useAnimate();
+  const [showDeveloper, setShowDeveloper] = useState(false);
+
   return (
     <>
       <motion.h5 variants={textVariant} className="major">
@@ -28,22 +31,35 @@ const Major = () => {
             className="hider"
             onAnimationComplete={() => {
               animate(ref.current, { left: "initial", right: "-20%" }).then(
-                () => animate(ref.current, { width: 0 })
+                () =>
+                  animate(ref.current, { width: 0 }).then(() =>
+                    setShowDeveloper(true)
+                  )
               );
             }}
           ></motion.div>
           <motion.span
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9, duration: 0.3 }}
+            transition={{ delay: 1.5, duration: 0.3 }}
             key={num}
+            variants={opacityVariant}
+            initial="start"
+            animate="end"
+            exit="exit"
           >
-            <BiPlusMedical key={`plus - ${num}`} />
-            {arr[num]}{" "}
-            <div className="developer">
-              <span>D</span>eveloper
-            </div>
+            <motion.span
+              key={`plus - ${num}`}
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 90 }}
+              transition={{ delay: 2.5, duration: 0.2 }}
+            >
+              <BiPlusMedical />
+            </motion.span>
+            {arr[num]}
+            {showDeveloper && (
+              <div className="developer">
+                <span>D</span>eveloper
+              </div>
+            )}
           </motion.span>
         </AnimatePresence>
       </motion.h5>

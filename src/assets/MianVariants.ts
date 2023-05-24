@@ -19,3 +19,9 @@ export const textVariant = {
   start: { opacity: 0, x: 400 },
   end: { opacity: 1, x: 0 },
 };
+
+export const opacityVariant = {
+  start: { opacity: 0 },
+  exit: { opacity: 0 },
+  end: { opacity: 1 },
+};

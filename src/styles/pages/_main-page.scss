@@ -1,12 +1,14 @@
-@import "../mixins";
+@import "../globals/variables";
+@import "../globals/globals";
+@import "../globals/mixins";
 #main-page {
   width: 100%;
-  background: #121111;
-  height: 100vh;
+  background: var(--secondary);
+  height: calc(100vh - 50px);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 0 50px;
+  margin-top: 50px;
   position: relative;
   .home-content {
     display: flex;
@@ -15,7 +17,7 @@
     justify-content: center;
     gap: 12px;
     gap: 20px;
-    color: var(--main);
+    color: var(--third);
     white-space: nowrap;
     font-size: 1rem;
     h2 {
@@ -26,7 +28,7 @@
         &.H-animate {
           @include fexien(75, 800);
 
-          @include header-animation(3.5);
+          @include header-animation(3.8);
         }
       }
     }
@@ -45,9 +47,9 @@
       .developer {
         display: flex;
         @include fexien(75, 800);
-
         span {
-          @include header-animation(1.5, 800);
+          @include header-animation(1.9);
+          font-weight: 1000;
         }
       }
       span {
@@ -67,7 +69,7 @@
         top: -10%;
         height: 120%;
         width: 164%;
-        background-color: var(--svg);
+        background-color: var(--scroll);
       }
     }
     .message {
@@ -89,6 +91,9 @@
     background: var(--main);
     transition: 0.3s;
     border-radius: 4px;
+    box-shadow: 1px 1px 3px black;
+    position: relative;
+    z-index: 2;
     path {
       transition: 0.3s;
     }
@@ -96,7 +101,7 @@
     &:hover {
       background: var(--scroll);
       path {
-        fill: white;
+        fill: var(--main);
       }
     }
   }

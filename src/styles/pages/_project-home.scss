@@ -1,14 +1,17 @@
-@import "./../variables";
-@import "./../variables";
+@import "../globals/variables";
+@import "../globals/globals";
+@import "../globals/mixins";
 #projects-home {
   width: 100%;
+  position: relative;
+  // background-color: var(--main);
 }
 
 section.projects-section {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
-  height: 1000px;
+  min-height: 100vh;
   figure.projects-fig {
     background: #000;
     height: 300px;

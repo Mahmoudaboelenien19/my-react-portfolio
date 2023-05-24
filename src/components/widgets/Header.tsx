@@ -13,18 +13,24 @@ const Header = ({ head, specialLetter }: Props) => {
     <motion.h3 className="heading" ref={ref}>
       <span className="heading-span">
         {Array.from(head, (letter, i) => {
-          return (
-            <motion.div
-              variants={fontVariant}
-              initial="start"
-              animate="end"
-              custom={{ bool: inView, i }}
-              key={i}
-              className={i === specialLetter && inView ? "heading-animate" : ""}
-            >
-              {letter}
-            </motion.div>
-          );
+          if (letter === " ") {
+            return <span key={i}> &nbsp;</span>;
+          } else {
+            return (
+              <motion.div
+                variants={fontVariant}
+                initial="start"
+                animate="end"
+                custom={{ bool: inView, i }}
+                key={i}
+                className={
+                  i === specialLetter && inView ? "heading-animate" : ""
+                }
+              >
+                {letter}
+              </motion.div>
+            );
+          }
         })}
       </span>
       <motion.span

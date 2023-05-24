@@ -1,5 +1,6 @@
-@import "../globals";
-@import "../mixins";
+@import "../globals/variables";
+@import "../globals/globals";
+@import "../globals/mixins";
 
 .heading {
   @include fexien(75, 650);
@@ -8,6 +9,7 @@
   position: relative;
   margin: 20px;
   font-size: 30px;
+  color: var(--third);
   .heading-span {
     display: inline-flex;
     .heading-animate {
@@ -30,6 +32,10 @@
   }
 }
 
+.box-shadow {
+  box-shadow: 1px 1px 3px black;
+}
+
 .btn {
   outline: 0;
   border: 0;
@@ -45,4 +51,54 @@
     transition: 0.3s;
     font-weight: bold;
   }
+}
+
+.main-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 0;
+
+  p {
+    opacity: 0.05;
+    // padding-bottom: 1px;
+    text-transform: capitalize;
+    font-size: 10rem;
+    color: var(--third);
+    font-family: "Caveat", cursive;
+  }
+  .shape {
+    position: absolute;
+    top: 5%;
+    height: 90%;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.3;
+    .div-1,
+    .div-3 {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--main);
+      @extend .box-shadow;
+    }
+    .div-2 {
+      height: calc(100% - 80px);
+      width: 2px;
+      @extend .box-shadow;
+      background: var(--main);
+    }
+  }
+}
+
+.relative {
+  position: relative;
 }
