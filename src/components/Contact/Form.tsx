@@ -2,7 +2,9 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Input from "./Input";
 import { toast } from "react-hot-toast";
-
+import { motion } from "framer-motion";
+import { IoSend } from "react-icons/io5";
+import MainBtn from "../widgets/MainBtn";
 const Form = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const sendEmail = (e: React.FormEvent) => {
@@ -40,7 +42,10 @@ const Form = () => {
       <Input placeholder="your email" name="user_email" />
       <Input placeholder="your subject" name="subject" />
       <Input placeholder="your message" type="textarea" name="message" />
-      <input type="submit" value="Send" />
+      <div className="inp-par inp-send">
+        <MainBtn Icon={IoSend} btn={"send"} type="submit" />
+        {/* <input type="submit" /> */}
+      </div>
     </form>
   );
 };

@@ -8,7 +8,7 @@
   animation: animate-head 0.4s linear forwards #{$delay}s;
   @keyframes animate-head {
     100% {
-      @include fexien(115, $weight);
+      @include fexien(115, 800);
       color: var(--scroll);
     }
   }

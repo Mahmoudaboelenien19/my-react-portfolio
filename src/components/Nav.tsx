@@ -12,21 +12,40 @@ import ThemeToggle from "./Theme/ThemeToggle";
 const Nav = () => {
   const [showClrPicker, setShowClrPicker] = useState(false);
   const { chosenColor } = useContext(colorContext);
+
+  const linkArr = [
+    { link: "home", id: "main-page" },
+    { link: "portfolio", id: "projects-home" },
+    { link: "contact", id: "contact" },
+    { link: "reviews", id: "testimonials" },
+  ];
+
   return (
     <BrowserRouter>
       <nav>
         <div className="logo">
-          <Logo clr={chosenColor} />
+          <Link to="main-page" smooth spy>
+            <Logo clr={chosenColor} />
+          </Link>
         </div>
 
         <div className="links">
-          <NavLink to="/">home</NavLink>
-          <Link smooth to="projects-home">
-            portfolio
-          </Link>
-          <Link smooth to="contact">
-            contact
-          </Link>
+          {linkArr.map(({ id, link }, i) => {
+            return (
+              <Link
+                key={i}
+                // spyThrottle={400}
+                to={id}
+                smooth
+                spy
+                offset={-100}
+                activeClass="active"
+              >
+                {link}
+              </Link>
+            );
+          })}
+
           <NavLink to={"/about"}>about</NavLink>
           <div className="clr-icon-parent">
             <RiPaletteFill

@@ -4,11 +4,12 @@
 #main-page {
   width: 100%;
   background: var(--secondary);
-  height: calc(100vh - 50px);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
   position: relative;
   .home-content {
     display: flex;
@@ -34,9 +35,9 @@
     }
 
     h5 {
+      @include fexien(75, 800);
       display: flex;
       gap: 4px;
-      // margin-left: 20px;
       letter-spacing: 0.8px;
       margin-top: -10px;
       width: fit-content;
@@ -44,9 +45,10 @@
       justify-content: flex-start;
       align-items: center;
       position: relative;
+      font-weight: 800;
       .developer {
         display: flex;
-        @include fexien(75, 800);
+
         span {
           @include header-animation(1.9);
           font-weight: 1000;

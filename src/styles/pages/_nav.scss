@@ -15,27 +15,26 @@ nav {
   z-index: 10;
   box-shadow: 1px 0.5px 2px black;
   .links {
-    width: 40%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    // gap: 5vw;
     a {
       display: inline-block;
       @include fexien(75, 500);
-      padding-left: 20px;
       text-decoration: none;
       color: var(--third);
       text-transform: capitalize;
       transition: 0.3s;
-      width: 75px;
+      font-size: 0.9rem;
       text-align: left;
+      width: 7vw;
       cursor: pointer;
 
       &:hover,
       &.active {
         color: var(--scroll);
-        font-weight: 600;
-        // @include kyiv(650, 0);
-        @include fexien(110, 600);
+        @include fexien(125, 800);
       }
     }
   }

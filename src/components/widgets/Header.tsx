@@ -1,4 +1,4 @@
-import { MotionValue, motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import { fontVariant } from "../../assets/MianVariants";
 
@@ -33,18 +33,20 @@ const Header = ({ head, specialLetter }: Props) => {
           }
         })}
       </span>
-      <motion.span
-        initial={{ width: 0 }}
-        animate={{ width: inView ? 40 : 0 }}
-        transition={{ delay: 1, duration: 0.2 }}
-        className="border-one custom-border"
-      ></motion.span>
-      <motion.span
-        initial={{ width: 0 }}
-        animate={{ width: inView ? 20 : 0 }}
-        transition={{ delay: 1.3, duration: 0.2 }}
-        className="border-two custom-border"
-      ></motion.span>
+      <>
+        <motion.span
+          initial={{ width: 0 }}
+          animate={{ width: inView ? 40 : 0 }}
+          transition={{ delay: 1.4, duration: 0.2 }}
+          className="border-one custom-border"
+        ></motion.span>
+        <motion.span
+          initial={{ width: 0 }}
+          animate={{ width: inView ? 20 : 0 }}
+          transition={{ delay: 1.8, duration: 0.2 }}
+          className="border-two custom-border"
+        ></motion.span>
+      </>
     </motion.h3>
   );
 };

@@ -3,15 +3,20 @@
 @import "../globals/mixins";
 
 #contact {
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+
   .contact-data {
+    position: relative;
+
+    z-index: 4 !important;
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    margin-top: 50px;
     gap: 20px;
-    padding: 15px;
+    // padding: 15px;
+    padding: 40px 0;
     .my-details {
       width: 50%;
       display: flex;
@@ -76,11 +81,16 @@
     .inp-par {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: 5px;
       width: 100%;
       height: 80px;
       &.inp-text {
         height: 120px;
+      }
+      &.inp-send {
+        display: flex;
+        align-items: center;
       }
       input,
       textarea {
