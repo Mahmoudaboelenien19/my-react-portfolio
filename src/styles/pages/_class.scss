@@ -7,8 +7,10 @@
   width: fit-content;
   text-align: start;
   position: relative;
-  margin: 20px;
+  padding: 20px;
+  padding-bottom: 0;
   font-size: 30px;
+  margin-bottom: 15px;
   color: var(--third);
   .heading-span {
     display: inline-flex;
@@ -22,6 +24,8 @@
     left: 0;
     height: 4px;
     background: var(--scroll);
+    margin-left: 20px;
+    margin-bottom: 10px;
     border-radius: 4px;
   }
   .border-one {
@@ -70,10 +74,22 @@
   align-items: flex-end;
   z-index: 0;
 
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.3;
+    transition: 0.3s;
+  }
+
   p {
-    opacity: 0.05;
+    opacity: 0.15;
     text-transform: capitalize;
-    font-size: 9rem;
+    font-size: 8.5rem;
     color: var(--third);
     font-family: "Caveat", cursive;
     line-height: 7rem;

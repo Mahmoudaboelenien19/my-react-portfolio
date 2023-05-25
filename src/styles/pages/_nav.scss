@@ -14,7 +14,14 @@ nav {
   background: var(--main);
   z-index: 10;
   box-shadow: 1px 0.5px 2px black;
+  .theme-par {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
   .links {
+    height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -46,12 +53,17 @@ nav {
 }
 
 .clr-icon-parent {
-  position: relative;
   width: fit-content;
-
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  svg {
+    font-size: 18px;
+  }
   .color-picker {
     position: absolute;
-    top: 30px;
+    top: 40px;
     right: 0;
     display: flex;
     justify-content: center;
@@ -81,5 +93,50 @@ nav {
   filter: drop-shadow(1px 0.5px 0.25px black);
   path {
     stroke: black;
+  }
+}
+
+@media (max-width: 600px) {
+  aside {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    height: calc(100vh - 50px);
+
+    .links {
+      position: relative;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--forth);
+      box-shadow: 2px 1px 4px black;
+      height: 100%;
+      justify-content: flex-start;
+      padding-top: 120px;
+      a {
+        width: fit-content;
+        font-size: 2rem;
+      }
+      svg {
+        display: none;
+      }
+      .clr-icon-parent {
+        position: absolute;
+        height: fit-content;
+        width: 100%;
+        height: 40px;
+        top: 10px;
+        left: 0;
+        .color-picker {
+          left: initial;
+          right: inherit;
+          box-shadow: initial;
+          width: 100%;
+          gap: 10px;
+          left: 0;
+          background-color: transparent;
+        }
+      }
+    }
   }
 }

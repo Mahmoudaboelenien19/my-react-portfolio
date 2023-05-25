@@ -1,0 +1,46 @@
+@import "../globals/variables";
+@import "../globals/globals";
+@import "../globals/mixins";
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .menu-togglar {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-toggle {
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    .toggle-line {
+      height: 2px;
+      border-radius: 10px;
+      background: linear-gradient(210deg, var(--svg), var(--scroll));
+    }
+  }
+
+  .closing-toggle {
+    height: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    .closing-line {
+      background-color: red;
+      width: 2px;
+      border-radius: 10px;
+
+      &.line-one {
+        transform: rotate(45deg);
+      }
+      &.line-two {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

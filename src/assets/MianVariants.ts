@@ -25,3 +25,21 @@ export const opacityVariant = {
   exit: { opacity: 0 },
   end: { opacity: 1 },
 };
+
+export const parVar = {
+  start: {},
+  end: {
+    transition: {
+      delayChildren: 1,
+      when: "beforeChidren",
+      staggerChildren: 0.24,
+    },
+  },
+  exit: {
+    transition: {
+      when: "afterChidren",
+      staggerChildren: 0.24,
+      staggerDirection: -1,
+    },
+  },
+};

@@ -12,7 +12,9 @@ interface colorInterface {
 export const colorContext = createContext({} as colorInterface);
 
 const ColorContextComponent = ({ children }: Props) => {
-  const [chosenColor, setChosenColor] = useState("var(--grey)");
+  const [chosenColor, setChosenColor] = useState(
+    localStorage.getItem("color-portfolio") || "var(--grey)"
+  );
   useEffect(() => {
     const root = document.documentElement;
     root.style.setProperty("--scroll", chosenColor);
@@ -22,6 +24,9 @@ const ColorContextComponent = ({ children }: Props) => {
     }
   }, [chosenColor]);
 
+  useEffect(() => {
+    localStorage.setItem("color-portfolio", chosenColor);
+  }, [chosenColor]);
   return (
     <colorContext.Provider value={{ chosenColor, setChosenColor }}>
       {children}

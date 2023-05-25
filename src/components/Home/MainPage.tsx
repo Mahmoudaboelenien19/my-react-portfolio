@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { GrLinkedinOption } from "react-icons/gr";
 import { AiOutlineWhatsApp, AiFillGithub } from "react-icons/ai";
-import { colorContext } from "./context/colorContext";
+import { colorContext } from "../context/colorContext";
 import { motion } from "framer-motion";
-import devImg from "./../assets/developer-pic-1.png";
+import devImg from "../../assets/developer-pic-1.png";
 import { FaDownload } from "react-icons/fa";
-import { fontVariant, textVariant } from "../assets/MianVariants";
+import { fontVariant, textVariant } from "../../assets/MianVariants";
 import Major from "./Major";
-import Background from "./widgets/Background";
-import MainBtn from "./widgets/MainBtn";
-import GmailSvg from "./widgets/GmailSvg";
+import Background from "../widgets/Background";
+import MainBtn from "../widgets/MainBtn";
+import GmailSvg from "../widgets/GmailSvg";
 const MainPage = () => {
   const { chosenColor } = useContext(colorContext);
   const iconsArr = [
@@ -61,15 +61,15 @@ const MainPage = () => {
       initial="start"
       animate="end"
     >
-      <Background text={"web Developer"} />
-      <motion.img
+      <Background text={"web Developer"} type="home" />
+      {/* <motion.img
         className="main-img"
         src={devImg}
         variants={imageVariant}
         initial="start"
         animate="end"
         transition={{ duration: 0.3 }}
-      />
+      /> */}
 
       <div className="home-content">
         <motion.h2>
@@ -98,10 +98,10 @@ const MainPage = () => {
           </span>
         </motion.h2>
         <Major />
-        <motion.span variants={textVariant} className="message">
+        <motion.p variants={textVariant} className="message">
           Welcome to my portfolio where I show my projects and skills in web
           development.
-        </motion.span>
+        </motion.p>
 
         <div className="icons">
           {iconsArr.map(({ icon, id, title }) => {

@@ -1,0 +1,22 @@
+@import "../globals/variables";
+@import "../globals/globals";
+@import "../globals/mixins";
+
+// aside {
+//   display: none;
+// }
+
+@media (max-width: 600px) {
+  aside {
+    // padding: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // position: fixed;
+    // top: 50px;
+    // right: 0;
+    // width: 40%;
+    // height: calc(100vh - 50px);
+    // background-color: var(--forth);
+    // box-shadow: 2px 1px 4px black;
+  }
+}

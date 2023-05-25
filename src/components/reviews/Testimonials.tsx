@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../widgets/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import image1 from "../../assets/reviews/1.jpg";
 import image2 from "../../assets/reviews/2.jpg";
 import image3 from "../../assets/reviews/3.jpg";
@@ -10,8 +10,10 @@ import image5 from "../../assets/reviews/5.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import Review from "./Review";
 import Background from "../widgets/Background";
+import { useInView } from "framer-motion";
 
 const arr = [
   {
@@ -45,10 +47,14 @@ const arr = [
     img: image5,
   },
 ];
+
 const Testimonials = () => {
   const [ind, setInd] = useState(0);
+  const ref = useRef<null | HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: "some" });
+  console.log({ inView });
   return (
-    <div id="testimonials">
+    <div id="testimonials" ref={ref}>
       <Header head="Reviews" specialLetter={0} />
       <Background text="REVIEWS" />
       <Swiper
@@ -57,7 +63,10 @@ const Testimonials = () => {
         slidesPerView={1.7}
         direction="vertical"
         pagination={{ clickable: true }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
+        autoplay={{
+          delay: 3000,
+        }}
         className="swiper-par"
         onSlideChange={(e: any) => {
           setInd(e.realIndex);

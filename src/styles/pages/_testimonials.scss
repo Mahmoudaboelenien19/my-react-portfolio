@@ -4,14 +4,14 @@
 
 #testimonials {
   position: relative;
+  padding: 0;
   padding-bottom: 60px;
 }
 
 .swiper-par {
   width: 80%;
   height: 80vh;
-
-  padding: 24px;
+  padding: 10px;
   .review {
     height: 150px;
     display: flex;
@@ -22,6 +22,7 @@
     box-shadow: 1px 1px 4px black;
     border-radius: 5px;
     transition: 0.3s;
+    width: 90%;
     max-width: 600px;
     margin: 0 auto;
     &.blur {
@@ -42,14 +43,17 @@
       }
     }
     .review-content {
+      height: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       .review-name {
         color: var(--scroll);
         font-weight: 700;
       }
       p {
         font-family: "Caveat", cursive;
-
-        margin-bottom: 4px;
         color: var(--third);
         width: 90%;
         text-align: justify;
@@ -70,14 +74,26 @@
     padding-bottom: 40px;
   }
   .swiper-par {
-    height: 70vh;
+    height: 80vh;
     .review {
+      width: 80%;
       flex-direction: column;
-      height: 260px;
+      height: 220px;
       justify-content: space-between;
+      p {
+        font-size: 1.2rem;
+        width: 80%;
+        margin: 0 auto;
+      }
       .review-name {
         font-size: 1.5rem;
+        text-align: right;
+        margin: 6px;
       }
     }
   }
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--third);
 }

@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div id="contact">
       <Background text="Contact Me" />
-      <Header head="CoNtact Me" specialLetter={2} />
+      <Header head="ContAct Me" specialLetter={4} />
       <div className="contact-data">
         <MyDetails />
         <Form />

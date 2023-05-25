@@ -1,8 +1,8 @@
 import ColorContextComponent from "./components/context/colorContext";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 import React, { useState } from "react";
 import Loading from "./components/loading";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import "./styles/pages/App.scss";
 import ThemContext from "./components/context/ThemeContext";
 import { Toaster } from "react-hot-toast";
