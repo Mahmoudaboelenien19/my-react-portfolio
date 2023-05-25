@@ -1,20 +1,48 @@
 @import "../globals/variables";
 
-.about {
-  margin-top: 60px;
-  height: 200vh;
-  .main-about {
-    // position: relative;
-    // z-index: -1;
+#about {
+  min-height: 100vh;
+  position: relative;
+  .about {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 15px;
     gap: 20px;
+    height: 100%;
+    width: 100%;
+    .mac {
+      width: 50%;
+      height: 250px !important;
+      & > * {
+        margin-top: 20px;
+      }
+    }
 
     p {
-      width: 60%;
+      width: 40%;
       text-align: justify;
+      &::first-letter {
+        padding-left: 20px;
+        font-size: 1.3rem;
+        text-transform: capitalize;
+        color: var(--scroll);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .about {
+    flex-direction: column;
+    width: 100%;
+
+    .mac {
+      padding: 20px;
+      width: 100% !important;
+    }
+    p {
+      width: 80% !important;
     }
   }
 }

@@ -1,8 +1,8 @@
-import { OrbitControls, Stage } from "@react-three/drei";
+import { OrbitControls, Stage, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { useRef, useState } from "react";
-import CustomOrbitControls from "./components/CustomCamera";
+import React, { useRef, useState, Suspense } from "react";
 import Mac from "./Mac";
+import Loader from "./Loader";
 
 const MacCom = () => {
   const [reverse, setReverse] = useState(false);
@@ -25,19 +25,22 @@ const MacCom = () => {
   };
 
   return (
-    <Canvas>
-      <Mac />
-      <Stage environment={"city"} intensity={0.5}>
-        {/* <Lights /> */}
-        <OrbitControls
-          ref={controls}
-          onUpdate={handleUpdate}
-          autoRotate
-          enableZoom={false}
-          // maxPolarAngle={Math.PI / 2 - 0.5235}
-          // minPolarAngle={-Math.PI / 2 + 0.5235}
-        />
-      </Stage>
+    <Canvas
+      frameloop="demand"
+      shadows
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+    >
+      <Suspense fallback={<Loader />}>
+        <Mac />
+      </Suspense>
+      <OrbitControls
+        enableZoom={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
+      {/* </Stage> */}
+      <Preload all />
     </Canvas>
   );
 };
