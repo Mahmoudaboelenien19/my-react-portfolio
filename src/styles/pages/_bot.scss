@@ -1,0 +1,120 @@
+@import "../globals/globals";
+@import "../globals/variables";
+@import "../globals/mixins";
+
+.bot {
+  position: fixed;
+  left: 20px;
+  bottom: 0px;
+  z-index: 40;
+
+  svg {
+    color: var(--third);
+    font-size: 2rem;
+    position: relative;
+    z-index: 40;
+    margin-bottom: 10px;
+  }
+
+  .chat {
+    width: 220px;
+    height: 280px;
+    border-radius: 5px;
+    background: var(--main);
+    box-shadow: 2px 2px 4px black;
+  }
+  .head-chat {
+    display: flex;
+    padding: 8px;
+    gap: 10px;
+    background-color: var(--secondary);
+    position: relative;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 50px;
+    .chat-close-icon {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      font-size: 1rem;
+      color: var(--third);
+    }
+    .chat-content {
+      @include fexien(110, 800);
+      color: var(--third);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      .chat-name {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        font-weight: 700;
+      }
+      .ask {
+        opacity: 0.8;
+        font-family: "caveat";
+        font-size: 12px;
+      }
+    }
+    .img-par {
+      width: 35px;
+      height: 35px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 1px solid grey;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      img {
+        width: 130%;
+        height: 130%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .chat-messages {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+    overflow: auto;
+    height: calc(100% - 50px);
+    & > * {
+      box-shadow: 0.5px 0.5px 1px black;
+    }
+    .chat-q,
+    .chat-av-q {
+      align-self: flex-end;
+      background-color: var(--secondary);
+      border-radius: 20px;
+      width: fit-content;
+      max-width: 90%;
+      display: flex;
+      font-size: 10px;
+      align-items: center;
+      padding: 8px;
+      padding-left: 10px;
+      color: var(--third);
+    }
+    .chat-ans {
+      align-self: flex-start;
+      background-color: var(--forth);
+      border-radius: 20px;
+      width: fit-content;
+      max-width: 90%;
+      display: flex;
+      font-size: 10px;
+      align-items: center;
+      padding: 8px;
+      padding-left: 10px;
+      color: var(--third);
+    }
+    .chat-av-q {
+      background-color: #007aff;
+      align-self: flex-start;
+      color: var(--white);
+    }
+  }
+}
