@@ -1,12 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import { themeContext } from "../context/ThemeContext";
 
 const ThemeToggle = () => {
   const { toggleTheme, theme } = useContext(themeContext);
   const [ref, animate] = useAnimate();
   useEffect(() => {
-    console.log("userr");
     animate(
       ".theme-toggle",
       {
@@ -24,7 +23,7 @@ const ThemeToggle = () => {
       ref={ref}
       style={{
         background:
-          theme === "light" ? "rgba(0,0,0,.6)" : "rgba(255,255,255,.6)",
+          theme === "light" ? "rgba(0,0,0,.4)" : "rgba(255,255,255,.2)",
       }}
       onClick={() => {
         toggleTheme();
@@ -47,17 +46,7 @@ const ThemeToggle = () => {
           });
       }}
     >
-      <motion.div
-        className="theme-toggle"
-        style={
-          {
-            //   right: theme === "light" ? 0 : "initial",
-            //   left: theme === "dark" ? 0 : "initial",
-            //   width: "50%",
-            //   background: theme === "dark" ? "#111" : "#fff",
-          }
-        }
-      ></motion.div>
+      <motion.div className="theme-toggle"></motion.div>
     </div>
   );
 };

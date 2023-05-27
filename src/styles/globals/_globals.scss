@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +20,9 @@
 }
 
 body {
-  font-family: "Poppins", "Fexien Sans", sans-serif;
+  // font-family: "Poppins", "Fexien Sans", sans-serif;
+  @include fexien(115, 600);
+
   overflow-x: hidden;
   height: fit-content;
   background-color: var(--secondary);

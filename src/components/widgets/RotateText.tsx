@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation, useScroll } from "framer-motion";
-
+import { motion, useScroll } from "framer-motion";
+import Scroll from "react-scroll";
 const RotateText = () => {
   const { scrollYProgress } = useScroll();
   const [scrollY, setScrollY] = useState(0);
@@ -14,6 +14,7 @@ const RotateText = () => {
       unsubscribe();
     };
   }, [scrollYProgress]);
+  const scroll = Scroll.animateScroll;
 
   return (
     <motion.div
@@ -25,6 +26,7 @@ const RotateText = () => {
       style={{
         transform: `rotate(${scrollY * 360}deg) scale(.75)`,
       }}
+      onClick={() => scroll.scrollToTop({ smooth: true })}
     >
       <svg
         width="114"

@@ -8,6 +8,7 @@ import About from "../About/About";
 import Bot from "../Bot/Bot";
 import Nav from "../Nav/Nav";
 import RotateText from "../widgets/RotateText";
+import Skills from "../Skills/Experience";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Contact />
       <Bot />
       <RotateText />
+      <Skills />
     </>
   );
 };

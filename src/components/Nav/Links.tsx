@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { RiPaletteFill } from "react-icons/ri";
 import ColorPicker from "../Theme/ColorPicker.js";
-import ThemeToggle from "../Theme/ThemeToggle.js";
 import { opacityVariant } from "../../assets/MianVariants.js";
 
 const LinksComponent = ({ width = 1000 }: { width?: number }) => {
@@ -12,13 +11,7 @@ const LinksComponent = ({ width = 1000 }: { width?: number }) => {
   const check = showClrPicker || width <= 600;
   console.log({ showClrPicker });
   return (
-    <motion.div
-      key="aside"
-      className="links"
-      // initial="start"
-      // animate="end"
-      // exit="exit"
-    >
+    <div className="links">
       {linkArr.map(({ id, link }, i) => {
         return (
           <motion.span key={i} variants={opacityVariant}>
@@ -36,7 +29,6 @@ const LinksComponent = ({ width = 1000 }: { width?: number }) => {
         );
       })}
 
-      {/* <NavLink to={"/about"}>about</NavLink> */}
       <motion.div className="clr-icon-parent" variants={opacityVariant}>
         <RiPaletteFill
           title="pick a color"
@@ -50,7 +42,7 @@ const LinksComponent = ({ width = 1000 }: { width?: number }) => {
           {check && <ColorPicker setShowClrPicker={setShowClrPicker} />}
         </AnimatePresence>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

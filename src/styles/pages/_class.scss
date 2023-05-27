@@ -49,6 +49,8 @@
   letter-spacing: 1px;
   border-radius: 4px;
   text-shadow: 0.5px 0.5px 0.75px black;
+  box-shadow: 0.5px 1px 2px black;
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -125,16 +127,17 @@
   position: fixed;
   bottom: 2px;
   right: 4px;
-  transform: scale(0.8);
   z-index: 20;
   background-color: var(--third);
   border-radius: 50%;
-  width: 105px;
-  height: 105px;
+  width: 108px;
+  height: 108px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   svg {
+    transform: scale(0.95);
     path {
       fill: var(--main);
     }

@@ -6,8 +6,9 @@
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .menu-togglar {
+    // opacity: 0;
     height: 100%;
     display: flex;
     justify-content: center;

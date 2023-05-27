@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import Router from "./routes";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence, stagger, useAnimate } from "framer-motion";
 import { colorContext } from "../context/colorContext";
 import { Link } from "react-scroll";
@@ -10,10 +10,11 @@ import NavToggler from "./NavToggler";
 import useMeasure from "react-use-measure";
 import LinksComponent from "./Links";
 import { motion } from "framer-motion";
+import { opacityVariant } from "../../assets/MianVariants";
+
 const Nav = () => {
   const { chosenColor } = useContext(colorContext);
   const [ref, { width }] = useMeasure();
-  const [scope, animate] = useAnimate();
   const [ShowMenu, setShowMenu] = useState(false);
 
   const AsideMobile = {
@@ -36,31 +37,37 @@ const Nav = () => {
       },
     },
   };
+  const [showNav, setShowNav] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowNav(true);
+    }, 4200);
+  });
+  const parVar = {
+    start: {},
+    end: {
+      transition: { when: "beforeChildren", staggerChildren: 0.4 },
+    },
+  };
   return (
     <BrowserRouter>
-      <motion.span ref={scope}>
+      {showNav && (
         <motion.nav
+          variants={parVar}
+          initial="start"
+          animate="end"
           ref={ref}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0 }}
-          transition={{ delay: 4.2 }}
-          onAnimationComplete={() => {
-            animate(
-              "nav , a , .theme-par div",
-              { x: [5, 0], opacity: [0, 1], scale: [0.8, 1] },
-              { delay: stagger(0.18), duration: 0.18 }
-            );
-          }}
+          transition={{ when: "beforeChildren", staggerChildren: 0.8 }}
         >
-          <div className="logo">
+          <motion.div variants={opacityVariant} className="logo">
             <Link to="main-page" smooth spy>
               <Logo clr={chosenColor} />
             </Link>
-          </div>
+          </motion.div>
           <span className="theme-par">
-            <AnimatePresence initial={false}>
-              {!(width <= 600) ? (
+            <AnimatePresence>
+              {!(width <= 750) ? (
                 <>
                   <LinksComponent />
                 </>
@@ -91,13 +98,13 @@ const Nav = () => {
             >
               <ThemeToggle />
 
-              {width <= 600 && (
+              {width <= 750 && (
                 <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
               )}
             </span>
           </span>
         </motion.nav>
-      </motion.span>
+      )}
 
       <Router />
     </BrowserRouter>
