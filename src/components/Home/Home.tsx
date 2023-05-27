@@ -6,10 +6,13 @@ import Testimonials from "../reviews/Testimonials";
 import Service from "../Services/Services";
 import About from "../About/About";
 import Bot from "../Bot/Bot";
+import Nav from "../Nav/Nav";
+import RotateText from "../widgets/RotateText";
 
 const Home = () => {
   return (
     <>
+      {/* <Nav /> */}
       <MainPage />
       <Service />
       <About />
@@ -17,6 +20,7 @@ const Home = () => {
       <Testimonials />
       <Contact />
       <Bot />
+      <RotateText />
     </>
   );
 };

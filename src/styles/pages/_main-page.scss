@@ -6,20 +6,29 @@
   background: var(--secondary);
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding-top: 50px;
-  padding-bottom: 20px;
+  justify-content: space-between;
   position: relative;
+  overflow: hidden;
   & > * {
     text-shadow: 0.5px 0.5px 1px black;
+  }
+
+  video {
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 3;
   }
   .home-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    justify-content: flex-end;
     gap: 20px;
     color: var(--third);
     white-space: nowrap;
@@ -28,13 +37,15 @@
       @include fexien(75, 600);
       position: relative;
       z-index: 4;
+      display: flex;
       .my-name {
         @include fexien(75, 800);
 
         &.H-animate {
           @include fexien(75, 800);
 
-          @include header-animation(3.8);
+          @include header-animation(7.6);
+          z-index: -1;
         }
       }
     }
@@ -59,7 +70,6 @@
       position: relative;
       font-weight: 800;
       z-index: 2;
-      text-shadow: 0.5px 1px 20px black;
 
       .developer {
         display: flex;
@@ -70,12 +80,14 @@
         }
       }
       span {
+        text-shadow: 0.5px 0.5px 2px black;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 5px;
         svg {
           path {
+            filter: drop-shadow(0.5px 0.5px 2px black);
             fill: var(--scroll);
           }
         }
@@ -132,7 +144,7 @@
 @media (max-width: 850px) {
   #main-page {
     flex-direction: column;
-    gap: 10px;
+    // gap: 10px;
     button {
       margin-bottom: 20px;
       font-size: 12px;

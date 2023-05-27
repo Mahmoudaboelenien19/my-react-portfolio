@@ -36,7 +36,7 @@
       position: absolute;
       top: 3px;
       right: 3px;
-      font-size: 1rem;
+      font-size: 16px;
       color: var(--third);
     }
     .chat-content {
@@ -75,6 +75,7 @@
   }
   .chat-messages {
     padding: 5px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -115,6 +116,7 @@
       background-color: #007aff;
       align-self: flex-start;
       color: var(--white);
+      cursor: pointer;
     }
   }
 }

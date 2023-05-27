@@ -4,11 +4,12 @@ import { colorContext } from "../context/colorContext";
 
 interface Props {
   btn: string;
+  cls?: string;
   Icon: React.ComponentType;
   type?: "button" | "submit";
   children?: React.ReactNode;
 }
-const MainBtn = ({ children, btn, Icon, type = "button" }: Props) => {
+const MainBtn = ({ children, btn, Icon, type = "button", cls }: Props) => {
   const { chosenColor } = useContext(colorContext);
 
   const btnVariant = {
@@ -18,7 +19,7 @@ const MainBtn = ({ children, btn, Icon, type = "button" }: Props) => {
 
   return (
     <motion.button
-      className="btn"
+      className={`btn ${cls}`}
       style={{ background: chosenColor, marginTop: 20 }}
       variants={btnVariant}
       whileHover={{

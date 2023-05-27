@@ -11,7 +11,7 @@ export const fontVariant = {
   }) => ({
     opacity: bool ? 1 : 0,
     y: bool ? [-4, 4, 0] : 0,
-    transition: { delay: 0.2 + i * delay, typ: "spring", stiffness: 300 },
+    transition: { delay: 0.2 + i * delay, type: "spring", stiffness: 300 },
   }),
 };
 
@@ -21,9 +21,9 @@ export const textVariant = {
 };
 
 export const opacityVariant = {
-  start: { opacity: 0 },
+  start: { opacity: 0, scale: 0.8 },
   exit: { opacity: 0 },
-  end: { opacity: 1 },
+  end: { opacity: 1, scale: 1 },
 };
 
 export const parVar = {

@@ -18,56 +18,63 @@ const Major = () => {
   };
   useEffect(() => {
     let timer: number;
-    if (inView) {
+    if (num !== -1) {
       timer = setTimeout(() => {
         setNum((cur) => handleNums(cur + 1));
       }, 4800);
     }
     return () => clearTimeout(timer);
-  }, [inView, num]);
+  }, [num]);
   return (
-    <>
-      <motion.h5 variants={textVariant} className="major" ref={h5Ref}>
-        <motion.div
-          ref={ref}
-          initial={{ width: 0, left: "-20%" }}
-          animate={{ width: num === -1 ? 0 : "140%" }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          key={`${num}-hider`}
-          className="hider"
-          onAnimationComplete={() => {
-            animate(ref.current, { left: "initial", right: "-20%" }).then(() =>
-              animate(ref.current, { width: 0 })
-            );
-          }}
-        ></motion.div>
-        <AnimatePresence mode="wait" initial={false}>
+    <motion.h5
+      variants={textVariant}
+      onAnimationComplete={() => {
+        setTimeout(() => {
+          setNum((cur) => handleNums(cur + 1));
+        }, 4800);
+      }}
+      className="major"
+      ref={h5Ref}
+    >
+      <motion.div
+        ref={ref}
+        initial={{ width: 0, left: "-20%" }}
+        animate={{ width: num === -1 ? 0 : "140%" }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        key={`${num}-hider`}
+        className="hider"
+        onAnimationComplete={() => {
+          animate(ref.current, { left: "initial", right: "-20%" }).then(() =>
+            animate(ref.current, { width: 0 })
+          );
+        }}
+      ></motion.div>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={num}
+          variants={MajorVariant}
+          initial="start"
+          animate="end"
+          exit="exit"
+        >
           <motion.span
-            key={num}
-            variants={MajorVariant}
-            initial="start"
-            animate="end"
-            exit="exit"
+            key={`plus - ${num}`}
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 90 }}
+            transition={{ delay: 3.5, duration: 0.2 }}
           >
-            <motion.span
-              key={`plus - ${num}`}
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 90 }}
-              transition={{ delay: 3.5, duration: 0.2 }}
-            >
-              <BiPlusMedical />
-            </motion.span>
-            {arr[num] || "MERN Stack "}
-            <div className="developer">
-              <span style={{ animationDelay: num === -1 ? "3.4s" : "2.5s" }}>
-                D
-              </span>
-              eveloper
-            </div>
+            <BiPlusMedical />
           </motion.span>
-        </AnimatePresence>
-      </motion.h5>
-    </>
+          {arr[num] || "MERN Stack "}
+          <div className="developer">
+            <span style={{ animationDelay: num === -1 ? "3.4s" : "2.5s" }}>
+              D
+            </span>
+            eveloper
+          </div>
+        </motion.span>
+      </AnimatePresence>
+    </motion.h5>
   );
 };
 

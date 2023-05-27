@@ -1,67 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
-import myImg from "../../assets/me.jfif";
-import { IoCloseSharp } from "react-icons/io5";
 import Messages from "./Messages";
 import { useInView } from "framer-motion";
-interface Props {
-  setShowChat: React.Dispatch<React.SetStateAction<boolean>>;
-}
-const Chat = ({ setShowChat }: Props) => {
-  const botArr = [
-    {
-      id: 0,
-      question: " ",
-      ans: [
-        "hi, I am Mahmoud's Bot 😊",
-        "I just do Mahmoud's work.",
-        "How can I help you",
-      ],
-    },
-    {
-      id: 1,
-      question: "👋 I just need to say Hello.",
-      ans: ["Hello There 😊.", "Do you enjoy my portfolio ?"],
-    },
-    {
-      id: 2,
-      question: "Tell me about your most challenging project ?",
-      ans: [
-        "my most challenging project is my e-commerce app.",
-        "the reason is it was my first time using Graphql and Apollo.",
-        "but it was interesting for me.",
-      ],
-    },
-    {
-      id: 3,
-      question:
-        "What technologies and programming languages ​​are you good at?",
-      ans: [
-        "first I want to show that I'm an Engineer.but I didn't find my passion at that carrer.",
-        "so ,I looked for a career I like and I find this at web development.",
-        "as a MERN Stack I am good in both frontend and backend.",
-        "quite bite good at frontend,I am good at HTML5,CSS3,SASS,React,Vanila JAVASCRIPT.",
-        "for React I am good with usibg alot for package such as Apollo,React-hook-form ,react-router-dom , redux-Toolki ,query-client and the most prefered package for me Framer Motion ",
-        " In Backend I am good at express ,Graphql,RestFul Api ,JWT,I need to increase my skills at node's treatment with fileSystem.",
-        "I am good for both PostgreSQL and MongoDB including Mongoose",
-      ],
-    },
-    {
-      id: 4,
-      question: "What is your next plans ?",
-      ans: [
-        "This is my upcoming plan.",
-        "I need to increase my Framer-Motion skills",
-        "I will start studing ThreeJs",
-        "finally start Data Structure.",
-      ],
-    },
-  ];
+import { motion } from "framer-motion";
+import ChatHead from "./ChatHead";
+import { botArr } from "../../assets/Arr.js";
 
+interface MSGState {
+  delay: number;
+  id: number;
+  msg: string;
+  cls: string;
+}
+
+const Chat = () => {
   const [ChosenQuestionInd, setChosenQuestionInd] = useState<number>(-1);
-  const [msgs, setMsgs] = useState([{ cls: "", msg: "", id: 0, delay: 0 }]);
+  const [isSessionSTUsed, setIsSessionStUsed] = useState(true);
+  const [msgs, setMsgs] = useState<MSGState[]>([
+    { cls: "", msg: "", id: 0, delay: 0 },
+  ]);
+
   useEffect(() => {
     let count = 0;
-    if (msgs.length === 1) {
+    if (!sessionStorage.getItem("messages")) {
       setMsgs([
         ...botArr[0].ans.map((e, i) => ({
           msg: e,
@@ -69,93 +29,137 @@ const Chat = ({ setShowChat }: Props) => {
           id: 0,
           delay: count++,
         })),
-        ...botArr.map((e, i) => ({
+        ...botArr.map((e) => ({
           msg: e.question!,
           cls: "chat-av-q",
           id: e.id,
           delay: count++,
         })),
       ]);
+      count = 0;
+      sessionStorage.setItem(
+        "messages",
+        JSON.stringify([
+          ...botArr[0].ans.map((e, i) => ({
+            msg: e,
+            cls: "chat-ans",
+            id: 0,
+            delay: count++,
+          })),
+          ...botArr.map((e) => ({
+            msg: e.question!,
+            cls: "chat-av-q",
+            id: e.id,
+            delay: count++,
+          })),
+        ])
+      );
       botArr.splice(0, 1);
+      setIsSessionStUsed(false);
+    } else {
+      console.log("session is used");
+
+      setMsgs([
+        ...JSON.parse(sessionStorage.getItem("messages") as unknown as string),
+      ]);
+    }
+  }, []);
+
+  useEffect(() => {
+    let count = 0;
+    if (ChosenQuestionInd != -1) {
+      setIsSessionStUsed(false);
+
+      count = 0;
+      setMsgs((cur) => [
+        ...cur,
+        {
+          msg: botArr[ChosenQuestionInd].question!,
+          cls: "chat-q",
+          id: 0,
+          delay: 1,
+        },
+        ...botArr[ChosenQuestionInd].ans.map((e, i) => {
+          count = i + 2; // ! i ido this as when i use count++ it starts from 5 i will go back to see why
+          return { msg: e, cls: "chat-ans", id: 0, delay: count }; //why this count is 5  I need it 0
+        }),
+        ...botArr
+          // .filter((e, i) => i != ChosenQuestionInd)
+          .map((e, i) => ({
+            msg: e.question!,
+            cls: "chat-av-q",
+            id: e.id,
+            delay: ++count,
+          })),
+      ]);
+      sessionStorage.setItem(
+        "messages",
+        JSON.stringify([
+          ...JSON.parse(
+            sessionStorage.getItem("messages") as unknown as string
+          ),
+          {
+            msg: botArr[ChosenQuestionInd].question!,
+            cls: "chat-q",
+            id: 0,
+            delay: 1,
+          },
+          ...botArr[ChosenQuestionInd].ans.map((e, i) => {
+            count = i + 2;
+            return { msg: e, cls: "chat-ans", id: 0, delay: count }; //why this count is 5  I need it 0
+          }),
+          ...botArr
+            // .filter((e, i) => i != ChosenQuestionInd)
+            .map((e, i) => ({
+              msg: e.question!,
+              cls: "chat-av-q",
+              id: e.id,
+              delay: ++count,
+            })),
+        ])
+      );
+      // botArr.splice(ChosenQuestionInd, 1);
     }
 
     return () => {
       count = 0;
     };
-  }, []);
-
-  const chatContainerRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    let count = 0;
-    if (ChosenQuestionInd === -1) return;
-
-    setMsgs((cur) => [
-      ...cur,
-      {
-        msg: botArr[ChosenQuestionInd].question!,
-        cls: "chat-q",
-        id: 0,
-        delay: 0,
-      },
-      ...botArr[ChosenQuestionInd].ans.map((e, i) => ({
-        msg: e,
-        cls: "chat-ans",
-        id: 0,
-        delay: count++,
-      })),
-      ...botArr
-        .filter((e, i) => i != ChosenQuestionInd)
-        .map((e, i) => ({
-          msg: e.question!,
-          cls: "chat-av-q",
-          id: e.id,
-          delay: count++,
-        })),
-    ]);
-
-    botArr.splice(ChosenQuestionInd, 1);
-    return () => {
-      count = 0;
-    };
   }, [ChosenQuestionInd]);
 
-  console.log({ msgs });
   const ref = useRef<HTMLDivElement | null>(null);
-  const InView = useInView(ref, { amount: "all" });
+  const InView = useInView(ref, { amount: "all", once: true });
+  console.log(msgs);
   return (
-    <div key={"chat-key"} className="chat" ref={ref}>
-      <div className="head-chat">
-        <IoCloseSharp
-          className="chat-close-icon"
-          onClick={() => setShowChat(false)}
-        />
-        <div className="img-par">
-          <img src={myImg} />
-        </div>
-        <div className="chat-content">
-          <div className="chat-name">Mahmoud Abo Elenien</div>
-          <div className="ask">ask me a question</div>
-        </div>
-      </div>
-      <div className="chat-messages" ref={chatContainerRef}>
+    <motion.div
+      key={"chat-key"}
+      className="chat"
+      ref={ref}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.8, opacity: 0 }}
+      initial={{ scale: 0.8, opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <ChatHead />
+      <motion.div className="chat-messages">
         <>
           {InView && (
             <>
-              {msgs.map((ob, i) => {
+              {msgs.map((ob, i: number) => {
                 return (
                   <Messages
                     {...ob}
                     key={i}
                     i={botArr.findIndex((e) => e.id === ob.id)}
                     changeInd={setChosenQuestionInd}
+                    isSessionUsed={isSessionSTUsed}
                   />
                 );
               })}
             </>
           )}
         </>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

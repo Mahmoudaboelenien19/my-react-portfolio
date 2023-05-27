@@ -1,20 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { opacityVariant } from "../../assets/MianVariants";
+import ReactAudioPlayer from "react-audio-player";
+import BotAns from "../../assets/audios/bot ans.mp3";
+import Botasks from "../../assets/audios/default questions.mp3";
+import userAsks from "../../assets/audios/user pick.mp3";
 interface Props {
   changeInd: React.Dispatch<React.SetStateAction<number>>;
   cls: string;
   msg: string;
   delay: number;
   i: number;
+  isSessionUsed: boolean;
+  id: number;
 }
-const Messages = ({ delay, i, msg, cls, changeInd }: Props) => {
+const Messages = ({
+  isSessionUsed,
+  id,
+  delay,
+  i,
+  msg,
+  cls,
+  changeInd,
+}: Props) => {
   const messageRef = useRef<null | HTMLDivElement>(null);
-
-  console.log({
-    msg,
-    i,
-  });
+  console.log({ isSessionUsed });
+  const [startAudio, setStartAudio] = useState(false);
   return (
     <>
       {msg !== " " && (
@@ -23,20 +34,34 @@ const Messages = ({ delay, i, msg, cls, changeInd }: Props) => {
           className={cls}
           onClick={() => {
             if (cls == "chat-av-q") {
-              changeInd(i - 1);
+              changeInd(i);
             }
           }}
           variants={opacityVariant}
           initial="start"
           animate="end"
-          transition={{ delay: delay * 0.3, duration: 0.3 }}
-          onAnimationComplete={() =>
-            messageRef?.current!.scrollIntoView({ behavior: "smooth" })
-          }
+          transition={{
+            delay: isSessionUsed ? 0 : delay * 1.2,
+            duration: 0.4,
+          }}
+          onAnimationComplete={() => {
+            messageRef?.current!.scrollIntoView({ behavior: "smooth" });
+            if (!isSessionUsed) {
+              setStartAudio(true);
+            }
+          }}
         >
           {" "}
           {msg}
         </motion.div>
+      )}
+      {startAudio && (
+        <ReactAudioPlayer
+          src={
+            cls === "chat-av-q" ? Botasks : cls === "chat-q" ? userAsks : BotAns
+          }
+          autoPlay
+        />
       )}
     </>
   );

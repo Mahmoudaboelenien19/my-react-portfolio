@@ -52,7 +52,7 @@ const Testimonials = () => {
   const [ind, setInd] = useState(0);
   const ref = useRef<null | HTMLDivElement>(null);
   const inView = useInView(ref, { amount: "some" });
-  console.log({ inView });
+  // console.log({ inView });
   return (
     <div id="testimonials" ref={ref}>
       <Header head="Reviews" specialLetter={0} />

@@ -37,11 +37,25 @@ nav {
       text-align: left;
       width: 7vw;
       cursor: pointer;
-
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 120%;
+        left: 0;
+        width: 0;
+        height: 1.5px;
+        border-radius: 4px;
+        background-color: var(--third);
+        transition: 0.3s;
+      }
       &:hover,
       &.active {
         color: var(--scroll);
         @include fexien(125, 800);
+        &:before {
+          width: 30%;
+        }
       }
     }
   }
@@ -116,6 +130,9 @@ nav {
       a {
         width: fit-content;
         font-size: 2rem;
+        &:before {
+          content: initial;
+        }
       }
       svg {
         display: none;

@@ -1,21 +1,36 @@
-import { AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { createContext, useState } from "react";
 import { BsFillChatFill } from "react-icons/bs";
 import Chat from "./Chat";
 
+interface BotContextInterface {
+  setShowChat: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const BotContext = createContext({} as BotContextInterface);
 const Bot = () => {
   const [showChat, setShowChat] = useState(false);
 
   return (
-    <div className="bot">
-      <AnimatePresence mode="wait">
-        {!showChat ? (
-          <BsFillChatFill key={"bot-icon"} onClick={() => setShowChat(true)} />
-        ) : (
-          <Chat key="chat" setShowChat={setShowChat} />
-        )}
-      </AnimatePresence>
-    </div>
+    <BotContext.Provider value={{ setShowChat }}>
+      <motion.div
+        className="bot"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 12, duration: 0.3 }}
+      >
+        <AnimatePresence mode="wait">
+          {!showChat ? (
+            <BsFillChatFill
+              key={"bot-icon"}
+              onClick={() => setShowChat(true)}
+            />
+          ) : (
+            <Chat key="chat" />
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </BotContext.Provider>
   );
 };
 
