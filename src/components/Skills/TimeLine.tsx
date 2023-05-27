@@ -6,11 +6,13 @@ interface Props {
   date: string;
   head: string;
   clr: string;
+  link?: string;
   Icon: React.ComponentType;
   content: string[];
+  linkDes: string;
 }
 
-const TimeLine = ({ head, clr, date, Icon, content }: Props) => {
+const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -35,6 +37,23 @@ const TimeLine = ({ head, clr, date, Icon, content }: Props) => {
           return <li key={i}>{sentence}</li>;
         })}
       </ul>
+      {link && (
+        <div
+          className="link-timeline"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            fontSize: 11,
+          }}
+        >
+          <div className="detail">link to certificate : </div>
+
+          <a href={link} target="_balnk" style={{ color: "var(--scroll)" }}>
+            {linkDes}
+          </a>
+        </div>
+      )}
     </VerticalTimelineElement>
   );
 };

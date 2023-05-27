@@ -98,6 +98,7 @@ export const skillsArr = [
       "Acquired a solid foundation in WordPress development and customization.",
     ],
     link: "https://drive.google.com/file/d/1zzGQXqoIY2jwguCvOnfchWoKsR7wJfR2/view",
+    linkDes: " Web Development challenger track.",
   },
 
   {
@@ -112,6 +113,7 @@ export const skillsArr = [
       "Acquired advanced knowledge and techniques in front-end web development.",
     ],
     link: "https://drive.google.com/file/d/1eOlSm3HfsHZWZbvmTI7eUp_8qY1XT6sT/view",
+    linkDes: " Professional Front-End program.",
   },
   {
     head: "start Backend Development Journey",
@@ -128,6 +130,7 @@ export const skillsArr = [
       "Mastered the use of TypeScript for building scalable and maintainable web applications.",
     ],
     link: "https://drive.google.com/file/d/1pzpOyIutGuuWckFfQ20r9-O6fqIr3NAE/view",
+    linkDes: " Advanced Full-Stack Web Development program.",
   },
   {
     head: "Main Portfolio Projects",

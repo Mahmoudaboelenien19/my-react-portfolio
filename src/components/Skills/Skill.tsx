@@ -1,6 +1,5 @@
 import React from "react";
-import { Tilt } from "react-tilt";
-import { TiltDefaultOptions } from "../../assets/Objects/object";
+import Title from "../widgets/CustomTitle";
 
 interface Props {
   Icon: React.ComponentType;
@@ -9,11 +8,11 @@ interface Props {
 }
 const Skill = ({ clr, name, Icon }: Props) => {
   return (
-    <Tilt options={TiltDefaultOptions(45, 1.05)} key={name}>
-      <div className="skill-icon" style={{ color: clr }} title={name}>
+    <div className="skill-icon" style={{ color: clr }}>
+      <Title title={name}>
         <Icon />
-      </div>
-    </Tilt>
+      </Title>
+    </div>
   );
 };
 

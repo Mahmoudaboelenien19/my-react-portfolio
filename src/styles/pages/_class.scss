@@ -96,31 +96,6 @@
     font-family: "Caveat", cursive;
     line-height: 7rem;
   }
-  .shape {
-    position: absolute;
-    top: 5%;
-    height: 90%;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity: 0.3;
-    .div-1,
-    .div-3 {
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      border: 1px solid var(--main);
-      @extend .box-shadow;
-    }
-    .div-2 {
-      height: calc(100% - 80px);
-      width: 2px;
-      @extend .box-shadow;
-      background: var(--main);
-    }
-  }
 }
 
 .rotated-text-par {
@@ -141,5 +116,37 @@
     path {
       fill: var(--main);
     }
+  }
+}
+
+.title-par {
+  display: inline-flex;
+}
+.custom-title {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: lowercase;
+  position: absolute;
+  top: 115%;
+  width: fit-content;
+  z-index: 1000;
+  padding: 4px 6px;
+  background: var(--secondary);
+  color: var(--third) !important;
+  white-space: nowrap;
+  border-radius: 4px;
+  letter-spacing: 0.8px;
+  height: 20px;
+  font-size: 0.8rem;
+  box-shadow: 0.5px 0.5px 1px black;
+  text-transform: capitalize;
+  box-shadow: var(--main-shadow);
+  &.right {
+    right: 0;
+  }
+  &.left {
+    left: 0;
   }
 }

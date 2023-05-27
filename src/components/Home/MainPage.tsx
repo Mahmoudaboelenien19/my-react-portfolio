@@ -11,6 +11,7 @@ import Background from "../widgets/Background";
 import MainBtn from "../widgets/MainBtn";
 import GmailSvg from "../widgets/GmailSvg";
 import MainVideo from "./MainVideo";
+
 const MainPage = () => {
   const { chosenColor } = useContext(colorContext);
   const ref = useRef<HTMLDivElement | null>(null);

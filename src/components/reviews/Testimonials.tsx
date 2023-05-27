@@ -51,8 +51,6 @@ const arr = [
 const Testimonials = () => {
   const [ind, setInd] = useState(0);
   const ref = useRef<null | HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: "some" });
-  // console.log({ inView });
   return (
     <div id="testimonials" ref={ref}>
       <Header head="Reviews" specialLetter={0} />
@@ -64,9 +62,9 @@ const Testimonials = () => {
         direction="vertical"
         pagination={{ clickable: true }}
         modules={[Pagination, Autoplay]}
-        autoplay={{
-          delay: 3000,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        // }}
         className="swiper-par"
         onSlideChange={(e: any) => {
           setInd(e.realIndex);

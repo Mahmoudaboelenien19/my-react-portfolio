@@ -43,8 +43,7 @@ const Form = () => {
       <Input placeholder="your subject" name="subject" />
       <Input placeholder="your message" type="textarea" name="message" />
       <div className="inp-par inp-send">
-        <MainBtn Icon={IoSend} btn={"send"} type="submit" />
-        {/* <input type="submit" /> */}
+        <MainBtn cls="send-btn" Icon={IoSend} btn={"send"} type="submit" />
       </div>
     </form>
   );
