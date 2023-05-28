@@ -44,7 +44,6 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
             display: "flex",
             alignItems: "center",
             gap: 6,
-            fontSize: 11,
           }}
         >
           <div className="detail">link to certificate : </div>

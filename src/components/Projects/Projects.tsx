@@ -24,7 +24,7 @@ const Projects = () => {
 
   return (
     <section id="projects-home" ref={sectionRef}>
-      <Background text={"PORTFOLIO"} pos={"right"} />
+      <Background text={"PORTFOLIO"} />
       <Header specialLetter={0} head="Portfolio" />
       <section className="projects-section">
         <motion.figure

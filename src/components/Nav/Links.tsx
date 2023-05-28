@@ -8,7 +8,7 @@ import { opacityVariant } from "../../assets/MianVariants.js";
 
 const LinksComponent = ({ width = 1000 }: { width?: number }) => {
   const [showClrPicker, setShowClrPicker] = useState(false);
-  const check = showClrPicker || width <= 600;
+  const check = showClrPicker || width <= 850;
   console.log({ showClrPicker });
   return (
     <div className="links">

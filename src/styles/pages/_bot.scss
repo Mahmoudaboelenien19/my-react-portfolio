@@ -10,10 +10,11 @@
 
   svg {
     color: var(--third);
-    font-size: 2rem;
+    font-size: 30px;
     position: relative;
     z-index: 40;
     margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .chat {
@@ -117,6 +118,17 @@
       align-self: flex-start;
       color: var(--white);
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .bot {
+    left: 0;
+    bottom: 0;
+    .chat {
+      width: 100vw;
+      height: 100vh;
     }
   }
 }

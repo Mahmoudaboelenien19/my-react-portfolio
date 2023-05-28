@@ -20,7 +20,7 @@ const Nav = () => {
   const AsideMobile = {
     start: { width: 0 },
     end: {
-      width: "40%",
+      width: width >= 600 ? "40%" : "100%",
       transition: {
         duration: 0.3,
         when: "beforeChildren",
@@ -67,7 +67,7 @@ const Nav = () => {
           </motion.div>
           <span className="theme-par">
             <AnimatePresence>
-              {!(width <= 750) ? (
+              {!(width <= 850) ? (
                 <>
                   <LinksComponent />
                 </>
@@ -98,7 +98,7 @@ const Nav = () => {
             >
               <ThemeToggle />
 
-              {width <= 750 && (
+              {width <= 850 && (
                 <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
               )}
             </span>

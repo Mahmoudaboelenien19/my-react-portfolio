@@ -79,7 +79,7 @@
     flex-direction: column;
     gap: 15px;
     width: 50%;
-    padding: 4% 2%;
+    padding: 6% 2%;
     border-radius: 5px;
 
     background: var(--secondary);
@@ -88,6 +88,7 @@
 
     .send-btn {
       opacity: 0;
+      margin: 0%;
     }
     .inp-par {
       display: flex;
