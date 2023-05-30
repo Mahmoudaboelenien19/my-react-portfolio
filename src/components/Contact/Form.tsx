@@ -5,47 +5,110 @@ import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { IoSend } from "react-icons/io5";
 import MainBtn from "../widgets/MainBtn";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 const Form = () => {
+  const schema = yup.object().shape({
+    user_name: yup.string().min(5).max(20).required(),
+    subject: yup.string().min(5).max(20).required(),
+    message: yup.string().min(20).max(1000).required(),
+    user_email: yup.string().email("insert a valid email").required(),
+  });
+  const methods = useForm({ resolver: yupResolver(schema) });
+  const {
+    formState: { errors, isValid },
+    handleSubmit,
+    getValues,
+    reset,
+  } = methods;
+  console.log(getValues());
+  console.log(errors);
   const form = useRef<HTMLFormElement | null>(null);
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const sendEmail = (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_i1m9rdf",
-        "template_o7nzi0c",
-        form.current!,
-        "ewh4vljEV59tCgEiH"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          if (result.text === "OK") {
-            toast.success("message is successfully send");
-            form.current!.reset();
+  //   emailjs
+  //     .sendForm(
+  //       "service_i1m9rdf",
+  //       "template_o7nzi0c",
+  //       form.current!,
+  //       "ewh4vljEV59tCgEiH"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //         if (result.text === "OK") {
+  //           toast.success("message is successfully send");
+  //           form.current!.reset();
+  //         }
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // };
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    if (isValid) {
+      emailjs
+        .sendForm(
+          "service_i1m9rdf",
+          "template_o7nzi0c",
+          form.current!,
+          "ewh4vljEV59tCgEiH"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            if (result.text === "OK") {
+              toast.success("message is successfully sent By EmailJs");
+              form.current!.reset();
+            }
+          },
+          (error) => {
+            console.log(error.text);
+            // form.current!.reset();
+            reset();
           }
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+        );
+    }
   };
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendEmail}
-      action="  
+    <FormProvider {...methods}>
+      <form
+        ref={form}
+        onSubmit={handleSubmit(onSubmit)}
+        action="  
   "
-    >
-      <Input placeholder="your name" name="user_name" />
-      <Input placeholder="your email" name="user_email" />
-      <Input placeholder="your subject" name="subject" />
-      <Input placeholder="your message" type="textarea" name="message" />
-      <div className="inp-par inp-send">
-        <MainBtn cls="send-btn" Icon={IoSend} btn={"send"} type="submit" />
-      </div>
-    </form>
+      >
+        <Input
+          placeholder="name"
+          name="user_name"
+          err={errors?.user_name?.message!.toString()}
+        />
+        <Input
+          placeholder="email"
+          name="user_email"
+          err={errors?.user_email?.message!.toString()}
+        />
+        <Input
+          placeholder="subject"
+          name="subject"
+          err={errors?.subject?.message!.toString()}
+        />
+        <Input
+          placeholder="message"
+          type="textarea"
+          name="message"
+          err={errors?.message?.message!.toString()}
+        />
+        <div className="inp-par inp-send">
+          <MainBtn cls="send-btn" Icon={IoSend} btn={"send"} type="submit" />
+        </div>
+      </form>
+    </FormProvider>
   );
 };
 

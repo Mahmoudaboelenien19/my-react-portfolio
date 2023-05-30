@@ -7,6 +7,7 @@
   min-height: 100vh;
   width: 100%;
   background-color: var(--main);
+  overflow: hidden;
   .timeline-par {
     margin-top: 60px;
 
@@ -57,9 +58,13 @@
         background: var(--svg);
         position: relative;
         box-shadow: var(--main-shadow);
+
         svg {
           font-size: 3.8vw;
           filter: drop-shadow(0.5px 0.3px 0.7px black);
+          &:hover {
+            mix-blend-mode: normal !important;
+          }
         }
       }
     }

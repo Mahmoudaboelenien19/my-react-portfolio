@@ -29,13 +29,24 @@
         width: 100%;
         align-items: center;
         justify-content: center;
-        gap: 40px;
+        // gap: 20px;
         button {
           font-size: 10px;
           &.contact-btn {
             background-color: rgb(78, 75, 75) !important;
             color: var(--white);
+            width: fit-content;
             gap: 4px;
+            position: relative;
+          }
+          .transparent-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
           }
         }
       }

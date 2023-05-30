@@ -33,7 +33,7 @@ nav {
       color: var(--third);
       text-transform: capitalize;
       transition: 0.3s;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-align: left;
       width: 7vw;
       cursor: pointer;
@@ -44,12 +44,12 @@ nav {
         top: 110%;
         left: 0;
         width: 0;
-        height: 2px;
+        height: 3px;
         border-radius: 4px;
         background-color: var(--third);
         transition: 0.3s;
       }
-      &:hover,
+      // &:hover,
       &.active {
         color: var(--scroll);
         @include fexien(125, 800);

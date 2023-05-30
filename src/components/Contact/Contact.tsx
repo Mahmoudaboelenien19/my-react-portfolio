@@ -29,7 +29,7 @@ const Contact = () => {
 
             .then(() =>
               animate(
-                "    .send-btn",
+                " .send-btn",
                 { opacity: [0, 1], y: [60, 0] },
                 { duration: 0.2 }
               )
