@@ -8,6 +8,7 @@ import MainBtn from "../widgets/MainBtn";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
+
 const Form = () => {
   const schema = yup.object().shape({
     user_name: yup.string().min(5).max(20).required(),
@@ -25,50 +26,26 @@ const Form = () => {
   console.log(getValues());
   console.log(errors);
   const form = useRef<HTMLFormElement | null>(null);
-  // const sendEmail = (e: React.FormEvent) => {
-  //   e.preventDefault();
 
-  //   emailjs
-  //     .sendForm(
-  //       "service_i1m9rdf",
-  //       "template_o7nzi0c",
-  //       form.current!,
-  //       "ewh4vljEV59tCgEiH"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //         if (result.text === "OK") {
-  //           toast.success("message is successfully send");
-  //           form.current!.reset();
-  //         }
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // };
   const onSubmit = (data: FieldValues) => {
-    console.log(data);
     if (isValid) {
       emailjs
         .sendForm(
-          "service_i1m9rdf",
-          "template_o7nzi0c",
+          import.meta.env.VITE_REACT_APP_service_ID,
+          import.meta.env.VITE_REACT_APP_TEMPLATE_ID,
           form.current!,
-          "ewh4vljEV59tCgEiH"
+          import.meta.env.VITE_REACT_APP_PUBLIC_KEY
         )
         .then(
           (result) => {
             console.log(result.text);
             if (result.text === "OK") {
               toast.success("message is successfully sent By EmailJs");
-              form.current!.reset();
+              reset();
             }
           },
           (error) => {
             console.log(error.text);
-            // form.current!.reset();
             reset();
           }
         );

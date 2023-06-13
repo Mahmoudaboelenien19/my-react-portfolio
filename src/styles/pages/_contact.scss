@@ -6,7 +6,10 @@
   min-height: 100vh;
   position: relative;
   background-color: var(--forth);
+  background-color: var(--secondary);
   overflow: hidden;
+  padding-bottom: calc(8vw + 4vh);
+
   .contact-data {
     position: relative;
 
@@ -78,11 +81,12 @@
   form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     width: 50%;
     padding: 8% 2%;
     border-radius: 5px;
     background: var(--secondary);
+    background: var(--main);
     box-shadow: var(--main-shadow);
     opacity: 0;
 
@@ -115,7 +119,7 @@
         letter-spacing: 0.8px;
         outline: none;
         border: none;
-        background-color: var(--main);
+        background-color: var(--secondary);
         box-shadow: 0.5px 0.5px 1px black;
         &:focus {
           border: 2px solid var(--scroll);

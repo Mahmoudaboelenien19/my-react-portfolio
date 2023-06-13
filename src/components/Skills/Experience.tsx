@@ -3,7 +3,7 @@ import Background from "../widgets/Background";
 import Header from "../widgets/Header";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { skillsArr, skillsIconsArr } from "../../assets/Arr.js";
+import { skillsArr, skillsIconsArr } from "../../assets/Utils/Arr.js";
 import TimeLine from "./TimeLine";
 import "react-vertical-timeline-component/style.min.css";
 import Skills from "./Skills.js";
@@ -21,7 +21,7 @@ const Experience = () => {
         lineColor="var(--third)"
         layout={"2-columns"}
       >
-        {skillsArr.map((obj, i) => {
+        {skillsArr?.map((obj, i) => {
           return <TimeLine key={i} {...obj} />;
         })}
       </VerticalTimeline>

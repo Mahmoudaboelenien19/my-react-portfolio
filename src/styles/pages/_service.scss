@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding-bottom: 50px;
   z-index: 4;
-  background: var(--forth);
+  background: var(--secondary);
   position: relative;
 
   .services {
@@ -20,7 +20,7 @@
   .service {
     position: relative;
     z-index: 2;
-    background: var(--secondary);
+    background: var(--forth);
     display: flex;
     flex-direction: column;
     justify-content: center;

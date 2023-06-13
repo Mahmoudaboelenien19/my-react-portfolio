@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { linkArr } from "../../assets/Arr.js";
+import { linkArr } from "../../assets/Utils/Arr.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { RiPaletteFill } from "react-icons/ri";
 import ColorPicker from "../Theme/ColorPicker.js";
-import { opacityVariant } from "../../assets/MianVariants.js";
+import { opacityVariant } from "../../assets/Utils/MianVariants.js";
 
 const LinksComponent = ({ width = 1000 }: { width?: number }) => {
   const [showClrPicker, setShowClrPicker] = useState(false);

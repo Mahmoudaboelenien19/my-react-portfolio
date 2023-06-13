@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { parVar } from "../../assets/MianVariants";
+import { parVar } from "../../assets/Utils/MianVariants";
 const CloseToggler = () => {
   const closeLine = {
     start: { height: 0 },

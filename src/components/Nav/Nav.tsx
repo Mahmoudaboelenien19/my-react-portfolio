@@ -1,22 +1,22 @@
-import { BrowserRouter } from "react-router-dom";
-import Router from "./routes";
 import React, { useContext, useEffect, useState } from "react";
-import { AnimatePresence, stagger, useAnimate } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { colorContext } from "../context/colorContext";
 import { Link } from "react-scroll";
-import Logo from "../widgets/Logo";
+import Logo from "../widgets/Svgs/Logo";
 import ThemeToggle from "../Theme/ThemeToggle";
 import NavToggler from "./NavToggler";
 import useMeasure from "react-use-measure";
 import LinksComponent from "./Links";
 import { motion } from "framer-motion";
-import { opacityVariant } from "../../assets/MianVariants";
+import { opacityVariant } from "../../assets/Utils/MianVariants";
+import Title from "../widgets/CustomTitle";
+import { themeContext } from "../context/ThemeContext";
 
 const Nav = () => {
   const { chosenColor } = useContext(colorContext);
   const [ref, { width }] = useMeasure();
   const [ShowMenu, setShowMenu] = useState(false);
-
+  const { theme } = useContext(themeContext);
   const AsideMobile = {
     start: { width: 0 },
     end: {
@@ -51,7 +51,7 @@ const Nav = () => {
     },
   };
   return (
-    <BrowserRouter>
+    <>
       {showNav && (
         <motion.nav
           variants={parVar}
@@ -92,11 +92,16 @@ const Nav = () => {
               style={{
                 justifyContent: "space-between",
                 height: "100%",
-                width: 60,
                 alignItems: "center",
               }}
             >
-              <ThemeToggle />
+              <Title
+                title={
+                  theme === "light" ? "apply dark mode" : "apply light mode"
+                }
+              >
+                <ThemeToggle />
+              </Title>
 
               {width <= 850 && (
                 <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
@@ -105,9 +110,7 @@ const Nav = () => {
           </span>
         </motion.nav>
       )}
-
-      <Router />
-    </BrowserRouter>
+    </>
   );
 };
 

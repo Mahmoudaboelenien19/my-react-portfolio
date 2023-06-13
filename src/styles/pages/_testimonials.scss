@@ -5,13 +5,15 @@
 #testimonials {
   position: relative;
   padding: 0;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
+.swiper-wrapper {
+  padding-top: 30px;
+}
 .swiper-par {
   width: 80%;
-  height: 80vh;
-  padding: 10px;
+  height: 75vh;
   .review {
     height: 150px;
     display: flex;
@@ -70,9 +72,6 @@
 }
 
 @media (max-width: 520px) {
-  #testimonials {
-    padding-bottom: 40px;
-  }
   .swiper-par {
     height: 80vh;
     .review {
@@ -95,5 +94,5 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--third);
+  background-color: var(--secondary);
 }

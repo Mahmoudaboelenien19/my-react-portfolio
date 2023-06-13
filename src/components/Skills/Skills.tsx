@@ -1,8 +1,8 @@
 import React from "react";
-import { skillsIconsArr } from "../../assets/Arr.js";
 import Skill from "./Skill";
+import { SkillInterface } from "../../assets/Utils/interfaces";
 interface Props {
-  arr: { Icon: React.ComponentType; clr: string; name: string }[];
+  arr: SkillInterface[];
 }
 const Skills = ({ arr }: Props) => {
   return (

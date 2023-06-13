@@ -1,12 +1,8 @@
 import React from "react";
 import Title from "../widgets/CustomTitle";
+import { SkillInterface } from "../../assets/Utils/interfaces.js";
 
-interface Props {
-  Icon: React.ComponentType;
-  clr: string;
-  name: string;
-}
-const Skill = ({ clr, name, Icon }: Props) => {
+const Skill = ({ clr, name, Icon }: SkillInterface) => {
   return (
     <div className="skill-icon" style={{ color: clr }}>
       <Title title={name}>

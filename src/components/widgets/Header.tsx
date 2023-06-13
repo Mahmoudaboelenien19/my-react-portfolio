@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-import { fontVariant } from "../../assets/MianVariants";
+import { headerVariant } from "../../assets/Utils/MianVariants.js";
 
 interface Props {
   head: string;
@@ -18,7 +18,7 @@ const Header = ({ head, specialLetter }: Props) => {
           } else {
             return (
               <motion.div
-                variants={fontVariant}
+                variants={headerVariant}
                 initial="start"
                 animate="end"
                 custom={{ bool: inView, i }}

@@ -5,15 +5,13 @@ const Loader = () => {
 
   return (
     <Html>
-      <span className="canvas-load"></span>
       <div
         style={{
-          color: "var(--third)",
+          color: "var(--scroll)",
           fontSize: 20,
           display: "flex",
         }}
       >
-        {" "}
         {progress.toFixed(2)}%{" "}
       </div>
     </Html>

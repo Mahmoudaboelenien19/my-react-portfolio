@@ -3,11 +3,15 @@
 #about {
   min-height: 100vh;
   position: relative;
+  z-index: 4;
+  overflow: hidden;
   .about {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 15px;
+    padding-bottom: calc(8vw + 4vh);
+
     gap: 20px;
     height: 100%;
     width: 100%;

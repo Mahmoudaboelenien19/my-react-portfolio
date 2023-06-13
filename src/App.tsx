@@ -2,11 +2,11 @@ import ColorContextComponent from "./components/context/colorContext";
 import Nav from "./components/Nav/Nav";
 import React, { useEffect, useState } from "react";
 import Loading from "./components/loading/loading";
-import Home from "./components/Home/Home";
 import "./styles/pages/App.scss";
 import ThemContext from "./components/context/ThemeContext";
 import { Toaster } from "react-hot-toast";
 import AnimatedCursor from "react-animated-cursor";
+import Home from "./components/Home/Home";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +25,7 @@ const App = () => {
         ) : (
           <>
             <Nav />
+            <Home />
             <Toaster
               position="bottom-left"
               reverseOrder={false}

@@ -4,20 +4,27 @@ import Header from "../widgets/Header";
 import Background from "../widgets/Background";
 import MainBtn from "../widgets/MainBtn";
 import { FaDownload } from "react-icons/fa";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 import { Link } from "react-scroll";
+import { motion, useAnimate, useInView } from "framer-motion";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const About = () => {
+  const [scope, animate] = useAnimate();
+  const inView = useInView(scope, { once: true });
   return (
-    <div id="about">
+    <div id="about" ref={scope}>
       <Header head="ABout Me" specialLetter={1} />
       <Background text="About Me" />
       <div className="about">
-        <div className="mac">
-          <MacCom />
-        </div>
-        <div className="about-content">
+        <div className="mac">{inView && <MacCom />}</div>
+        <motion.div
+          className="about-content"
+          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ x: [200, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.3, delay: 1 }}
+        >
           <p>
             I&apos;m a Full Stack MERN Developer with a background in Electrical
             Engineering. I specialize in both front-end and back-end
@@ -30,7 +37,7 @@ const About = () => {
             <div className="cv">
               <MainBtn btn={""} Icon={FaDownload}>
                 <a
-                  href={"/src/assets/cv.pdf"}
+                  href={"/src/assets/Mahmoud Abo Elenien.pdf"}
                   download="cv.pdf"
                   className="cv-link"
                 >
@@ -42,7 +49,7 @@ const About = () => {
               <MainBtn
                 cls={"contact-btn"}
                 btn={"contact me"}
-                Icon={MdOutlineArrowRightAlt}
+                Icon={BsFillArrowRightCircleFill}
               >
                 <Link to="contact" smooth className="contact-link">
                   <div className="transparent-btn"></div>
@@ -50,7 +57,7 @@ const About = () => {
               </MainBtn>
             </>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

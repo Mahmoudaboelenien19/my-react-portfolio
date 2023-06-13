@@ -1,9 +1,9 @@
-export const fontVariant = {
+export const headerVariant = {
   start: { opacity: 0 },
   end: ({
     bool = true,
-    i,
-    delay = 0.125,
+    i = 0,
+    delay = 0.1,
   }: {
     bool: boolean;
     i: number;
@@ -11,8 +11,16 @@ export const fontVariant = {
   }) => ({
     opacity: bool ? 1 : 0,
     y: bool ? [-4, 4, 0] : 0,
-    transition: { delay: 0.2 + i * delay, type: "spring", stiffness: 300 },
+    transition: { delay: i * delay, type: "spring", stiffness: 300 },
   }),
+};
+export const fontVariant = {
+  start: { opacity: 0 },
+  end: {
+    opacity: 1,
+    y: [-4, 4, 0],
+    transition: { type: "spring", stiffness: 300 },
+  },
 };
 
 export const textVariant = {

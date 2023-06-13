@@ -5,12 +5,14 @@ import { colorContext } from "../context/colorContext";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import devImg from "../../assets/developer-pic-1.png";
 import { FaDownload } from "react-icons/fa";
-import { fontVariant, textVariant } from "../../assets/MianVariants";
+import { fontVariant, textVariant } from "../../assets/Utils/MianVariants";
 import Major from "./Major";
 import Background from "../widgets/Background";
 import MainBtn from "../widgets/MainBtn";
-import GmailSvg from "../widgets/GmailSvg";
+import GmailSvg from "../widgets/Svgs/GmailSvg";
 import MainVideo from "./MainVideo";
+import { iconsArr } from "../../assets/Utils/Arr.js";
+import Title from "../widgets/CustomTitle";
 
 const MainPage = () => {
   const { chosenColor } = useContext(colorContext);
@@ -20,26 +22,6 @@ const MainPage = () => {
     offset: ["start start", "end start"],
   });
   const width = useTransform(scrollYProgress, [0, 1], ["100%", "140%"]);
-  const iconsArr = [
-    {
-      id: 1,
-      icon: <GrLinkedinOption />,
-      link: "https://www.linkedin.com/in/mahmoud-abo-elenien19/",
-      title: "go to my linkedin",
-    },
-    {
-      id: 2,
-      icon: <AiFillGithub />,
-      link: "https://github.com/Mahmoudaboelenien19",
-      title: "go to my github",
-    },
-    {
-      id: 3,
-      icon: <GmailSvg />,
-      title: "send me an e_mail",
-    },
-    { id: 4, icon: <AiOutlineWhatsApp />, title: "send me whatApp message" },
-  ];
 
   const mainPageVariant = {
     start: { overflow: "hidden" },
@@ -68,27 +50,16 @@ const MainPage = () => {
       height: "50vh",
       marginTop: 20,
       transition: {
-        delay: 4.8,
-        duration: 1,
+        duration: 0.4,
+        delay: 4.6,
         when: "beforeChildren",
-        delayChildren: 1,
-        staggerChildren: 0.25,
+        staggerChildren: 0.18,
       },
     },
   };
 
   return (
     <section id="main-page" ref={ref}>
-      {/* <Background text={"web Developer"} /> */}
-      {/* <motion.img
-        className="main-img"
-        src={devImg}
-        variants={imageVariant}
-        initial="start"
-        animate="end"
-        transition={{ duration: 0.3 }}
-      /> */}
-
       <motion.div
         layout
         variants={ContentPar}
@@ -109,7 +80,6 @@ const MainPage = () => {
                     i === 12 ? "H-animate" : ""
                   }`}
                   key={i}
-                  custom={{ i, delay: 0.1 }}
                 >
                   {letter}
                 </motion.div>
@@ -124,18 +94,20 @@ const MainPage = () => {
         </motion.p>
 
         <div className="icons">
-          {iconsArr.map(({ icon, id, title }) => {
+          {iconsArr.map(({ Icon, id, title, link }) => {
             return (
-              <motion.span
-                variants={opacityVariant}
-                className="icon-parent"
-                key={id}
-                style={{ color: chosenColor, fontSize: 30, marginLeft: 10 }}
-                title={title}
-                transition={{ duration: 0.1 }}
-              >
-                {icon}
-              </motion.span>
+              <Title key={id} title={title}>
+                <motion.a
+                  variants={opacityVariant}
+                  className="icon-parent"
+                  style={{ fontSize: 30, color: "var(--scroll)" }}
+                  transition={{ duration: 0.1 }}
+                  href={link}
+                  target="blank"
+                >
+                  <Icon />
+                </motion.a>
+              </Title>
             );
           })}
         </div>

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { opacityVariant } from "../../assets/MianVariants";
+import { opacityVariant } from "../../assets/Utils/MianVariants";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Input = ({

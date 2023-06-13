@@ -10,7 +10,7 @@ interface Props {
   type?: "button" | "submit";
   children?: React.ReactNode;
 }
-const MainBtn = ({ children, btn, Icon, type = "button", cls }: Props) => {
+const MainBtn = ({ children, btn, Icon, type = "button", cls = "" }: Props) => {
   const { chosenColor } = useContext(colorContext);
 
   const btnVariant = {

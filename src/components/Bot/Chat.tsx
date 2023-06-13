@@ -3,7 +3,7 @@ import Messages from "./Messages";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import ChatHead from "./ChatHead";
-import { botArr } from "../../assets/Arr.js";
+import { botArr } from "../../assets/Utils/Arr.js";
 
 interface MSGState {
   delay: number;

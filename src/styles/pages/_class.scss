@@ -72,10 +72,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   text-transform: capitalize;
   background-color: transparent;
   font-size: 14px !important;
+  white-space: nowrap;
+  // svg {
+  //   fill: var(--scroll);
+  // }
 }
 .cv-link {
   color: var(--third);
@@ -95,17 +99,6 @@
   letter-spacing: 1vw;
   white-space: nowrap;
   overflow: hidden;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0.3;
-    transition: 0.3s;
-  }
 
   p {
     opacity: 0.15;
@@ -124,14 +117,17 @@
   z-index: 20;
   background-color: var(--third);
   border-radius: 50%;
-  width: 108px;
-  height: 108px;
+  width: 110px;
+  height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  svg {
+  .rotate-svg {
     transform: scale(0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     path {
       fill: var(--main);
     }
@@ -150,7 +146,7 @@
   position: absolute;
   top: 115%;
   width: fit-content;
-  z-index: 1000;
+  z-index: 10;
   padding: 4px 6px;
   background: var(--secondary);
   color: var(--third) !important;
@@ -176,7 +172,18 @@
   position: absolute;
   text-align: center;
   top: 105%;
+  font-size: 0.85rem;
   left: 0;
   color: rgb(118, 9, 9);
   font-weight: bold;
+}
+
+.relative {
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  .main-background p {
+    font-size: 6rem;
+  }
 }

@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import ContactDetail from "./ContactDetail";
 const MyDetails = () => {
   const arr = [
-    { Icon: FaUserAlt, detail: "name", value: "Mahmoud abou Elenien" },
+    { Icon: FaUserAlt, detail: "name", value: "Mahmoud Abo Elenien" },
     { Icon: MdEmail, detail: "email", value: "m.aboelenien20020@gmail.com" },
-    { Icon: BsTelephoneFill, detail: "phone", value: "Mansoura Egypt" },
+    { Icon: BsTelephoneFill, detail: "phone", value: "+201503636395" },
     { Icon: BsFillMapFill, detail: "address", value: "Mansoura Egypt" },
   ];
 

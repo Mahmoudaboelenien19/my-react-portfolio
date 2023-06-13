@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { opacityVariant } from "../../assets/MianVariants";
+import { opacityVariant } from "../../assets/Utils/MianVariants";
 
 interface Props {
   title: string;

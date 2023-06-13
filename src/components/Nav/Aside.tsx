@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { linkArr } from "../../assets/Arr";
+import { linkArr } from "../../assets/Utils/Arr";
 import { Link } from "react-scroll";
 const Aside = () => {
   const AsideVariant = {

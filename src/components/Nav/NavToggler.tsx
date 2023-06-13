@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { parVar } from "../../assets/MianVariants";
+import { parVar } from "../../assets/Utils/MianVariants";
 import CloseToggler from "./CloseToggler";
 import Aside from "./Aside";
+import Title from "../widgets/CustomTitle";
 interface Props {
   ShowMenu: boolean;
   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,7 +20,7 @@ const NavToggler = ({ ShowMenu, setShowMenu }: Props) => {
 
   //   const [ShowMenu, setShowMenu] = useState(false);
   return (
-    <>
+    <Title title={ShowMenu ? "hide nav" : "show nav"}>
       <div className="menu-togglar" onClick={() => setShowMenu(!ShowMenu)}>
         <AnimatePresence mode="wait">
           {!ShowMenu ? (
@@ -47,7 +48,7 @@ const NavToggler = ({ ShowMenu, setShowMenu }: Props) => {
           )}
         </AnimatePresence>
       </div>
-    </>
+    </Title>
   );
 };
 

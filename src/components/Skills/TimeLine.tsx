@@ -1,5 +1,4 @@
-import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
   link?: string;
   Icon: React.ComponentType;
   content: string[];
-  linkDes: string;
+  linkDes?: string;
 }
 
 const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {

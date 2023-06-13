@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { BotContext } from "./Bot";
-import myImg from "../../assets/me.jfif";
+import myImg from "../../assets/images/me.jfif";
 
 const ChatHead = () => {
   const { setShowChat } = useContext(BotContext);

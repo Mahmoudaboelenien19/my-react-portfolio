@@ -1,26 +1,36 @@
-import { AiFillCode, AiFillHtml5 } from "react-icons/ai";
+import { AiFillGithub, AiFillHtml5, AiOutlineWhatsApp } from "react-icons/ai";
 import { BiCodeAlt } from "react-icons/bi";
-import { BsBootstrapFill, BsGit } from "react-icons/bs";
+import { BsBootstrapFill, BsGit, BsStripe } from "react-icons/bs";
 import { DiCss3Full, DiJavascript1, DiMongodb, DiSass } from "react-icons/di";
-import { GrReactjs } from "react-icons/gr";
-import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io5";
+import { GrLinkedinOption, GrReactjs } from "react-icons/gr";
+import { IoLogoNodejs } from "react-icons/io5";
+import typeScriptToDoImg from "../images/projects/frontend-todolist.jpg";
+import MernToDoImg from "../images/projects/mern todo.jpg.jpg";
+import CrudCastle from "../images/projects/crudCatle.jpg.jpg";
+import Zimart from "../images/projects/zimart.jpg.jpg";
+
 import {
   SiExpress,
   SiGraphql,
-  SiJavascript,
+  SiPassport,
   SiPostgresql,
   SiThealgorithms,
   SiTypescript,
 } from "react-icons/si";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbBrandRedux } from "react-icons/tb";
+
+import OOPSVG from "../../components/widgets/Svgs/OOPSVG";
+import FigmaIcon from "../../components/widgets/Svgs/FigmaIcon";
+import CLoudinarySvg from "../../components/widgets/Svgs/CLoudinarySvg";
+import GmailSvg from "../../components/widgets/Svgs/GmailSvg";
 export const linkArr = [
   { link: "home", id: "main-page" },
   { link: "service", id: "service" },
   { link: "about", id: "about" },
-  { link: "portfolio", id: "projects-home" },
-  { link: "contact", id: "contact" },
-  { link: "reviews", id: "testimonials" },
   { link: "experience", id: "experience" },
+  { link: "portfolio", id: "projects-home" },
+  { link: "reviews", id: "testimonials" },
+  { link: "contact", id: "contact" },
 ];
 
 export const botArr = [
@@ -87,7 +97,7 @@ export const skillsArr = [
   },
   {
     head: "the start to learn",
-    date: "may 2022 - june 2022",
+    date: "may - june 2022",
 
     Icon: DiCss3Full,
     clr: "#2965f1",
@@ -103,7 +113,7 @@ export const skillsArr = [
 
   {
     head: "going in depth in JavaScript",
-    date: "jun 2022 - sep 2022",
+    date: "jun - sep 2022",
     clr: "#f7df1e",
     Icon: DiJavascript1,
     content: [
@@ -117,7 +127,7 @@ export const skillsArr = [
   },
   {
     head: "start Backend Development Journey",
-    date: "oct 2022 - jan 2023",
+    date: "oct - jan 2023",
     clr: " #339933",
     Icon: IoLogoNodejs,
     content: [
@@ -168,7 +178,6 @@ export const skillsIconsArr = [
       { name: "PostgresQl", Icon: SiPostgresql, clr: "#336791" },
       {
         name: "MongoDb",
-
         Icon: DiMongodb,
         clr: "#4DB33D",
       },
@@ -189,15 +198,177 @@ export const skillsIconsArr = [
       { Icon: DiCss3Full, clr: "#2965f1", name: "CSS3" },
       { clr: "#f7df1e", Icon: DiJavascript1, name: "JavaScript" },
       { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
       { clr: "#563d7c", Icon: BsBootstrapFill, name: "BootStrap" },
-      { clr: "black", Icon: SiThealgorithms, name: "JavaScript Algorism" },
+      {
+        clr: "black",
+        Icon: SiThealgorithms,
+        name: "JavaScript Algorism",
+      },
+      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
     ],
   },
   {
     essentials: [
       { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+      { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
       { clr: "#F05032", Icon: BsGit, name: "Git" },
+      { clr: "", Icon: FigmaIcon, name: "figma" },
+      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
     ],
+  },
+];
+
+export const projects = [
+  {
+    msgOne: "MERN",
+    msgTwo: "graphQL",
+    head: "Zimart",
+    img: Zimart,
+    skillsUsed: [
+      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+      { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
+      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+      { clr: "#635BFF", name: "Stripe", Icon: BsStripe },
+      { Icon: SiPassport, name: "PassportJS", clr: "var(--third)" },
+      {
+        name: "RestFul API",
+        clr: "var(--third)",
+        Icon: TbApi,
+      },
+      {
+        Icon: SiGraphql,
+        clr: "#E10098",
+        name: "GraphQL",
+      },
+
+      {
+        Icon: SiExpress,
+        clr: "var(--third)",
+
+        name: "ExpressJs",
+      },
+      {
+        name: "MongoDb",
+        Icon: DiMongodb,
+        clr: "#4DB33D",
+      },
+      { clr: "", Icon: FigmaIcon, name: "figma" },
+      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/mern-graphql-E-commerce",
+    demo: "https://zimart-3deh.onrender.com/",
+  },
+
+  {
+    msgOne: "MERN App",
+    msgTwo: "sass",
+    head: "listify",
+    img: MernToDoImg,
+    skillsUsed: [
+      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+      { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
+      { clr: "", Icon: FigmaIcon, name: "figma" },
+      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
+
+      {
+        name: "RestFul API",
+        clr: "var(--third)",
+        Icon: TbApi,
+      },
+
+      {
+        Icon: SiExpress,
+        clr: "var(--third)",
+
+        name: "ExpressJs",
+      },
+      {
+        name: "MongoDb",
+        Icon: DiMongodb,
+        clr: "#4DB33D",
+      },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/Mern-toDoList",
+    demo: "https://mern-app-v44r.onrender.com/",
+  },
+  {
+    msgOne: "Javascript",
+    msgTwo: "PostgreSQL",
+    head: "CrudCastle",
+    img: CrudCastle,
+    skillsUsed: [
+      {
+        name: "HTML 5",
+        clr: "#E34F26",
+        Icon: AiFillHtml5,
+      },
+      { Icon: DiCss3Full, clr: "#2965f1", name: "CSS3" },
+      { clr: "#f7df1e", Icon: DiJavascript1, name: "JavaScript" },
+
+      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
+      {
+        name: "RestFul API",
+        clr: "var(--third)",
+        Icon: TbApi,
+      },
+      { name: "PostgresQl", Icon: SiPostgresql, clr: "#336791" },
+
+      {
+        Icon: SiExpress,
+        clr: "var(--third)",
+        name: "ExpressJs",
+      },
+      { clr: " #339933", Icon: IoLogoNodejs, name: "node js" },
+
+      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/cruds",
+    demo: "https://crudcastle.onrender.com/",
+  },
+  {
+    msgOne: "typescript",
+    msgTwo: "sass",
+    head: "advanced ToDo list",
+    img: typeScriptToDoImg,
+    skillsUsed: [
+      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/Typescript-Oop-Scss-to-do-list",
+    demo: "https://mahmoudaboelenien19.github.io/Typescript-Oop-Scss-to-do-list/",
+  },
+];
+
+export const iconsArr = [
+  {
+    id: 1,
+    Icon: GrLinkedinOption,
+    link: "https://www.linkedin.com/in/mahmoud-abo-elenien19/",
+    title: "go to my linkedin",
+  },
+  {
+    id: 2,
+    Icon: AiFillGithub,
+    link: "https://github.com/Mahmoudaboelenien19",
+    title: "go to my github",
+  },
+  {
+    id: 3,
+    Icon: GmailSvg,
+
+    title: "send me an Email",
+    link: "mailto:m.aboelenien20020@gmail.com",
+  },
+  {
+    id: 4,
+    Icon: AiOutlineWhatsApp,
+    title: "send me whatApp message",
+    link: "https://wa.me/+201503636395",
   },
 ];

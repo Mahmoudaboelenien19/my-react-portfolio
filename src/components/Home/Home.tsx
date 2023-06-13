@@ -7,8 +7,9 @@ import Service from "../Services/Services";
 import About from "../About/About";
 import Bot from "../Bot/Bot";
 import Nav from "../Nav/Nav";
-import RotateText from "../widgets/RotateText";
+import RotateText from "../widgets/Svgs/RotateText";
 import Skills from "../Skills/Experience";
+import Title from "../widgets/CustomTitle";
 
 export const MainAnimationContext = createContext<null | React.Dispatch<
   React.SetStateAction<boolean>
@@ -24,12 +25,12 @@ const Home = () => {
         <>
           <Service />
           <About />
+          <Skills />
           <Projects />
-          <Testimonials />
-          <Contact />
           <Bot />
           <RotateText />
-          <Skills />
+          <Testimonials />
+          <Contact />
         </>
       )}
     </MainAnimationContext.Provider>

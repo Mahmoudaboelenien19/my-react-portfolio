@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BiPlusMedical } from "react-icons/bi";
-import { textVariant } from "../../assets/MianVariants";
+import { textVariant } from "../../assets/Utils/MianVariants";
 import { AnimatePresence, motion, useAnimate, useInView } from "framer-motion";
 const Major = () => {
   const arr = ["Frontend ", "Backend ", "MERN Stack "];
@@ -17,7 +17,7 @@ const Major = () => {
     exit: { opacity: 0, transition: { duration: 0.4, delay: 0 } },
   };
   useEffect(() => {
-    let timer: number;
+    let timer: any;
     if (num !== -1) {
       timer = setTimeout(() => {
         setNum((cur) => handleNums(cur + 1));

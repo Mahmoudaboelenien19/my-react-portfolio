@@ -1,10 +1,11 @@
 import { useGLTF } from "@react-three/drei";
 import React from "react";
-
+import * as THREE from "three";
 const Mac = () => {
   const gltf = useGLTF("/mac-draco.glb", true);
 
   return (
+    /* eslint-disable */
     <mesh>
       <hemisphereLight intensity={0.15} groundColor={"black"} />
       <pointLight intensity={1} />
@@ -20,7 +21,6 @@ const Mac = () => {
         dispose={null}
         scale={0.85}
       />
-      ;
     </mesh>
   );
 };
