@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-import { headerVariant } from "../../assets/Utils/MianVariants.js";
+import { opacityVariant } from "../../assets/Utils/MianVariants.js";
 
 interface Props {
   head: string;
@@ -18,14 +18,12 @@ const Header = ({ head, specialLetter }: Props) => {
           } else {
             return (
               <motion.div
-                variants={headerVariant}
+                variants={opacityVariant}
                 initial="start"
-                animate="end"
-                custom={{ bool: inView, i }}
+                transition={{ delay: 0.1, duration: 0.3 }}
+                animate={inView ? "end" : ""}
                 key={i}
-                className={
-                  i === specialLetter && inView ? "heading-animate" : ""
-                }
+                className={i === 0 && inView ? "heading-animate" : ""}
               >
                 {letter}
               </motion.div>
@@ -37,13 +35,13 @@ const Header = ({ head, specialLetter }: Props) => {
         <motion.span
           initial={{ width: 0 }}
           animate={{ width: inView ? 40 : 0 }}
-          transition={{ delay: 1.4, duration: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
           className="border-one custom-border"
         ></motion.span>
         <motion.span
           initial={{ width: 0 }}
           animate={{ width: inView ? 20 : 0 }}
-          transition={{ delay: 1.8, duration: 0.2 }}
+          transition={{ delay: 0.4, duration: 0.2 }}
           className="border-two custom-border"
         ></motion.span>
       </>

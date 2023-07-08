@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import UseBorder from "../customComponents/UseBorder";
 import { useScroll, useTransform } from "framer-motion";
 import Header from "../widgets/Header";
 import Background from "../widgets/Background";

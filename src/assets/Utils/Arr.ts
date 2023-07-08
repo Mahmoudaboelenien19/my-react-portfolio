@@ -1,6 +1,7 @@
 import { AiFillGithub, AiFillHtml5, AiOutlineWhatsApp } from "react-icons/ai";
 import { BiCodeAlt } from "react-icons/bi";
-import { BsBootstrapFill, BsGit, BsStripe } from "react-icons/bs";
+import { SiTailwindcss } from "react-icons/si";
+import { BsGit, BsStripe } from "react-icons/bs";
 import { DiCss3Full, DiJavascript1, DiMongodb, DiSass } from "react-icons/di";
 import { GrLinkedinOption, GrReactjs } from "react-icons/gr";
 import { IoLogoNodejs } from "react-icons/io5";
@@ -196,15 +197,16 @@ export const skillsIconsArr = [
         Icon: AiFillHtml5,
       },
       { Icon: DiCss3Full, clr: "#2965f1", name: "CSS3" },
+      { Icon: SiTailwindcss, clr: "#48C2F8", name: "tailwind css" },
+
       { clr: "#f7df1e", Icon: DiJavascript1, name: "JavaScript" },
       { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
 
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      { clr: "#563d7c", Icon: BsBootstrapFill, name: "BootStrap" },
       {
         clr: "black",
         Icon: SiThealgorithms,
-        name: "JavaScript Algorism",
+        name: " Algorithm",
       },
       { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
     ],

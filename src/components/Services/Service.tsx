@@ -38,12 +38,12 @@ const Service = ({
       }}
     >
       <Icon />
-      <span
+      <h2
         style={{ color: isHoverStarted ? "var(--third)" : clr }}
         className="service-title"
       >
         {title}
-      </span>
+      </h2>
       <p style={{ color: !isHoverStarted ? "var(--third)" : clr }}>
         {description}
       </p>

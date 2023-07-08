@@ -5,16 +5,16 @@
   position: relative;
   z-index: 4;
   overflow: hidden;
+
   .about {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 15px;
-    padding-bottom: calc(8vw + 4vh);
-
     gap: 20px;
     height: 100%;
     width: 100%;
+    height: calc(100vh - 100px);
     .mac {
       width: 50%;
       height: 250px !important;

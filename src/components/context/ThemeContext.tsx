@@ -17,12 +17,12 @@ const ThemContext = ({ children }: Props) => {
   useEffect(() => {
     if (theme == "light") {
       document.documentElement.style.setProperty(
-        "--main",
+        "--secondary",
         "rgb(247, 246, 246)"
       );
 
       document.documentElement.style.setProperty("--third", "#000");
-      document.documentElement.style.setProperty("--secondary", "#f4ece6");
+      document.documentElement.style.setProperty("--main", "#f4ece6");
       document.documentElement.style.setProperty("--forth", "#F4F9FC");
       localStorage.setItem("portfolio-theme", "light");
     } else {

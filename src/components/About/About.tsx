@@ -37,7 +37,8 @@ const About = () => {
             <div className="cv">
               <MainBtn btn={""} Icon={FaDownload}>
                 <a
-                  href={"/src/assets/Mahmoud Abo Elenien.pdf"}
+                  // href={"/src/assets/Mahmoud Abo Elenien.pdf"}
+                  href={"/Mahmoud Abo Elenien.pdf"}
                   download="cv.pdf"
                   className="cv-link"
                 >

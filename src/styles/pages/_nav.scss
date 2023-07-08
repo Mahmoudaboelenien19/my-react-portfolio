@@ -7,7 +7,7 @@ nav {
   left: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 25px;
   align-items: center;
   width: 100vw;
   height: 50px;
@@ -52,12 +52,16 @@ nav {
         background-color: var(--third);
         transition: 0.3s;
       }
-      // &:hover,
+      &:hover {
+        @include fexien(125, 800);
+      }
+
       &.active {
         color: var(--scroll);
         @include fexien(125, 800);
         &:before {
           width: 30%;
+          background-color: var(--scroll);
         }
       }
     }

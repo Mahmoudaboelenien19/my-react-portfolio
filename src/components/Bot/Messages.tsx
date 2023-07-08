@@ -2,9 +2,9 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { opacityVariant } from "../../assets/Utils/MianVariants";
 import ReactAudioPlayer from "react-audio-player";
-import BotAns from "../../assets/audios/bot ans.mp3";
-import Botasks from "../../assets/audios/default questions.mp3";
-import userAsks from "../../assets/audios/user pick.mp3";
+// import BotAns from "../../assets/audios/botAns.mp3";
+// import Botasks from "../../assets/audios/defaultQuestions.mp3";
+// import userAsks from "../../assets/audios/userPick.mp3";
 interface Props {
   changeInd: React.Dispatch<React.SetStateAction<number>>;
   cls: string;
@@ -51,18 +51,17 @@ const Messages = ({
             }
           }}
         >
-          {" "}
           {msg}
         </motion.div>
       )}
-      {startAudio && (
+      {/* {startAudio && (
         <ReactAudioPlayer
           src={
             cls === "chat-av-q" ? Botasks : cls === "chat-q" ? userAsks : BotAns
           }
           autoPlay
         />
-      )}
+      )} */}
     </>
   );
 };
