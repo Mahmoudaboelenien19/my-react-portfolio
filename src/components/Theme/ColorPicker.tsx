@@ -19,23 +19,20 @@ const ColorPicker = ({
   const [dossAnimationEnds, setDossAnimationEnds] = useState(false);
 
   const pickerVariant = {
-    start: { y: -300 },
+    start: { opacity:0 },
     end: {
-      y: 0,
+      opacity:[0,.2,.4,.7,1],
       transition: {
         duration: 0.5,
         when: "beforeChildren",
-        staggerChildren: 0.1,
       },
     },
     exit: {
-      y: -300,
+      opacity:0,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
         when: "afterChildren",
-        staggerChildren: 0.1,
-        staggerDirection: -1,
       },
     },
   };

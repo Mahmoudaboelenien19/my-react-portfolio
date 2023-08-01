@@ -5,22 +5,22 @@ import { Link } from "react-scroll";
 import { RiPaletteFill } from "react-icons/ri";
 import ColorPicker from "../Theme/ColorPicker.js";
 import { opacityVariant } from "../../assets/Utils/MianVariants.js";
+import useIsMobile from "../customComponents/useIsMobile.js";
 
-const LinksComponent = ({ width = 1000 }: { width?: number }) => {
+const LinksComponent = () => {
   const [showClrPicker, setShowClrPicker] = useState(false);
-  const check = showClrPicker || width <= 850;
-  console.log({ showClrPicker });
+  const { isMidScreen } = useIsMobile();
+  const check = showClrPicker || isMidScreen;
   return (
     <div className="links">
       {linkArr.map(({ id, link }, i) => {
         return (
           <motion.span key={i} variants={opacityVariant}>
             <Link
-              // spyThrottle={400}
               to={id}
               smooth
               spy
-              offset={-100}
+              offset={-40}
               activeClass="active"
             >
               {link}
@@ -35,7 +35,6 @@ const LinksComponent = ({ width = 1000 }: { width?: number }) => {
           color="var(--third)"
           onClick={() => {
             setShowClrPicker(!showClrPicker);
-            console.log("clicked");
           }}
         />
         <AnimatePresence mode="wait">

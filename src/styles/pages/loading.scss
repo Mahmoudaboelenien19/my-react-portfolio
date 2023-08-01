@@ -9,15 +9,19 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  svg {
+svg{
+  filter: drop-shadow(1px 0.5px .5px black);
+  path:nth-child(1){
+    stroke: var(--scroll);
+    stroke-width: .2px;
   }
+
+}
   .loading-content {
     letter-spacing: 1px;
-    color: transparent;
-    background: linear-gradient(150deg, var(--svg), var(--scroll));
+    color: var(--scroll);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
-    -webkit-background-clip: text;
   }
 }

@@ -10,7 +10,6 @@ import Home from "./components/Home/Home";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);

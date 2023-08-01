@@ -12,8 +12,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import Review from "./Review";
-import Background from "../widgets/Background";
-import { useInView } from "framer-motion";
 
 const arr = [
   {
@@ -53,8 +51,7 @@ const Testimonials = () => {
   const ref = useRef<null | HTMLDivElement>(null);
   return (
     <div id="testimonials" ref={ref}>
-      <Header head="Reviews" specialLetter={0} />
-      <Background text="REVIEWS" />
+      <Header head="Reviews"  />
       <Swiper
         loop
         spaceBetween={5}

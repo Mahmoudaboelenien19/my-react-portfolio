@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import Header from "../widgets/Header";
-import Background from "../widgets/Background";
 import Service from "./Service";
 import { IoLogoNodejs } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
@@ -46,8 +45,7 @@ const Services = () => {
     <div ref={ref} id="service">
       {inView && (
         <>
-          <Background text="WHAT I OFFER" />
-          <Header head="SERVICES" specialLetter={1} />
+          <Header head="Services"  />
           <motion.div
             variants={parVar}
             initial="start"

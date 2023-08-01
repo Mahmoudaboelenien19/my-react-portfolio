@@ -9,7 +9,6 @@
   background-color: var(--main);
   background-color: var(--secondary);
   overflow: hidden;
-  padding-bottom: calc(8vw + 4vh);
 
   .timeline-par {
     margin-top: 60px;
@@ -49,7 +48,7 @@
       margin-bottom: 6px;
 
       .skill-icon {
-        opacity: 0;
+        // opacity: 0;
         height: 6vw;
         width: 6vw;
         min-height: 35px;

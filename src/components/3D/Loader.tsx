@@ -9,7 +9,7 @@ const Loader = () => {
         style={{
           color: "var(--scroll)",
           fontSize: 20,
-          display: "flex",
+          marginLeft:-40
         }}
       >
         {progress.toFixed(2)}%{" "}

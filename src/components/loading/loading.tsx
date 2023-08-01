@@ -12,9 +12,9 @@ const Loading = () => {
   return (
     <div className="loading">
       <motion.svg
-        // style={{ }}
+
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, filter: " drop-shadow(1px 0.4px .2px gray)" }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.2 }}
         width="116"
         height="45"

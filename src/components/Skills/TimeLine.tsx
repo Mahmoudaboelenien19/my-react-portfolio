@@ -15,7 +15,7 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "var(--forth)",
+        background: "var(--main)",
         color: "var(--third)",
         boxShadow: "var(--main-shadow)",
       }}

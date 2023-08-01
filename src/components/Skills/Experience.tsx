@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import Background from "../widgets/Background";
+import React from "react";
 import Header from "../widgets/Header";
 import { VerticalTimeline } from "react-vertical-timeline-component";
-import { motion, stagger, useAnimate } from "framer-motion";
 import { skillsArr, skillsIconsArr } from "../../assets/Utils/Arr.js";
 import TimeLine from "./TimeLine";
 import "react-vertical-timeline-component/style.min.css";
 import Skills from "./Skills.js";
+import {motion} from "framer-motion";
 const Experience = () => {
-  const [ref, animate] = useAnimate();
-  const [animateState, setAnimateState] = useState(false);
   return (
     <div id="experience">
-      <Background text="SKILLS" />
-      <Header head="Experience" specialLetter={0} />
+      <Header head="Experience"  />
 
       <VerticalTimeline
         animate
@@ -26,22 +22,16 @@ const Experience = () => {
         })}
       </VerticalTimeline>
       <motion.div
-        ref={ref}
-        onViewportEnter={() => {
-          if (!animateState) {
-            setAnimateState(true);
-            animate(
-              " .skill-icon",
-              { opacity: [0, 1], scale: [0.8, 1.05, 1] },
-              { delay: stagger(0.18), duration: 0.15 }
-            );
-          }
-        }}
+          style={{opacity:0,x:-60}}
+          viewport={{once:true,amount:.7}}
+          whileInView={{ opacity: [0,.1,.2,.5,.8,1],x:0 }}
+          transition={{duration:.4}}
+   
         className="skills-par"
       >
-        <Skills arr={skillsIconsArr[0].backend!} />
-        <Skills arr={skillsIconsArr[1].frontend!} />
-        <Skills arr={skillsIconsArr[2].essentials!} />
+        <Skills arr={skillsIconsArr[0].backend||[] }  />
+        <Skills arr={skillsIconsArr[1].frontend||[]} />
+        <Skills arr={skillsIconsArr[2].essentials||[]}  />
       </motion.div>
     </div>
   );

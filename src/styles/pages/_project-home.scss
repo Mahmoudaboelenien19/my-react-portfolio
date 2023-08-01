@@ -7,7 +7,6 @@
   background-color: var(--secondary);
   min-height: 100vh;
   display: grid;
-  padding-bottom: calc(8vw + 4vh);
 }
 
 .fig-parent {
@@ -20,8 +19,8 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
   figure {
-    height: 350px;
-    background-color: var(--forth);
+    // height: 350px;
+    background-color: var(--main);
 
     min-width: 300px;
     padding: 20px 0;
@@ -40,7 +39,7 @@
       justify-content: center;
       align-items: center;
       width: 95%;
-      height: 70%;
+      height: 250px;
       border-top-left-radius: 20px;
       overflow: hidden;
       img {

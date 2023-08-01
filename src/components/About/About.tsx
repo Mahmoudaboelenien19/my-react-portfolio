@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import MacCom from "../3D/MacCom";
 import Header from "../widgets/Header";
-import Background from "../widgets/Background";
 import MainBtn from "../widgets/MainBtn";
 import { FaDownload } from "react-icons/fa";
 
 import { Link } from "react-scroll";
-import { motion, useAnimate, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const About = () => {
-  const [scope, animate] = useAnimate();
-  const inView = useInView(scope, { once: true });
+  const ref = useRef<null | HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true });
   return (
-    <div id="about" ref={scope}>
-      <Header head="ABout Me" specialLetter={1} />
-      <Background text="About Me" />
-      <div className="about">
+    <div id="about" ref={ref}>
+      <Header head="About Me"  />
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
+        transition={{ delay: 0.1 }}
+        className="about"
+      >
         <div className="mac">{inView && <MacCom />}</div>
         <motion.div
           className="about-content"
@@ -37,7 +40,8 @@ const About = () => {
             <div className="cv">
               <MainBtn btn={""} Icon={FaDownload}>
                 <a
-                  href={"/src/assets/Mahmoud Abo Elenien.pdf"}
+                  // href={"/src/assets/Mahmoud Abo Elenien.pdf"}
+                  href={"/Mahmoud Abo Elenien.pdf"}
                   download="cv.pdf"
                   className="cv-link"
                 >
@@ -58,7 +62,7 @@ const About = () => {
             </>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

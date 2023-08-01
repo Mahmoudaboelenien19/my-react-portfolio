@@ -1,15 +1,8 @@
 import React, { useContext, useRef } from "react";
-import { GrLinkedinOption } from "react-icons/gr";
-import { AiOutlineWhatsApp, AiFillGithub } from "react-icons/ai";
 import { colorContext } from "../context/colorContext";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import devImg from "../../assets/developer-pic-1.png";
-import { FaDownload } from "react-icons/fa";
+import { motion,  useScroll, useTransform } from "framer-motion";
 import { fontVariant, textVariant } from "../../assets/Utils/MianVariants";
 import Major from "./Major";
-import Background from "../widgets/Background";
-import MainBtn from "../widgets/MainBtn";
-import GmailSvg from "../widgets/Svgs/GmailSvg";
 import MainVideo from "./MainVideo";
 import { iconsArr } from "../../assets/Utils/Arr.js";
 import Title from "../widgets/CustomTitle";
@@ -23,21 +16,6 @@ const MainPage = () => {
   });
   const width = useTransform(scrollYProgress, [0, 1], ["100%", "140%"]);
 
-  const mainPageVariant = {
-    start: { overflow: "hidden" },
-    end: { transition: { delayChildren: 1.1, staggerChildren: 0.3 } },
-  };
-
-  const imageVariant = {
-    start: {
-      x: -400,
-      opacity: 0,
-    },
-    end: {
-      x: 0,
-      opacity: 1,
-    },
-  };
 
   const opacityVariant = {
     start: { opacity: 0, x: 100, y: 30 },

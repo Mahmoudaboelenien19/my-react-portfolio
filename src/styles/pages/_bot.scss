@@ -126,6 +126,7 @@
   .bot {
     left: 0;
     bottom: 0;
+    z-index: 100;
     .chat {
       width: 100vw;
       height: 100vh;

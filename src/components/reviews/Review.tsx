@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 interface Props {
   img: string;
   name: string;
@@ -8,7 +8,12 @@ interface Props {
 }
 const Review = ({ img, name, review, shouldBlur }: Props) => {
   return (
-    <div className={`review ${!shouldBlur ? "blur" : ""}`}>
+    <motion.div
+      className={`review ${!shouldBlur ? "blur" : ""}`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
+      transition={{ delay: 0.1 }}
+    >
       <div className="img-par">
         <img src={img} alt="" />
       </div>
@@ -16,7 +21,7 @@ const Review = ({ img, name, review, shouldBlur }: Props) => {
         <p>{review}</p>
         <div className="review-name">{name}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

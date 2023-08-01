@@ -5,22 +5,22 @@ import { Link } from "react-scroll";
 import Logo from "../widgets/Svgs/Logo";
 import ThemeToggle from "../Theme/ThemeToggle";
 import NavToggler from "./NavToggler";
-import useMeasure from "react-use-measure";
 import LinksComponent from "./Links";
 import { motion } from "framer-motion";
 import { opacityVariant } from "../../assets/Utils/MianVariants";
 import Title from "../widgets/CustomTitle";
 import { themeContext } from "../context/ThemeContext";
+import useIsMobile from "../customComponents/useIsMobile";
 
 const Nav = () => {
+  const { isMobile, isMidScreen } = useIsMobile();
   const { chosenColor } = useContext(colorContext);
-  const [ref, { width }] = useMeasure();
   const [ShowMenu, setShowMenu] = useState(false);
   const { theme } = useContext(themeContext);
   const AsideMobile = {
     start: { width: 0 },
     end: {
-      width: width >= 600 ? "40%" : "100%",
+      width: !isMobile && isMidScreen ? "40%" : "100%",
       transition: {
         duration: 0.3,
         when: "beforeChildren",
@@ -47,19 +47,16 @@ const Nav = () => {
   const parVar = {
     start: {},
     end: {
-      transition: { when: "beforeChildren", staggerChildren: 0.4 },
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: isMobile ? 0.4 : 0,
+      },
     },
   };
   return (
     <>
       {showNav && (
-        <motion.nav
-          variants={parVar}
-          initial="start"
-          animate="end"
-          ref={ref}
-          transition={{ when: "beforeChildren", staggerChildren: 0.8 }}
-        >
+        <motion.nav variants={parVar} initial="start" animate="end">
           <motion.div variants={opacityVariant} className="logo">
             <Link to="main-page" smooth spy>
               <Logo clr={chosenColor} />
@@ -67,7 +64,7 @@ const Nav = () => {
           </motion.div>
           <span className="theme-par">
             <AnimatePresence>
-              {!(width <= 850) ? (
+              {!isMidScreen ? (
                 <>
                   <LinksComponent />
                 </>
@@ -81,7 +78,7 @@ const Nav = () => {
                       animate="end"
                       exit="exit"
                     >
-                      <LinksComponent width={width} />
+                      <LinksComponent />
                     </motion.aside>
                   )}
                 </AnimatePresence>
@@ -103,7 +100,7 @@ const Nav = () => {
                 <ThemeToggle />
               </Title>
 
-              {width <= 850 && (
+              {isMidScreen && (
                 <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
               )}
             </span>

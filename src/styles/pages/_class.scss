@@ -3,37 +3,30 @@
 @import "../globals/mixins";
 
 .heading {
-  @include fexien(75, 650);
+  @include kyiv(500, -600);
+  font-weight: 600;
+  
   width: fit-content;
+  margin: 0 auto;
   text-align: start;
   position: relative;
-  padding: 20px;
+  padding: 20px 20px;
+  padding-top: 40px;
   padding-bottom: 0;
   font-size: 30px;
   margin-bottom: 15px;
   color: var(--third);
-  .heading-span {
-    display: inline-flex;
-    .heading-animate {
-      @include header-animation(2.4);
-    }
-  }
-  .custom-border {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    height: 4px;
+    text-transform: capitalize;
+    &:before {
+      content:"";    position: absolute;
+      left: 35%;
+      width: 30%;
+    height: 1.5px;
     background: var(--scroll);
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  }
-  .border-one {
+    border-radius: 3px;
     top: 105%;
   }
-  .border-two {
-    top: 130%;
-  }
+
 }
 
 .box-shadow {
@@ -75,7 +68,7 @@
   gap: 6px;
   text-transform: capitalize;
   background-color: transparent;
-  font-size: 14px !important;
+  font-size: 16px !important;
   white-space: nowrap;
   // svg {
   //   fill: var(--scroll);
@@ -186,4 +179,8 @@
   .main-background p {
     font-size: 6rem;
   }
+}
+
+p {
+  @include fexien(75, 600);
 }

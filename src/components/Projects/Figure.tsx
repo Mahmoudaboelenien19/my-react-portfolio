@@ -30,10 +30,9 @@ const Figure = ({
 }: Props) => {
   return (
     <motion.figure
-      viewport={{ once: true }}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: i * 0.1 }}
+      whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
+      transition={{ delay: 0.1 }}
     >
       <ProjectHint msgOne={msgOne} msgTwo={msgTwo} />
       <div className="img-par">

@@ -31,13 +31,14 @@
     justify-content: flex-end;
     gap: 20px;
     color: var(--third);
-    white-space: nowrap;
     font-size: 1rem;
     h2 {
       @include fexien(75, 600);
       position: relative;
       z-index: 4;
       display: flex;
+      font-size: 2rem;
+      font-weight: 800;
       .my-name {
         @include fexien(75, 800);
 
@@ -50,11 +51,16 @@
       }
     }
     p.message {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 500;
       letter-spacing: 0.8px;
       position: relative;
       z-index: 4;
+      white-space: pre-wrap;
+      text-align: center;
+      width: 95%;
+      margin :0 auto;
+
     }
 
     h5 {
@@ -68,8 +74,9 @@
       justify-content: flex-start;
       align-items: center;
       position: relative;
-      font-weight: 800;
+      font-weight: 600;
       z-index: 2;
+      font-size: 1.1rem;
 
       .developer {
         display: flex;
@@ -145,18 +152,4 @@
   height: 400px;
   position: relative;
   top: 10px;
-}
-
-@media (max-width: 850px) {
-  #main-page {
-    flex-direction: column;
-    // gap: 10px;
-    button {
-      margin-bottom: 20px;
-      font-size: 12px;
-    }
-    img {
-      margin-top: 40px;
-    }
-  }
 }

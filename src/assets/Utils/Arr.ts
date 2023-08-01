@@ -1,14 +1,16 @@
 import { AiFillGithub, AiFillHtml5, AiOutlineWhatsApp } from "react-icons/ai";
 import { BiCodeAlt } from "react-icons/bi";
-import { BsBootstrapFill, BsGit, BsStripe } from "react-icons/bs";
+import { SiTailwindcss } from "react-icons/si";
+import { BsGit, BsStripe } from "react-icons/bs";
 import { DiCss3Full, DiJavascript1, DiMongodb, DiSass } from "react-icons/di";
 import { GrLinkedinOption, GrReactjs } from "react-icons/gr";
 import { IoLogoNodejs } from "react-icons/io5";
 import typeScriptToDoImg from "../images/projects/frontend-todolist.jpg";
 import MernToDoImg from "../images/projects/mern todo.jpg.jpg";
 import CrudCastle from "../images/projects/crudCatle.jpg.jpg";
-import Zimart from "../images/projects/zimart.jpg.jpg";
-
+import Zimart from "../images/projects/zimart.jpg";
+import wheatherEye from "../images/projects/wheatherEye.jpg.jpg"
+import CashFlow from "../images/projects/cashFLow.jpg.jpg"
 import {
   SiExpress,
   SiGraphql,
@@ -25,11 +27,11 @@ import CLoudinarySvg from "../../components/widgets/Svgs/CLoudinarySvg";
 import GmailSvg from "../../components/widgets/Svgs/GmailSvg";
 export const linkArr = [
   { link: "home", id: "main-page" },
-  { link: "service", id: "service" },
+  { link: "services", id: "service" },
   { link: "about", id: "about" },
   { link: "experience", id: "experience" },
   { link: "portfolio", id: "projects-home" },
-  { link: "reviews", id: "testimonials" },
+  // { link: "reviews", id: "testimonials" },
   { link: "contact", id: "contact" },
 ];
 
@@ -196,15 +198,16 @@ export const skillsIconsArr = [
         Icon: AiFillHtml5,
       },
       { Icon: DiCss3Full, clr: "#2965f1", name: "CSS3" },
+      { Icon: SiTailwindcss, clr: "#48C2F8", name: "tailwind css" },
+
       { clr: "#f7df1e", Icon: DiJavascript1, name: "JavaScript" },
       { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
 
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      { clr: "#563d7c", Icon: BsBootstrapFill, name: "BootStrap" },
       {
         clr: "black",
         Icon: SiThealgorithms,
-        name: "JavaScript Algorism",
+        name: " Algorithm",
       },
       { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
     ],
@@ -330,6 +333,33 @@ export const projects = [
     code: "https://github.com/Mahmoudaboelenien19/cruds",
     demo: "https://crudcastle.onrender.com/",
   },
+  
+  {
+    msgOne: "React",
+    msgTwo: "Sass",
+    head: "WeatherEye",
+    img: wheatherEye,
+    skillsUsed: [
+      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+      { clr: "", Icon: FigmaIcon, name: "figma" },
+
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/WeatherEye",
+    demo: "https://weathereye.onrender.com/",
+  },
+  {
+    msgOne: "React",
+    msgTwo: "Sass",
+    head: "CashFlow",
+    img: CashFlow,
+    skillsUsed: [
+      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/manage-budget",
+    demo: "https://cashflow-2okh.onrender.com/",
+  },
   {
     msgOne: "typescript",
     msgTwo: "sass",
@@ -343,6 +373,7 @@ export const projects = [
     code: "https://github.com/Mahmoudaboelenien19/Typescript-Oop-Scss-to-do-list",
     demo: "https://mahmoudaboelenien19.github.io/Typescript-Oop-Scss-to-do-list/",
   },
+  
 ];
 
 export const iconsArr = [
@@ -372,3 +403,5 @@ export const iconsArr = [
     link: "https://wa.me/+201503636395",
   },
 ];
+
+

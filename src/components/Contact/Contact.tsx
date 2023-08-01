@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../widgets/Header";
 import MyDetails from "./MyDetails";
 import Form from "./Form";
-import Background from "../widgets/Background";
 import { motion, stagger, useAnimate } from "framer-motion";
 
 const Contact = () => {
@@ -38,12 +37,16 @@ const Contact = () => {
       }}
       id="contact"
     >
-      <Background text="Contact Me" />
-      <Header head="ContAct Me" specialLetter={4} />
-      <div className="contact-data">
+      <Header head="Contact Me"  />
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
+        transition={{ delay: 0.1 }}
+        className="contact-data"
+      >
         <MyDetails />
         <Form />
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

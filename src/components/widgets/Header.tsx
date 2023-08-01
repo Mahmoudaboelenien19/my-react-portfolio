@@ -1,52 +1,22 @@
-import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
-import { headerVariant } from "../../assets/Utils/MianVariants.js";
+import { motion } from "framer-motion";
+import React from "react";
 
 interface Props {
   head: string;
-  specialLetter: number;
 }
-const Header = ({ head, specialLetter }: Props) => {
-  const ref = useRef<null | HTMLHeadingElement>(null);
-  const inView = useInView(ref, { once: true, amount: "all" });
+const Header = ({ head }: Props) => {
   return (
-    <motion.h3 className="heading" ref={ref}>
-      <span className="heading-span">
-        {Array.from(head, (letter, i) => {
-          if (letter === " ") {
-            return <span key={i}> &nbsp;</span>;
-          } else {
-            return (
-              <motion.div
-                variants={headerVariant}
-                initial="start"
-                animate="end"
-                custom={{ bool: inView, i }}
-                key={i}
-                className={
-                  i === specialLetter && inView ? "heading-animate" : ""
-                }
-              >
-                {letter}
-              </motion.div>
-            );
-          }
-        })}
-      </span>
-      <>
-        <motion.span
-          initial={{ width: 0 }}
-          animate={{ width: inView ? 40 : 0 }}
-          transition={{ delay: 1.4, duration: 0.2 }}
-          className="border-one custom-border"
-        ></motion.span>
-        <motion.span
-          initial={{ width: 0 }}
-          animate={{ width: inView ? 20 : 0 }}
-          transition={{ delay: 1.8, duration: 0.2 }}
-          className="border-two custom-border"
-        ></motion.span>
-      </>
+    <motion.h3 className="heading"
+    initial={{ opacity: 0 }}
+    whileInView={{opacity:[0,.1,0.3,0.5,0.8,1]}}
+    transition={{duration:0.5}}
+    viewport={{
+      
+      amount:"all"
+    }}
+    >
+{head}
+
     </motion.h3>
   );
 };

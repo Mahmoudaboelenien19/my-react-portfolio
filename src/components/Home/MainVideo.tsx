@@ -18,7 +18,7 @@ const MainVideo = ({ width }: Props) => {
         zIndex: 100,
       }}
       animate={{
-        height: "50vh",
+        height: "45vh",
         clipPath: "ellipse(160% 160% at 50% 160%)",
         position: "relative",
         top: "initial",

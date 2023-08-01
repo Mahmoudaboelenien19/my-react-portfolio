@@ -4,37 +4,44 @@
 
 #service {
   min-height: 100vh;
-  padding-bottom: 50px;
+
   z-index: 4;
   background: var(--secondary);
   position: relative;
+  width: 95vw;
+  margin: 0 auto;
 
   .services {
-    padding: 20px;
+    width: 100%;
     margin-top: 40px;
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-  }
-
-  .service {
+    height: calc(100vh - 200px);
+    align-items: center;
+    // &  > div{
+    
+    //   flex-grow: 1;
+    //   width: 300px;
+    // }
+}
+.service {
     position: relative;
     z-index: 2;
-    background: var(--forth);
+    background: var(--main);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // max-width: 350px;
     margin: 0 auto;
-    padding: 12px 8px;
+    padding: 20px 8px;
     border-radius: 5px;
     gap: 6px;
     box-shadow: 0.5px 0.5px 2px black;
     & > * {
       transition: 0.3s;
     }
-    // transition: 0.1s;
     &.blurred-service {
       filter: blur(4px);
     }
@@ -43,17 +50,22 @@
     }
     .service-title {
       font-weight: 600;
-      font-size: 1.1rem;
-      //   transition: 0.3s;
+      font-size: 18px;
     }
     p {
-      //   transition: 0.3s;
       margin: 0 auto;
       text-align: center;
       width: 80%;
       color: var(--third);
-      font-size: 18px;
-      font-family: "caveat";
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  #service {
+    .services {
+      height: initial;
     }
   }
 }
