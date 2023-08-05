@@ -30,10 +30,8 @@ const Nav = () => {
     exit: {
       width: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         when: "afterChildren",
-        staggerChildren: 0.15,
-        staggerDirection: -1,
       },
     },
   };
@@ -43,7 +41,7 @@ const Nav = () => {
     setTimeout(() => {
       setShowNav(true);
     }, 4200);
-  });
+  }, []);
   const parVar = {
     start: {},
     end: {
@@ -53,6 +51,18 @@ const Nav = () => {
       },
     },
   };
+  useEffect(() => {
+    if (ShowMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [ShowMenu]);
+  useEffect(() => {
+    if (!isMobile) {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMobile]);
   return (
     <>
       {showNav && (
@@ -78,7 +88,7 @@ const Nav = () => {
                       animate="end"
                       exit="exit"
                     >
-                      <LinksComponent />
+                      <LinksComponent setShowMenu={setShowMenu} />
                     </motion.aside>
                   )}
                 </AnimatePresence>

@@ -4,8 +4,8 @@
 
 .heading {
   @include kyiv(500, -600);
-  font-weight: 600;
-  
+  font-weight: 900;
+
   width: fit-content;
   margin: 0 auto;
   text-align: start;
@@ -16,17 +16,17 @@
   font-size: 30px;
   margin-bottom: 15px;
   color: var(--third);
-    text-transform: capitalize;
-    &:before {
-      content:"";    position: absolute;
-      left: 35%;
-      width: 30%;
+  text-transform: capitalize;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 35%;
+    width: 30%;
     height: 1.5px;
     background: var(--scroll);
     border-radius: 3px;
     top: 105%;
   }
-
 }
 
 .box-shadow {

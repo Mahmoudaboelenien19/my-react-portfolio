@@ -6,7 +6,13 @@
   position: relative;
   background-color: var(--secondary);
   min-height: 100vh;
-  display: grid;
+}
+.grid-loader {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .fig-parent {
@@ -23,6 +29,7 @@
     background-color: var(--main);
 
     min-width: 300px;
+    max-width: 500px;
     padding: 20px 0;
 
     box-shadow: var(--main-shadow);
@@ -105,6 +112,38 @@
   text-transform: capitalize;
 }
 
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 40px;
+  font-weight: 800;
+  width: 95vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  div {
+    font-size: 12px;
+    color: white;
+    padding: 5px 8px;
+    text-transform: capitalize;
+    border-radius: 2px;
+    position: relative;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--scroll);
+    transition: 0.3s;
+    filter: drop-shadow(var(--secondary-shadow));
+
+    &.active {
+      background-color: var(--third);
+      color: var(--scroll);
+    }
+  }
+}
 @media (max-width: 700px) {
   .fig-parent {
     width: 95%;

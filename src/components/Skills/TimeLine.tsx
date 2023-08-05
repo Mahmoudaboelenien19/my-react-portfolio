@@ -1,6 +1,6 @@
 import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
-
+import { motion } from "framer-motion";
 interface Props {
   date: string;
   head: string;
@@ -31,7 +31,7 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
       }}
     >
       <h3>{head}</h3>
-      <ul>
+      <ul className="timeline-list">
         {content.map((sentence, i) => {
           return <li key={i}>{sentence}</li>;
         })}

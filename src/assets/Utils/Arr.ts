@@ -9,8 +9,8 @@ import typeScriptToDoImg from "../images/projects/frontend-todolist.jpg";
 import MernToDoImg from "../images/projects/mern todo.jpg.jpg";
 import CrudCastle from "../images/projects/crudCatle.jpg.jpg";
 import Zimart from "../images/projects/zimart.jpg";
-import wheatherEye from "../images/projects/wheatherEye.jpg.jpg"
-import CashFlow from "../images/projects/cashFLow.jpg.jpg"
+import wheatherEye from "../images/projects/wheatherEye.jpg.jpg";
+import CashFlow from "../images/projects/cashFLow.jpg.jpg";
 import {
   SiExpress,
   SiGraphql,
@@ -225,7 +225,7 @@ export const skillsIconsArr = [
 
 export const projects = [
   {
-    msgOne: "MERN",
+    msgOne: "MERN App",
     msgTwo: "graphQL",
     head: "Zimart",
     img: Zimart,
@@ -263,9 +263,11 @@ export const projects = [
     ],
     code: "https://github.com/Mahmoudaboelenien19/mern-graphql-E-commerce",
     demo: "https://zimart-3deh.onrender.com/",
+    tags: ["MERN App", "graphQL", "Typescript", "sass"],
   },
 
   {
+    tags: ["MERN App", "Typescript", "sass"],
     msgOne: "MERN App",
     msgTwo: "sass",
     head: "listify",
@@ -300,6 +302,8 @@ export const projects = [
     demo: "https://mern-app-v44r.onrender.com/",
   },
   {
+    tags: ["Javascript", "PostgreSQL"],
+
     msgOne: "Javascript",
     msgTwo: "PostgreSQL",
     head: "CrudCastle",
@@ -333,22 +337,24 @@ export const projects = [
     code: "https://github.com/Mahmoudaboelenien19/cruds",
     demo: "https://crudcastle.onrender.com/",
   },
-  
+
   {
     msgOne: "React",
     msgTwo: "Sass",
     head: "WeatherEye",
+    tags: ["React", "sass"],
     img: wheatherEye,
     skillsUsed: [
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
       { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
       { clr: "", Icon: FigmaIcon, name: "figma" },
-
     ],
     code: "https://github.com/Mahmoudaboelenien19/WeatherEye",
     demo: "https://weathereye.onrender.com/",
   },
   {
+    tags: ["React", "sass"],
+
     msgOne: "React",
     msgTwo: "Sass",
     head: "CashFlow",
@@ -361,7 +367,8 @@ export const projects = [
     demo: "https://cashflow-2okh.onrender.com/",
   },
   {
-    msgOne: "typescript",
+    tags: ["Typescript", "sass"],
+    msgOne: "Typescript",
     msgTwo: "sass",
     head: "advanced ToDo list",
     img: typeScriptToDoImg,
@@ -373,7 +380,6 @@ export const projects = [
     code: "https://github.com/Mahmoudaboelenien19/Typescript-Oop-Scss-to-do-list",
     demo: "https://mahmoudaboelenien19.github.io/Typescript-Oop-Scss-to-do-list/",
   },
-  
 ];
 
 export const iconsArr = [
@@ -403,5 +409,3 @@ export const iconsArr = [
     link: "https://wa.me/+201503636395",
   },
 ];
-
-

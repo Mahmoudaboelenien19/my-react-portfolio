@@ -7,7 +7,10 @@ import ColorPicker from "../Theme/ColorPicker.js";
 import { opacityVariant } from "../../assets/Utils/MianVariants.js";
 import useIsMobile from "../customComponents/useIsMobile.js";
 
-const LinksComponent = () => {
+interface Props {
+  setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const LinksComponent = ({ setShowMenu }: Props) => {
   const [showClrPicker, setShowClrPicker] = useState(false);
   const { isMidScreen } = useIsMobile();
   const check = showClrPicker || isMidScreen;
@@ -22,6 +25,11 @@ const LinksComponent = () => {
               spy
               offset={-40}
               activeClass="active"
+              onClick={() => {
+                if (isMidScreen && setShowMenu) {
+                  setShowMenu(false);
+                }
+              }}
             >
               {link}
             </Link>

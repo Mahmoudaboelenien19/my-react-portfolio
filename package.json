@@ -26,6 +26,7 @@
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.9.0",
     "react-scroll": "^1.8.9",
+    "react-spinners": "^0.13.8",
     "react-svg": "^16.1.15",
     "react-tilt": "^1.0.2",
     "react-use-measure": "^2.1.1",

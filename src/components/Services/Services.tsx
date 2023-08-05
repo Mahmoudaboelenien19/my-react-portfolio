@@ -21,14 +21,14 @@ const Services = () => {
       Icon: IoLogoNodejs,
       title: "Backend Development",
       description:
-        "With my expertise in MERN stack, I specialize in backend development using Apollo Server, RESTful APIs, Express, GraphQL, and JWT. I leverage these technologies to build efficient and secure server-side applications.",
+        "With my good knowledge in MERN stack, I specialize in backend development using Apollo Server, RESTful APIs, Express, GraphQL, and JWT. I leverage these technologies to build efficient and secure server-side applications.",
       clr: " #339933",
     },
     {
       Icon: DiMongodb,
       title: "Database Management",
       description:
-        "I have a strong command of databases, particularly PostgreSQL and MongoDB with Mongoose. I possess the skills to design, optimize, and manage database systems, ensuring data integrity and efficient querying.",
+        "I have a good command of databases, particularly PostgreSQL and MongoDB with Mongoose. I possess the skills to design, optimize, and manage database systems, ensuring data integrity and efficient querying.",
       clr: "#4DB33D",
     },
   ];
