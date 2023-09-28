@@ -12,27 +12,15 @@ export const themeContext = createContext({} as themeContextInterface);
 
 const ThemContext = ({ children }: Props) => {
   const localstorageTheme = localStorage.getItem("portfolio-theme");
-  const [theme, setTheme] = useState(localstorageTheme || "dark");
+  const [theme, setTheme] = useState(localstorageTheme || "light");
 
   useEffect(() => {
     if (theme == "light") {
-      document.documentElement.style.setProperty(
-        "--secondary",
-        "rgb(247, 246, 246)"
-      );
-
-      document.documentElement.style.setProperty("--third", "#000");
-      document.documentElement.style.setProperty("--main", "#f4ece6");
-      document.documentElement.style.setProperty("--forth", "#F4F9FC");
       localStorage.setItem("portfolio-theme", "light");
+      document.body.classList.remove("dark");
     } else {
-      document.documentElement.style.setProperty("--forth", "#1D2226");
-      document.documentElement.style.setProperty("--main", "#222222");
-      document.documentElement.style.setProperty("--secondary", "#111110");
-      document.documentElement.style.setProperty(
-        "--third",
-        "rgb(247, 246, 246)"
-      );
+      document.body.classList.add("dark");
+
       localStorage.setItem("portfolio-theme", "dark");
     }
   }, [theme]);

@@ -24,10 +24,24 @@ body {
 
   height: fit-content;
   width: 100%;
-
   background-color: var(--secondary);
   font-size: clamp(10px, 2vw, 14px);
 }
+
+body {
+  --secondary: rgb(247, 246, 246);
+  --third: #000;
+  --main: #f4ece6;
+  --forth: #f4f9fc;
+}
+
+body.dark {
+  --forth: #1d2226;
+  --main: #222222;
+  --secondary: #111110;
+  --third: rgb(247, 246, 246);
+}
+
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 4px var(--third);
   padding: 0 5px;
@@ -36,7 +50,7 @@ body {
 *::-webkit-scrollbar {
   width: 6px;
   border-radius: 2px;
-  margin:2px
+  margin: 2px;
 }
 
 *::-webkit-scrollbar-thumb {

@@ -6,11 +6,9 @@ import Testimonials from "../reviews/Testimonials";
 import Service from "../Services/Services";
 import About from "../About/About";
 import Bot from "../Bot/Bot";
-import Nav from "../Nav/Nav";
 import RotateText from "../widgets/Svgs/RotateText";
 import Skills from "../Skills/Experience";
-import Title from "../widgets/CustomTitle";
-
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 export const MainAnimationContext = createContext<null | React.Dispatch<
   React.SetStateAction<boolean>
 >>(null);
@@ -19,12 +17,13 @@ const Home = () => {
     useState(false);
   return (
     <MainAnimationContext.Provider value={setIsMainAnimationCompleted}>
-      {/* <Nav /> */}
       <MainPage />
       {isMainAnimationCompleted && (
         <>
           <Service />
-          <About />
+          <LazyLoadComponent>
+            <About />
+          </LazyLoadComponent>
           <Skills />
           <Projects />
           <Bot />
