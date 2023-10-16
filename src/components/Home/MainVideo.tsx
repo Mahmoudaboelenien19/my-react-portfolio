@@ -35,7 +35,7 @@ const MainVideo = ({ width }: Props) => {
       muted
       loop
       transition={{
-        delay: 4,
+        delay: 1.5,
         type: "tween",
         height: { duration: 1 },
         clipPath: { duration: 0.4 },

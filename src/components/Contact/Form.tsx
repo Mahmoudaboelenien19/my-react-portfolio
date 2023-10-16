@@ -23,8 +23,7 @@ const Form = () => {
     getValues,
     reset,
   } = methods;
-  console.log(getValues());
-  console.log(errors);
+
   const form = useRef<HTMLFormElement | null>(null);
 
   const onSubmit = (data: FieldValues) => {
@@ -38,15 +37,14 @@ const Form = () => {
         )
         .then(
           (result) => {
-            console.log(result.text);
             if (result.text === "OK") {
               toast.success("message is successfully sent By EmailJs");
               reset();
             }
           },
           (error) => {
-            console.log(error.text);
             reset();
+            console.log(error);
           }
         );
     }

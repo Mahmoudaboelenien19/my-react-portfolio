@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { linkArr } from "../../assets/Utils/Arr.js";
+import { linkArr } from "@/assets/Utils/Arr.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { RiPaletteFill } from "react-icons/ri";
 import ColorPicker from "../Theme/ColorPicker.js";
-import { opacityVariant } from "../../assets/Utils/MianVariants.js";
+import { opacityVariant } from "@/assets/Utils/MianVariants.js";
 import useIsMobile from "../customComponents/useIsMobile.js";
 
 interface Props {
@@ -23,7 +23,7 @@ const LinksComponent = ({ setShowMenu }: Props) => {
               to={id}
               smooth
               spy
-              offset={-40}
+              offset={-55}
               activeClass="active"
               onClick={() => {
                 if (isMidScreen && setShowMenu) {

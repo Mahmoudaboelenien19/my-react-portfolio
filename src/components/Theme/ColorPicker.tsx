@@ -7,28 +7,22 @@ const ColorPicker = ({
 }: {
   setShowClrPicker: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const clrs = [
-    "var(--grey)",
-    "var(--blue)",
-    "var(--aqua)",
-    "var(--red)",
-    "var(--lavender)",
-  ];
+  const clrs = ["grey", "blue", "aqua", "red", "lavender"];
 
   const { chosenColor, setChosenColor } = useContext(colorContext);
   const [dossAnimationEnds, setDossAnimationEnds] = useState(false);
 
   const pickerVariant = {
-    start: { opacity:0 },
+    start: { opacity: 0 },
     end: {
-      opacity:[0,.2,.4,.7,1],
+      opacity: [0, 0.2, 0.4, 0.7, 1],
       transition: {
         duration: 0.5,
         when: "beforeChildren",
       },
     },
     exit: {
-      opacity:0,
+      opacity: 0,
       transition: {
         duration: 0.5,
         ease: "easeInOut",
@@ -59,7 +53,7 @@ const ColorPicker = ({
               chosenColor === clr && dossAnimationEnds ? "active" : ""
             } clr-option`}
             key={i}
-            style={{ background: clr }}
+            style={{ background: `var(--${clr})` }}
             onClick={() => {
               setShowClrPicker(false);
               setChosenColor(clr);

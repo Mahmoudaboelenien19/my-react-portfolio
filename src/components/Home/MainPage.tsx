@@ -1,21 +1,19 @@
-import React, { useContext, useRef } from "react";
-import { colorContext } from "../context/colorContext";
-import { motion,  useScroll, useTransform } from "framer-motion";
-import { fontVariant, textVariant } from "../../assets/Utils/MianVariants";
+import React, { useRef } from "react";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { textVariant } from "@/assets/Utils/MianVariants";
 import Major from "./Major";
 import MainVideo from "./MainVideo";
-import { iconsArr } from "../../assets/Utils/Arr.js";
-import Title from "../widgets/CustomTitle";
+import { iconsArr } from "@/assets/Utils/Arr.js";
+import Title from "@/components/widgets/CustomTitle";
 
 const MainPage = () => {
-  const { chosenColor } = useContext(colorContext);
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
   const width = useTransform(scrollYProgress, [0, 1], ["100%", "140%"]);
-
 
   const opacityVariant = {
     start: { opacity: 0, x: 100, y: 30 },
@@ -29,7 +27,7 @@ const MainPage = () => {
       marginTop: 20,
       transition: {
         duration: 0.4,
-        delay: 4.6,
+        delay: 1.8,
         when: "beforeChildren",
         staggerChildren: 0.18,
       },
@@ -39,34 +37,16 @@ const MainPage = () => {
   return (
     <section id="main-page" ref={ref}>
       <motion.div
-        layout
         variants={ContentPar}
         initial="start"
         animate="end"
         className="home-content"
       >
-        <h2 className="myname-head">
-          {Array.from("Hello I'm MaHmoud", (letter, i) => {
-            if (letter === " ") {
-              return <span key={i}> &nbsp;</span>;
-            } else {
-              return (
-                <motion.div
-                  variants={fontVariant}
-                  style={{ color: i >= 10 ? chosenColor : "" }}
-                  className={`${i >= 10 ? "my-name" : ""} ${
-                    i === 12 ? "H-animate" : ""
-                  }`}
-                  key={i}
-                >
-                  {letter}
-                </motion.div>
-              );
-            }
-          })}
-        </h2>
+        <motion.h2 className="myname-head my-name" variants={opacityVariant}>
+          Hello I'm <span> Mahmoud. </span>
+        </motion.h2>
         <Major />
-        <motion.p variants={textVariant} className="message">
+        <motion.p variants={textVariant(0.6)} className="message">
           Welcome to my portfolio where I show my projects and skills in web
           development.
         </motion.p>

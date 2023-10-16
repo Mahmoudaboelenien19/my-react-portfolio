@@ -23,10 +23,10 @@ export const fontVariant = {
   },
 };
 
-export const textVariant = {
+export const textVariant = (opacity = 1) => ({
   start: { opacity: 0, x: 400 },
-  end: { opacity: 1, x: 0 },
-};
+  end: { opacity: opacity, x: 0 },
+});
 
 export const opacityVariant = {
   start: { opacity: 0, scale: 0.8 },
@@ -50,4 +50,10 @@ export const parVar = {
       staggerDirection: -1,
     },
   },
+};
+
+export const MajorVariant = {
+  start: { opacity: 0 },
+  end: { opacity: 1, transition: { duration: 0.4, delay: 0.9 } },
+  exit: { opacity: 0, transition: { duration: 0.4, delay: 0 } },
 };

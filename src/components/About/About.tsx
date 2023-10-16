@@ -13,7 +13,7 @@ const About = () => {
   const inView = useInView(ref, { once: true });
   return (
     <div id="about" ref={ref}>
-      <Header head="About Me"  />
+      <Header head="About Me" />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
@@ -29,18 +29,18 @@ const About = () => {
           transition={{ duration: 0.3, delay: 1 }}
         >
           <p>
-            I&apos;m a Full Stack MERN Developer with a background in Electrical
-            Engineering. I specialize in both front-end and back-end
-            development, creating intuitive user interfaces and designing
-            efficient server-side architectures. Explore my portfolio to see
-            examples of my work.
+            I&apos;m a{" "}
+            <span className="special">Full Stack MERN Developer</span>
+            with a background in Electrical Engineering. I specialize in both
+            front-end and back-end development, creating intuitive user
+            interfaces and designing efficient server-side architectures.
+            Explore my portfolio to see examples of my work.
           </p>
 
           <div className="about-btns">
             <div className="cv">
               <MainBtn btn={""} Icon={FaDownload}>
                 <a
-                  // href={"/src/assets/Mahmoud Abo Elenien.pdf"}
                   href={"/Mahmoud Abo Elenien.pdf"}
                   download="cv.pdf"
                   className="cv-link"

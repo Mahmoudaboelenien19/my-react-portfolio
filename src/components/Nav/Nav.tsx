@@ -35,19 +35,15 @@ const Nav = () => {
       },
     },
   };
-  const [showNav, setShowNav] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowNav(true);
-    }, 4200);
-  }, []);
   const parVar = {
-    start: {},
+    start: { opacity: 0 },
     end: {
+      opacity: [0, 0.4, 1],
       transition: {
         when: "beforeChildren",
         staggerChildren: isMobile ? 0.4 : 0,
+        delay: 1.5,
       },
     },
   };
@@ -65,58 +61,56 @@ const Nav = () => {
   }, [isMobile]);
   return (
     <>
-      {showNav && (
-        <motion.nav variants={parVar} initial="start" animate="end">
-          <motion.div variants={opacityVariant} className="logo">
-            <Link to="main-page" smooth spy>
-              <Logo clr={chosenColor} />
-            </Link>
-          </motion.div>
-          <span className="theme-par">
-            <AnimatePresence>
-              {!isMidScreen ? (
-                <>
-                  <LinksComponent />
-                </>
-              ) : (
-                <AnimatePresence mode="wait">
-                  {ShowMenu && (
-                    <motion.aside
-                      key="aside-mobile"
-                      variants={AsideMobile}
-                      initial="start"
-                      animate="end"
-                      exit="exit"
-                    >
-                      <LinksComponent setShowMenu={setShowMenu} />
-                    </motion.aside>
-                  )}
-                </AnimatePresence>
-              )}
-            </AnimatePresence>
-            <span
-              className="theme-par"
-              style={{
-                justifyContent: "space-between",
-                height: "100%",
-                alignItems: "center",
-              }}
-            >
-              <Title
-                title={
-                  theme === "light" ? "apply dark mode" : "apply light mode"
-                }
-              >
-                <ThemeToggle />
-              </Title>
+      <motion.nav variants={parVar} initial="start" animate="end">
+        <motion.div variants={opacityVariant} className="logo">
+          <Link to="main-page" smooth spy>
+            <Logo clr={chosenColor} />
+          </Link>
+        </motion.div>
+        <span className="theme-par">
+          <AnimatePresence>
+            {!isMidScreen ? (
+              <>
+                <LinksComponent />
+              </>
+            ) : (
+              <AnimatePresence mode="wait">
+                {ShowMenu && (
+                  <motion.aside
+                    key="aside-mobile"
+                    variants={AsideMobile}
+                    initial="start"
+                    animate="end"
+                    exit="exit"
+                  >
+                    <LinksComponent setShowMenu={setShowMenu} />
+                  </motion.aside>
+                )}
+              </AnimatePresence>
+            )}
+          </AnimatePresence>
 
-              {isMidScreen && (
-                <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
-              )}
-            </span>
-          </span>
-        </motion.nav>
-      )}
+          <motion.span
+            className="theme-par"
+            style={{
+              justifyContent: "space-between",
+              height: "100%",
+              alignItems: "center",
+            }}
+            variants={opacityVariant}
+          >
+            <Title
+              title={theme === "light" ? "apply dark mode" : "apply light mode"}
+            >
+              <ThemeToggle />
+            </Title>
+
+            {isMidScreen && (
+              <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
+            )}
+          </motion.span>
+        </span>
+      </motion.nav>
     </>
   );
 };

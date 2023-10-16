@@ -1,12 +1,5 @@
-import React, {
-  useEffect,
-  createContext,
-  useState,
-  ReactSVGElement,
-} from "react";
-import { ReactSVG } from "react-svg";
+import React, { useEffect, createContext, useState } from "react";
 import { useFavicon } from "react-usefavicon";
-import svg from "../../assets/Svg/icon.svg";
 import MyFavIcon from "../widgets/Svgs/FavIcon";
 interface Props {
   children: React.ReactNode;
@@ -21,29 +14,26 @@ export const colorContext = createContext({} as colorInterface);
 
 const ColorContextComponent = ({ children }: Props) => {
   const [chosenColor, setChosenColor] = useState(
-    localStorage.getItem("color-portfolio") || "var(--grey)"
+    localStorage.getItem("color-portfolio") || "grey"
   );
   const [, { jsxToFavicon }] = useFavicon();
 
-  // const svg = useMyFavIcon(chosenColor);
   useEffect(() => {
-    const root = document.documentElement;
-    root.style.setProperty("--scroll", chosenColor);
     let switchColor;
     switch (chosenColor) {
-      case "var(--grey)":
+      case "grey":
         switchColor = "#5c6e7d";
         break;
-      case "var(--blue)":
+      case "blue":
         switchColor = "#1d546a";
         break;
-      case "var(--aqua)":
+      case "aqua":
         switchColor = "#359399";
         break;
-      case "var(--red)":
+      case "red":
         switchColor = "#a53737";
         break;
-      case "var(--lavender)":
+      case "lavender":
         switchColor = "rgb(69, 69, 147)";
         break;
       default:

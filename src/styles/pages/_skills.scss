@@ -6,65 +6,60 @@
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--main);
+
   background-color: var(--secondary);
   overflow: hidden;
 
   .timeline-par {
     margin-top: 60px;
-
+    .detail {
+      text-wrap: nowrap;
+    }
     h3 {
       text-transform: capitalize;
       @include fexien(125, 800);
       letter-spacing: 0.7px;
       padding: 4px;
-      font-size: 0.9rem;
       padding-left: 12px;
       color: var(--scroll);
     }
     ul {
       padding: 10px;
       li {
-        font-size: 12px;
-
         padding-bottom: 4px;
       }
     }
   }
   .skills-par {
-    padding: 50px 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: min(10px, 1.75vw);
     width: 95vw;
     margin: 0 auto;
+
     .skills {
       width: 80%;
+
       display: flex;
       justify-content: center;
+      gap: min(10px, 1.75vw);
       align-items: center;
-      height: 8vw;
-      gap: 2vh;
       margin: 0 auto;
-      margin-bottom: 6px;
 
       .skill-icon {
-        // opacity: 0;
-        height: 6vw;
-        width: 6vw;
-        min-height: 30px;
-        min-width: 30px;
+        min-height: min(10.5vw, 80px);
+        min-width: min(10.5vw, 80px);
         border-radius: 4px;
         display: flex;
         justify-content: center;
         align-items: center;
         background: var(--svg);
         position: relative;
-        box-shadow: var(--main-shadow);
+        box-shadow: var(--secondary-shadow);
 
         svg {
-          font-size: 3.8vw;
-          filter: drop-shadow(0.5px 0.3px 0.7px black);
+          font-size: min(6vw, 40px);
+          filter: drop-shadow(0px 0px 0.7px black);
           &:hover {
             mix-blend-mode: normal !important;
           }
@@ -74,18 +69,12 @@
   }
 }
 
-.link-timeline {
-  font-size: 11px;
+.icon-new {
+  transform: scale(1.6);
 }
 
 @media (max-width: 500px) {
-  .link-timeline {
-    font-size: 8px;
+  .icon-new {
+    transform: scale(1.2);
   }
-  // .skills-par .skills {
-  //   .skill-icon {
-  //     min-width: initial;
-  //     min-height: initial;
-  //   }
-  // }
 }

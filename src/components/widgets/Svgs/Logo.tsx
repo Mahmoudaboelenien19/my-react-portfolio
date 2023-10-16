@@ -31,7 +31,7 @@ const Logo = ({ clr }: { clr: string }) => {
           y2="35"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.325581" stopColor={clr} />
+          <stop offset="0.325581" stopColor={`var(--${clr})`} />
           <stop offset="0.976744" stopColor="#010E00" stopOpacity="0" />
         </linearGradient>
       </defs>

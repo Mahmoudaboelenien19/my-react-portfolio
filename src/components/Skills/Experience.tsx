@@ -14,7 +14,7 @@ const Experience = () => {
       <VerticalTimeline
         animate
         className="timeline-par"
-        lineColor="var(--third)"
+        lineColor="grey"
         layout={"2-columns"}
       >
         {skillsArr?.map((obj, i) => {

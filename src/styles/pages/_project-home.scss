@@ -6,6 +6,7 @@
   position: relative;
   background-color: var(--secondary);
   min-height: 100vh;
+  padding: 20px 0;
 }
 .grid-loader {
   height: 80vh;
@@ -22,14 +23,12 @@
   padding-top: 30px;
   justify-content: space-between;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 
   figure {
-    // height: 350px;
     background-color: var(--main);
-
     min-width: 300px;
-    max-width: 500px;
+    max-width: 650px;
     padding: 20px 0;
 
     box-shadow: var(--main-shadow);
@@ -40,6 +39,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     .img-par {
       padding-top: 8px;
       display: flex;
@@ -70,21 +70,40 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       margin-bottom: 10px;
       filter: drop-shadow(var(--secondary-shadow));
+
+      svg {
+        font-size: min(7vw, 25px);
+      }
     }
     .projects-links {
-      transform: scale(0.7);
       display: flex;
-      justify-content: center;
+      justify-content: center !important;
       align-items: center;
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
 
+      a {
+        margin-top: 20px;
+        transform: scale(0.8);
+        &:nth-child(1) {
+          transform-origin: right 0;
+        }
+        &:nth-child(2) {
+          transform-origin: left 0;
+        }
+        svg,
+        button {
+          text-shadow: initial;
+          color: white !important;
+        }
+      }
       .btn-par {
         padding: 0;
-        margin: 0;
+        margin: 0 !important;
+
         button svg {
           font-size: 20px;
         }
@@ -95,21 +114,21 @@
 .hint {
   display: inline-block;
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 40px;
+  left: 40px;
   color: white;
   transform: translate(-50%, -50%) rotate(-45deg);
-  width: 140px;
-  height: 40px;
+  width: 200px;
+  height: min(14vw, 50px);
   background: var(--scroll);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 8px;
   z-index: 2;
   box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.217);
   text-transform: capitalize;
+  font-size: 0.85rem;
 }
 
 #filters {
@@ -147,5 +166,6 @@
 @media (max-width: 700px) {
   .fig-parent {
     width: 95%;
+    margin-left: 2px;
   }
 }

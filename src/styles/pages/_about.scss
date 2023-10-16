@@ -14,7 +14,7 @@
     gap: 20px;
     height: 100%;
     width: 100%;
-    height: calc(100vh - 100px);
+    height: 100vh;
     overflow: hidden;
     .mac {
       width: 50%;
@@ -28,18 +28,24 @@
       width: 40%;
       display: flex;
       flex-direction: column;
-
+      .special {
+        color: var(--scroll);
+        font-weight: bold;
+        margin: 0 5px;
+      }
       .about-btns {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
-        // gap: 20px;
-        button {
-          font-size: 10px;
+
+        button,
+        a {
+          font-size: 0.9rem;
+          color: white !important;
+          text-shadow: none;
+
           &.contact-btn {
-            background-color: rgb(78, 75, 75) !important;
-            color: var(--white);
             width: fit-content;
             gap: 4px;
             position: relative;
@@ -56,14 +62,8 @@
         }
       }
       p {
-        text-align: justify;
+        text-wrap: balance;
         color: var(--third);
-        &::first-letter {
-          padding-left: 20px;
-          font-size: 1.3rem;
-          text-transform: capitalize;
-          color: var(--scroll);
-        }
       }
     }
   }

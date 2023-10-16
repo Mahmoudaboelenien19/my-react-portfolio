@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { colorContext } from "../context/colorContext";
+
 import ButtonBackground from "./ButtonBackground";
 
 interface Props {
@@ -11,8 +11,6 @@ interface Props {
   children?: React.ReactNode;
 }
 const MainBtn = ({ children, btn, Icon, type = "button", cls = "" }: Props) => {
-  const { chosenColor } = useContext(colorContext);
-
   const btnVariant = {
     start: { opacity: 0, y: 200 },
     end: { opacity: 1, y: 0 },
@@ -20,12 +18,10 @@ const MainBtn = ({ children, btn, Icon, type = "button", cls = "" }: Props) => {
   return (
     <motion.div
       initial={{
-        scaleX: 0.6,
-        scaleY: 0.8,
+        scale: 0.8,
       }}
       whileHover={{
-        scaleX: 0.65,
-        scaleY: 0.85,
+        scaleX: 0.85,
         filter: "drop-shadow(1px .5px .5px black)",
         transition: { type: "spring", stiffness: 300 },
       }}

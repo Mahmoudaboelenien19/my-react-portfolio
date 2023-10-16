@@ -4,13 +4,11 @@
 
 #service {
   min-height: 100vh;
-
   z-index: 4;
   background: var(--secondary);
   position: relative;
   width: 95vw;
   margin: 0 auto;
-
   .services {
     width: 100%;
     margin-top: 40px;
@@ -20,13 +18,8 @@
     gap: 20px;
     height: calc(100vh - 200px);
     align-items: center;
-    // &  > div{
-    
-    //   flex-grow: 1;
-    //   width: 300px;
-    // }
-}
-.service {
+  }
+  .service {
     position: relative;
     z-index: 2;
     background: var(--main);
@@ -35,10 +28,11 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 20px 8px;
+    padding: 20px 4px;
     border-radius: 5px;
     gap: 6px;
     box-shadow: 0.5px 0.5px 2px black;
+    text-wrap: balance;
     & > * {
       transition: 0.3s;
     }

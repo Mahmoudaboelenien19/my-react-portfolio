@@ -39,15 +39,12 @@
       display: flex;
       font-size: 2rem;
       font-weight: 800;
-      .my-name {
-        @include fexien(75, 800);
-
-        &.H-animate {
-          @include fexien(75, 800);
-
-          @include header-animation(10);
-          z-index: -1;
-        }
+      span {
+        color: var(--scroll);
+        margin-left: 5px;
+      }
+      &.my-name {
+        @include fexien(105, 600);
       }
     }
     p.message {
@@ -59,8 +56,8 @@
       white-space: pre-wrap;
       text-align: center;
       width: 95%;
-      margin :0 auto;
-
+      margin: 0 auto;
+      text-wrap: balance;
     }
 
     h5 {
@@ -80,21 +77,18 @@
 
       .developer {
         display: flex;
-
         span {
-          @include header-animation(1.9);
+          @include header-animation(2.5);
           font-weight: 1000;
         }
       }
       span {
-        text-shadow: 0.5px 0.5px 2px black;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 5px;
         svg {
           path {
-            filter: drop-shadow(0.5px 0.5px 2px black);
             fill: var(--scroll);
           }
         }

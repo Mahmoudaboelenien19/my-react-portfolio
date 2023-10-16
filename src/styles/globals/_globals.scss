@@ -21,11 +21,12 @@
 
 body {
   @include kyiv(500, -600);
-
   height: fit-content;
   width: 100%;
   background-color: var(--secondary);
-  font-size: clamp(10px, 2vw, 14px);
+}
+:root {
+  font-size: clamp(12px, 3vw, 16px);
 }
 
 body {
@@ -42,6 +43,32 @@ body.dark {
   --third: rgb(247, 246, 246);
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 599px) {
+  :root {
+    cursor: initial;
+  }
+}
+
+#home.grey {
+  --scroll: var(--grey);
+}
+#home.blue {
+  --scroll: var(--blue);
+}
+#home.aqua {
+  --scroll: var(--aqua);
+}
+#home.red {
+  --scroll: var(--red);
+}
+#home.lavender {
+  --scroll: var(--lavender);
+}
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 4px var(--third);
   padding: 0 5px;
@@ -57,32 +84,3 @@ body.dark {
   background: var(--scroll);
   border-radius: 4px;
 }
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-@media (max-width: 599px) {
-  :root {
-    cursor: initial;
-  }
-}
-
-// @media (max-width: 800px) {
-//   :root {
-//     font-size: 12px;
-//   }
-// }
-
-// @media (max-width: 600px) {
-//   :root {
-//     font-size: 10px;
-//   }
-// }
-
-// @media (max-width: 500px) {
-//   :root {
-//     font-size: 8px;
-//   }
-// }

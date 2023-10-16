@@ -28,9 +28,9 @@ import GmailSvg from "../../components/widgets/Svgs/GmailSvg";
 export const linkArr = [
   { link: "home", id: "main-page" },
   { link: "services", id: "service" },
+  { link: "portfolio", id: "projects-home" },
   { link: "about", id: "about" },
   { link: "experience", id: "experience" },
-  { link: "portfolio", id: "projects-home" },
   // { link: "reviews", id: "testimonials" },
   { link: "contact", id: "contact" },
 ];
@@ -258,8 +258,6 @@ export const projects = [
         Icon: DiMongodb,
         clr: "#4DB33D",
       },
-      { clr: "", Icon: FigmaIcon, name: "figma" },
-      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
     ],
     code: "https://github.com/Mahmoudaboelenien19/mern-graphql-E-commerce",
     demo: "https://zimart-3deh.onrender.com/",
@@ -277,8 +275,6 @@ export const projects = [
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
       { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
       { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
-      { clr: "", Icon: FigmaIcon, name: "figma" },
-      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
 
       {
         name: "RestFul API",
@@ -331,8 +327,6 @@ export const projects = [
         name: "ExpressJs",
       },
       { clr: " #339933", Icon: IoLogoNodejs, name: "node js" },
-
-      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
     ],
     code: "https://github.com/Mahmoudaboelenien19/cruds",
     demo: "https://crudcastle.onrender.com/",
@@ -347,7 +341,6 @@ export const projects = [
     skillsUsed: [
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
       { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
-      { clr: "", Icon: FigmaIcon, name: "figma" },
     ],
     code: "https://github.com/Mahmoudaboelenien19/WeatherEye",
     demo: "https://weathereye.onrender.com/",
