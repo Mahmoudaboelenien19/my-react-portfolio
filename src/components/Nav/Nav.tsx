@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { colorContext } from "../context/colorContext";
 import { Link } from "react-scroll";
 import Logo from "../widgets/Svgs/Logo";
 import ThemeToggle from "../Theme/ThemeToggle";
@@ -14,7 +13,6 @@ import useIsMobile from "../customComponents/useIsMobile";
 
 const Nav = () => {
   const { isMobile, isMidScreen } = useIsMobile();
-  const { chosenColor } = useContext(colorContext);
   const [ShowMenu, setShowMenu] = useState(false);
   const { theme } = useContext(themeContext);
   const AsideMobile = {
@@ -64,7 +62,7 @@ const Nav = () => {
       <motion.nav variants={parVar} initial="start" animate="end">
         <motion.div variants={opacityVariant} className="logo">
           <Link to="main-page" smooth spy>
-            <Logo clr={chosenColor} />
+            <Logo />
           </Link>
         </motion.div>
         <span className="theme-par">

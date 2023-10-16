@@ -4,9 +4,10 @@
 #projects-home {
   width: 100%;
   position: relative;
-  background-color: var(--secondary);
-  min-height: 100vh;
-  padding: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .grid-loader {
   height: 80vh;
@@ -18,13 +19,12 @@
 
 .fig-parent {
   display: grid;
-  width: 85%;
-  margin: 0 auto;
-  padding-top: 30px;
+  width: 100%;
+  padding-top: 20px;
   justify-content: space-between;
+  align-content: center;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   figure {
     background-color: var(--main);
     min-width: 300px;
@@ -134,13 +134,24 @@
 #filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 5px;
   justify-content: center;
   margin-top: 40px;
   font-weight: 800;
   width: 95vw;
   margin: 0 auto;
   margin-top: 40px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0vw;
+    width: 100%;
+    height: 1px;
+    background: var(--third);
+    opacity: 0.1;
+  }
   div {
     font-size: 12px;
     color: white;

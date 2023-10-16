@@ -14,10 +14,8 @@ interface Props {
   head: string;
   code: string;
   skillsUsed: SkillInterface[];
-  i: number;
   msgOne: string;
   msgTwo: string;
-  len: number;
 }
 const Figure = ({
   msgTwo,
@@ -27,12 +25,9 @@ const Figure = ({
   code,
   demo,
   head,
-  len,
-  i,
 }: Props) => {
   return (
     <motion.figure
-      className={`${len === 1 ? "figure-list" : ""}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
       transition={{ delay: 0.1 }}

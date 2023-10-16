@@ -1,12 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Header from "../widgets/Header";
 import Service from "./Service";
 import { IoLogoNodejs } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
 import { FaReact } from "react-icons/fa";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+//@ts-ignore
 import { Tilt } from "react-tilt";
 import { TiltDefaultOptions } from "../../assets/Objects/object.js";
+import Container from "../widgets/Container";
+import FadeINWrapper from "../widgets/FadeINWrapper";
 
 const Services = () => {
   const portfolioServices = [
@@ -33,8 +36,7 @@ const Services = () => {
     },
   ];
   const [hoveredService, setHoverService] = useState(-1);
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { amount: 0.4, once: true });
+
   const parVar = {
     start: {},
     end: {
@@ -42,32 +44,32 @@ const Services = () => {
     },
   };
   return (
-    <div ref={ref} id="service">
-      {inView && (
-        <>
-          <Header head="Services"  />
-          <motion.div
-            variants={parVar}
-            initial="start"
-            animate="end"
-            className="services"
-          >
-            {portfolioServices.map((obj, i) => {
-              return (
-                <Tilt options={TiltDefaultOptions()} key={i}>
+    <Container id="service">
+      <>
+        <Header head="Services" title="what I can Do" />
+        <motion.div
+          variants={parVar}
+          initial="start"
+          animate="end"
+          className="services"
+        >
+          {portfolioServices.map((obj, i) => {
+            return (
+              <Tilt options={TiltDefaultOptions()} key={i}>
+                <FadeINWrapper ind={i}>
                   <Service
                     {...obj}
                     hoveredService={hoveredService}
                     i={i}
                     setHoverService={setHoverService}
                   />
-                </Tilt>
-              );
-            })}
-          </motion.div>
-        </>
-      )}
-    </div>
+                </FadeINWrapper>
+              </Tilt>
+            );
+          })}
+        </motion.div>
+      </>
+    </Container>
   );
 };
 

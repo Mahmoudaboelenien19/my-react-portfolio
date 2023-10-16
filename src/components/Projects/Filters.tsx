@@ -10,7 +10,7 @@ const Filters = ({ filters, filter, setFilter }: Props) => {
     <motion.div
       id="filters"
       initial={{ opacity: 0, y: 20 }}
-      viewport={{ once: true, amount: "all" }}
+      viewport={{ once: false }}
       whileInView={{ opacity: [0, 0.2, 0.4, 7, 1], y: 0 }}
     >
       {filters.map((_filter) => (

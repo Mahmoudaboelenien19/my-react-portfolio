@@ -1,6 +1,6 @@
 export const TiltDefaultOptions = (max?: number, scale?: number) => ({
   reverse: false, // reverse the tilt direction
-  max: max || 35, // max tilt rotation (degrees)
+  max: max || 12, // max tilt rotation (degrees)
   perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
   scale: scale || 1, // 2 = 200%, 1.5 = 150%, etc..
   speed: 1000, // Speed of the enter/exit transition

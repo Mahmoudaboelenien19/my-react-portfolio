@@ -19,7 +19,7 @@ import {
   SiThealgorithms,
   SiTypescript,
 } from "react-icons/si";
-import { TbApi, TbBrandRedux } from "react-icons/tb";
+import { TbApi, TbBrandNextjs, TbBrandRedux } from "react-icons/tb";
 
 import OOPSVG from "../../components/widgets/Svgs/OOPSVG";
 import FigmaIcon from "../../components/widgets/Svgs/FigmaIcon";
@@ -193,6 +193,11 @@ export const skillsIconsArr = [
   {
     frontend: [
       {
+        name: "nextJS",
+        Icon: TbBrandNextjs,
+        clr: "var(--third)",
+      },
+      {
         name: "HTML 5",
         clr: "#E34F26",
         Icon: AiFillHtml5,
@@ -209,7 +214,6 @@ export const skillsIconsArr = [
         Icon: SiThealgorithms,
         name: " Algorithm",
       },
-      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
     ],
   },
   {
@@ -219,6 +223,7 @@ export const skillsIconsArr = [
       { clr: "#F05032", Icon: BsGit, name: "Git" },
       { clr: "", Icon: FigmaIcon, name: "figma" },
       { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
+      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
     ],
   },
 ];

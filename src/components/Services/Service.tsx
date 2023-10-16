@@ -25,7 +25,7 @@ const Service = ({
       className={`service ${
         i !== hoveredService && hoveredService !== -1 ? "blurred-service" : ""
       }`}
-      style={{ color: isHoverStarted ? "var(--third)" : clr, opacity: 0 }}
+      style={{ color: isHoverStarted ? "var(--third)" : clr }}
       onHoverStart={() => {
         setHoverService(i);
         setIsHoverStarted(true);
@@ -34,7 +34,6 @@ const Service = ({
         setHoverService(-1);
         setIsHoverStarted(false);
       }}
-      whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}
     >
       <Icon />
       <h2

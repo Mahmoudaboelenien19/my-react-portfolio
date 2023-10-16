@@ -37,7 +37,7 @@ const Contact = () => {
       }}
       id="contact"
     >
-      <Header head="Contact Me"  />
+      <Header head="Contact Me" title="how to reach me" />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8, 1] }}

@@ -9,6 +9,8 @@ import { projects } from "../../assets/Utils/Arr";
 import Figure from "./Figure";
 import Filters from "./Filters";
 import Grid from "react-spinners/GridLoader";
+import Container from "../widgets/Container";
+import FadeINWrapper from "../widgets/FadeINWrapper";
 
 const override: CSSProperties = {
   display: "block",
@@ -33,8 +35,8 @@ const Projects = () => {
     }
   }, [filter]);
   return (
-    <section id="projects-home">
-      <Header head="Portfolio" />
+    <Container id="projects-home">
+      <Header head="Portfolio" title="some of my recent works" />
 
       <Filters filters={filters} filter={filter} setFilter={setfilter} />
       <section className="fig-parent">
@@ -42,7 +44,11 @@ const Projects = () => {
           {!isPending ? (
             <>
               {dataShown.map((ob, i) => {
-                return <Figure key={i} {...ob} i={i} len={dataShown.length} />;
+                return (
+                  <FadeINWrapper key={i} ind={i}>
+                    <Figure {...ob} />
+                  </FadeINWrapper>
+                );
               })}
             </>
           ) : (
@@ -59,7 +65,7 @@ const Projects = () => {
           )}
         </>
       </section>
-    </section>
+    </Container>
   );
 };
 

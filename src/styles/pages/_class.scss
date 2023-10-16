@@ -2,30 +2,36 @@
 @import "../globals/globals";
 @import "../globals/mixins";
 
+.container {
+  min-height: calc(100vh - 50px);
+  padding: 20px 0;
+  background-color: var(--secondary);
+}
 .heading {
   @include kyiv(500, -600);
   font-weight: 900;
-
-  width: fit-content;
   margin: 0 auto;
   text-align: start;
   position: relative;
   padding: 20px 20px;
   padding-top: 40px;
   padding-bottom: 0;
-  font-size: 30px;
+  font-size: 2.4rem;
   margin-bottom: 15px;
   color: var(--third);
   text-transform: capitalize;
-  &:before {
-    content: "";
+  width: 100%;
+  text-align: center;
+  .title {
     position: absolute;
-    left: 35%;
-    width: 30%;
-    height: 1.5px;
-    background: var(--scroll);
+    left: 0%;
     border-radius: 3px;
-    top: 105%;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.4 !important;
   }
 }
 

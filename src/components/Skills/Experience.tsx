@@ -6,10 +6,11 @@ import TimeLine from "./TimeLine";
 import "react-vertical-timeline-component/style.min.css";
 import Skills from "./Skills.js";
 import { motion } from "framer-motion";
+import Container from "../widgets/Container";
 const Experience = () => {
   return (
-    <div id="experience">
-      <Header head="Experience" />
+    <Container id="experience">
+      <Header head="Experience" title="" />
 
       <VerticalTimeline
         animate
@@ -32,7 +33,7 @@ const Experience = () => {
         <Skills arr={skillsIconsArr[1].frontend || []} />
         <Skills arr={skillsIconsArr[2].essentials || []} />
       </motion.div>
-    </div>
+    </Container>
   );
 };
 
