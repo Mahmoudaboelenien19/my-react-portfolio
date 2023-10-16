@@ -17,8 +17,8 @@ const Header = ({ head, title }: Props) => {
       }}
     >
       <motion.span
-        whileInView={{ y: [20, 0], opacity: [0, 0.5, 1] }}
-        transition={{ delay: 0.2 }}
+        whileInView={{ y: [40, 0], opacity: [0, 0.4] }}
+        transition={{ delay: 0.05 }}
         className="title"
         viewport={{
           once: true,

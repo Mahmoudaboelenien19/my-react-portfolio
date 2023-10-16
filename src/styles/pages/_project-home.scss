@@ -19,15 +19,17 @@
 
 .fig-parent {
   display: grid;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   padding-top: 20px;
   justify-content: space-between;
   align-content: center;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
   figure {
     background-color: var(--main);
-    min-width: 300px;
+
     max-width: 650px;
     padding: 20px 0;
 
@@ -178,5 +180,6 @@
   .fig-parent {
     width: 95%;
     margin-left: 2px;
+    margin: 0 auto;
   }
 }

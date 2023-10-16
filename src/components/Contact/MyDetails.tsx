@@ -2,8 +2,8 @@ import React from "react";
 import { BsFillMapFill, BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
 import ContactDetail from "./ContactDetail";
+import FadeINWrapper from "../widgets/FadeINWrapper";
 const MyDetails = () => {
   const arr = [
     { Icon: FaUserAlt, detail: "name", value: "Mahmoud Abo Elenien" },
@@ -16,9 +16,9 @@ const MyDetails = () => {
     <div className="my-details">
       {arr.map((obj, i) => {
         return (
-          <motion.div key={i}>
+          <FadeINWrapper ind={i} key={i}>
             <ContactDetail {...obj} />
-          </motion.div>
+          </FadeINWrapper>
         );
       })}
     </div>

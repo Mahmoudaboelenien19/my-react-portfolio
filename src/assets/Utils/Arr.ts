@@ -8,9 +8,10 @@ import { IoLogoNodejs } from "react-icons/io5";
 import typeScriptToDoImg from "../images/projects/frontend-todolist.jpg";
 import MernToDoImg from "../images/projects/mern todo.jpg.jpg";
 import CrudCastle from "../images/projects/crudCatle.jpg.jpg";
-import Zimart from "../images/projects/zimart.jpg";
+import Zimart from "@/assets/images/projects/zimart.jpg";
 import wheatherEye from "../images/projects/wheatherEye.jpg.jpg";
 import CashFlow from "../images/projects/cashFLow.jpg.jpg";
+import CarLand from "@/assets/images/projects/carland.jpg";
 import {
   SiExpress,
   SiGraphql,
@@ -266,7 +267,22 @@ export const projects = [
     ],
     code: "https://github.com/Mahmoudaboelenien19/mern-graphql-E-commerce",
     demo: "https://zimart-3deh.onrender.com/",
-    tags: ["MERN App", "graphQL", "Typescript", "sass"],
+    tags: ["MERN App", "graphQL", "Typescript", "sass", "React"],
+  },
+
+  {
+    msgOne: "React",
+    msgTwo: "tailwind",
+    head: "Carland",
+    img: CarLand,
+    skillsUsed: [
+      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+      { Icon: SiTailwindcss, clr: "#48C2F8", name: "tailwind css" },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/React_framer_tailwind",
+    demo: "https://carland.onrender.com/",
+    tags: ["tailwind", "Typescript", "React"],
   },
 
   {

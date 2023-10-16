@@ -58,6 +58,7 @@ const Form = () => {
         action="  
   "
       >
+        <h2>Get in Touch</h2>
         <Input
           placeholder="name"
           name="user_name"
