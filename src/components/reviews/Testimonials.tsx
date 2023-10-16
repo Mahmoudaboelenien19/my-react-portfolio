@@ -2,11 +2,11 @@ import React, { useRef, useState } from "react";
 import Header from "../widgets/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import image1 from "../../assets/images/reviews/1.jpg";
-import image2 from "../../assets/images/reviews/2.jpg";
-import image3 from "../../assets/images/reviews/3.jpg";
-import image4 from "../../assets/images/reviews/4.jpg";
-import image5 from "../../assets/images/reviews/5.jpg";
+import image1 from "@/assets/images/reviews/1.jpg";
+import image2 from "@/assets/images/reviews/2.jpg";
+import image3 from "@/assets/images/reviews/3.jpg";
+import image4 from "@/assets/images/reviews/4.jpg";
+import image5 from "@/assets/images/reviews/5.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -51,7 +51,7 @@ const Testimonials = () => {
   const ref = useRef<null | HTMLDivElement>(null);
   return (
     <div id="testimonials" ref={ref}>
-      <Header head="Reviews"  />
+      <Header head="Reviews" title="" />
       <Swiper
         loop
         spaceBetween={5}
