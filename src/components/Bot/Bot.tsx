@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 import { BsFillChatFill } from "react-icons/bs";
 import Chat from "./Chat";
 

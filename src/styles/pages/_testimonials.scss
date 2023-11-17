@@ -8,13 +8,17 @@
 }
 
 .swiper-wrapper {
-  padding-top: 30px;
+  padding-top: 50px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
 }
 .swiper-par {
   width: 80%;
-  height: 75vh;
+  height: 65vh;
   .review {
-    height: 150px;
+    height: 180px;
     display: flex;
     gap: 30px;
     background-color: var(--main);
@@ -50,15 +54,15 @@
       justify-content: space-between;
 
       .review-name {
-        color: var(--scroll);
+        color: var(--main-clr);
         font-weight: 700;
       }
       p {
         color: var(--third);
         width: 90%;
-        text-align: justify;
+        margin-bottom: 20px;
         &::first-letter {
-          color: var(--scroll);
+          color: var(--main-clr);
           padding-left: 8px;
           font-weight: 500;
           text-transform: capitalize;

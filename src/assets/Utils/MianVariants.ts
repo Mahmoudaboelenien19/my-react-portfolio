@@ -24,14 +24,14 @@ export const fontVariant = {
 };
 
 export const textVariant = (opacity = 1) => ({
-  start: { opacity: 0, x: 400 },
+  start: { opacity: 0, x: 40 },
   end: { opacity: opacity, x: 0 },
 });
 
 export const opacityVariant = {
   start: { opacity: 0, scale: 0.8 },
   exit: { opacity: 0 },
-  end: { opacity: 1, scale: 1 },
+  end: (opacity?: number) => ({ opacity: opacity || 1, scale: 1 }),
 };
 
 export const parVar = {

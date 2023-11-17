@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BiPlusMedical } from "react-icons/bi";
 import { MajorVariant, textVariant } from "@/assets/Utils/MianVariants";
 import { AnimatePresence, motion, useAnimate } from "framer-motion";

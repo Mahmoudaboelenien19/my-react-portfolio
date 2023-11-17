@@ -1,4 +1,3 @@
-import React from "react";
 import { Html, useProgress } from "@react-three/drei";
 const Loader = () => {
   const { progress } = useProgress();
@@ -7,9 +6,9 @@ const Loader = () => {
     <Html>
       <div
         style={{
-          color: "var(--scroll)",
+          color: "var(--main-clr)",
           fontSize: 20,
-          marginLeft:-40
+          marginLeft: -40,
         }}
       >
         {progress.toFixed(2)}%{" "}

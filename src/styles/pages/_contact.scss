@@ -8,7 +8,7 @@
   background-color: var(--forth);
   background-color: var(--secondary);
   overflow: hidden;
-
+  padding-top: 0;
   .contact-data {
     position: relative;
 
@@ -48,7 +48,7 @@
           border: 0.5px solid var(--secondary);
           background-color: var(--main);
           svg {
-            color: var(--scroll);
+            color: var(--main-clr);
             filter: drop-shadow(0px 0.2px 0.1px black);
             font-size: 1.2rem;
           }
@@ -78,21 +78,29 @@
       }
     }
   }
+  .form-par {
+    width: 50%;
+    position: relative;
+  }
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 50%;
-    padding: 40px 2%;
+    gap: 25px;
+    padding: 40px min(3rem, 25px);
     border-radius: 5px;
     background: var(--main);
     box-shadow: var(--main-shadow);
-
+    p {
+      color: var(--third);
+      opacity: 0.4;
+      text-wrap: balance;
+      text-align: center;
+      font-size: 0.9rem;
+    }
     h2 {
-      opacity: 0.6;
       font-size: 2rem;
       text-align: center;
-      margin-bottom: 30px;
+
       color: var(--third);
     }
 
@@ -102,7 +110,7 @@
       align-items: flex-start;
       gap: 5px;
       width: 100%;
-      height: 80px;
+      min-height: 80px;
       position: relative;
 
       &.inp-text {
@@ -111,9 +119,18 @@
       &.inp-send {
         display: flex;
         align-items: center;
+        min-height: fit-content;
         button {
-          color: white;
+          width: 100%;
         }
+      }
+      .err-form {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--third);
+        height: 20px;
       }
       input,
       textarea {
@@ -128,7 +145,7 @@
         background-color: var(--secondary);
         box-shadow: 0.5px 0.5px 1px black;
         &:focus {
-          border: 2px solid var(--scroll);
+          border: 1px solid var(--main-clr);
         }
       }
       .placeholder {
@@ -138,6 +155,7 @@
         font-weight: 600;
         font-size: 20px;
         gap: 5px;
+        opacity: 0.7;
         justify-content: flex-start;
         align-items: center;
         padding-left: 20px;
@@ -155,9 +173,19 @@
       align-self: center;
       margin: 0 auto;
     }
-    form {
+    .form-par {
       width: 100%;
+    }
+    form {
       margin: 0 auto;
     }
   }
+}
+
+.contact-svg {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }

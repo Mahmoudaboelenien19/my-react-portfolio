@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useAnimate } from "framer-motion";
 import { themeContext } from "../context/ThemeContext";
 

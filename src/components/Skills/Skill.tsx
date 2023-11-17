@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "../widgets/CustomTitle";
 import { SkillInterface } from "../../assets/Utils/interfaces.js";
 

@@ -41,7 +41,6 @@
       color: var(--third);
     }
     .chat-content {
-      @include fexien(110, 800);
       color: var(--third);
       display: flex;
       flex-direction: column;

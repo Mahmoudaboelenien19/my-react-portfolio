@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -14,8 +13,9 @@ const FadeINWrapper = ({ children, className, ind, delay }: Props) => {
         opacity: 0,
       }}
       whileInView={{ opacity: [0, 0.5, 1] }}
-      transition={{ delay: delay || 0.1 * ind }}
+      transition={{ delay: delay || 0 + 0.1 * ind }}
       className={className}
+      viewport={{ once: true }}
     >
       {children}
     </motion.div>

@@ -9,7 +9,7 @@
   @keyframes animate-head {
     100% {
       @include fexien(115, 800);
-      color: var(--scroll);
+      color: var(--main-clr);
     }
   }
 }

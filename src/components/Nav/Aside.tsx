@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { linkArr } from "../../assets/Utils/Arr";
 import { Link } from "react-scroll";

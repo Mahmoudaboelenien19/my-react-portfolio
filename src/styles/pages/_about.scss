@@ -31,21 +31,19 @@
       padding-top: 25px;
       align-self: flex-end;
       .special {
-        color: var(--scroll);
         font-weight: bold;
-        margin: 0 5px;
       }
       .about-btns {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
-        button,
+        gap: 40px;
+
         a {
-          font-size: 1.1rem;
-          color: white !important;
-          text-shadow: none;
+          font-size: 1rem;
           margin: 0;
+
           &.contact-btn {
             width: fit-content;
             gap: 4px;
@@ -64,9 +62,8 @@
       }
       p {
         color: var(--third);
-        font-size: 1.2rem;
         font-weight: normal;
-        opacity: 0.6;
+        margin-bottom: 30px;
 
         &::first-letter {
           margin-left: 25px;

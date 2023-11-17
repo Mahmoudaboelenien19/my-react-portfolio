@@ -28,44 +28,39 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 5vw;
+    list-style: none;
+    gap: 20px;
+
     a {
       display: inline-block;
-      @include fexien(100, 500);
       text-decoration: none;
       color: var(--third);
       text-transform: capitalize;
       transition: 0.3s;
-
+      font-size: 0.8rem;
       text-align: left;
       cursor: pointer;
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 120%;
-        left: 0;
-        width: 0;
-        height: 3px;
-        border-radius: 4px;
-        background-color: var(--third);
-        transition: 0.3s;
-      }
-
-      &.active {
-        color: var(--scroll);
-        font-weight: 800;
-        &:before {
-          width: 100%;
-          background-color: var(--scroll);
-        }
-      }
     }
   }
-
-  .links {
+  li.link-par {
+    position: relative;
+    padding: 2px 4px;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    .active-link {
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 120%;
+      height: 140%;
+      border-radius: 4000px;
+      background-color: white;
+
+      mix-blend-mode: exclusion;
+    }
+  }
+  .links {
     width: 80%;
   }
 }
@@ -79,32 +74,6 @@ nav {
   margin-left: 40px;
   svg {
     font-size: 18px;
-  }
-  .color-picker {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    gap: 5px;
-    background: var(--main);
-    box-shadow: 2px 1px 8px black;
-    z-index: 100;
-    padding: 5px;
-
-    .clr-option {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      transition: 0.3s;
-      &:hover,
-      &.active {
-        opacity: 1 !important;
-      }
-    }
   }
 }
 
@@ -151,20 +120,6 @@ nav {
         top: 10px;
         left: 0;
         margin: 0 auto;
-
-        .color-picker {
-          opacity: 1;
-
-          left: initial;
-          right: inherit;
-          box-shadow: initial;
-          width: 100%;
-          gap: 10px;
-          left: 0;
-          background-color: transparent;
-          display: flex;
-          justify-content: center !important;
-        }
       }
     }
   }
@@ -207,17 +162,6 @@ nav {
         top: 10px;
         left: 0;
         margin: 0;
-        .color-picker {
-          opacity: 1;
-
-          left: initial;
-          right: inherit;
-          box-shadow: initial;
-          width: 100%;
-          gap: 10px;
-          left: 0;
-          background-color: transparent;
-        }
       }
     }
   }

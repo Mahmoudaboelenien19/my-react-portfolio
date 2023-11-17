@@ -33,18 +33,17 @@
     color: var(--third);
     font-size: 1rem;
     h2 {
-      @include fexien(75, 600);
       position: relative;
       z-index: 4;
       display: flex;
       font-size: 2rem;
       font-weight: 800;
       span {
-        color: var(--scroll);
+        color: var(--main-clr);
         margin-left: 5px;
       }
       &.my-name {
-        @include fexien(105, 600);
+        font-family: "Caveat", cursive;
       }
     }
     p.message {
@@ -61,7 +60,6 @@
     }
 
     h5 {
-      @include fexien(75, 800);
       display: flex;
       gap: 4px;
       letter-spacing: 0.8px;
@@ -89,7 +87,7 @@
         gap: 5px;
         svg {
           path {
-            fill: var(--scroll);
+            fill: var(--main-clr);
           }
         }
       }
@@ -99,7 +97,7 @@
         top: -10%;
         height: 120%;
         width: 164%;
-        background-color: var(--scroll);
+        background-color: var(--main-clr);
       }
     }
     .message {
@@ -111,10 +109,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 15px;
   .icon-parent {
     display: inline-flex;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     justify-content: center;
     align-items: center;
     margin: 10px;
@@ -129,13 +128,13 @@
       justify-content: center;
       align-items: center;
       path {
-        fill: var(--scroll);
+        fill: var(--main-clr);
         transition: 0.3s;
       }
     }
 
     &:hover {
-      background: var(--scroll);
+      background: var(--main-clr);
       path {
         fill: var(--main);
       }

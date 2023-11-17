@@ -1,5 +1,3 @@
-import React from "react";
-
 const MyFavIcon = (switchColor: string) => {
   return (
     <svg

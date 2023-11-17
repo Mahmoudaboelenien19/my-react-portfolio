@@ -1,5 +1,5 @@
 import { useGLTF } from "@react-three/drei";
-import React from "react";
+
 import * as THREE from "three";
 const Mac = () => {
   const gltf = useGLTF("/mac-draco.glb", true);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -38,7 +38,7 @@ const Service = ({
       <Icon />
       <h2
         style={{ color: isHoverStarted ? "var(--third)" : clr }}
-        className="service-title"
+        className="service-title itim"
       >
         {title}
       </h2>

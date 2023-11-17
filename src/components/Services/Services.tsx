@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../widgets/Header";
 import Service from "./Service";
 import { IoLogoNodejs } from "react-icons/io5";
@@ -17,7 +17,7 @@ const Services = () => {
       Icon: FaReact,
       title: "Frontend Development",
       description:
-        "I excel at frontend development using TypeScript, React, SCSS, and Apollo Client. I have a deep understanding of these technologies and utilize them effectively to build dynamic and responsive user interfaces.",
+        "I excel at frontend development using TypeScript,  SCSS, and Apollo Client. I have a deep understanding of these technologies and utilize them effectively to build dynamic and responsive user interfaces.",
       clr: " #61DAFB",
     },
     {

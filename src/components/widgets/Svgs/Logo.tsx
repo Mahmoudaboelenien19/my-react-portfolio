@@ -1,9 +1,4 @@
-import { colorContext } from "@/components/context/colorContext";
-import React, { useContext } from "react";
-
 const Logo = () => {
-  const { chosenColor } = useContext(colorContext);
-
   return (
     <svg
       width="78"
@@ -34,7 +29,7 @@ const Logo = () => {
           y2="35"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.325581" stopColor={`var(--${chosenColor})`} />
+          <stop offset="0.325581" stopColor={`var(--main-clr)`} />
           <stop offset="0.976744" stopColor="#010E00" stopOpacity="0" />
         </linearGradient>
       </defs>

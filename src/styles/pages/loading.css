@@ -6,7 +6,7 @@
   --aqua: #359399;
   --red: #a53737;
   --lavender: rgb(69, 69, 147);
-  --scroll: #5c6e7d;
+  --main-clr: #5c6e7d;
   --svg: rgb(211, 191, 152);
   --main-shadow: 1px 1.5px 2px black;
   --secondary-shadow: 0.5px 0.4px 0.5px black;
@@ -67,7 +67,7 @@ body.dark {
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--scroll);
+  background: var(--main-clr);
   border-radius: 4px;
 }
 
@@ -89,7 +89,7 @@ a {
   --aqua: #359399;
   --red: #a53737;
   --lavender: rgb(69, 69, 147);
-  --scroll: #5c6e7d;
+  --main-clr: #5c6e7d;
   --svg: rgb(211, 191, 152);
   --main-shadow: 1px 1.5px 2px black;
   --secondary-shadow: 0.5px 0.4px 0.5px black;
@@ -108,12 +108,12 @@ a {
   filter: drop-shadow(1px 0.5px 0.5px black);
 }
 .loading svg path:nth-child(1) {
-  stroke: var(--scroll);
+  stroke: var(--main-clr);
   stroke-width: 0.2px;
 }
 .loading .loading-content {
   letter-spacing: 1px;
-  color: var(--scroll);
+  color: var(--main-clr);
   font-weight: bold;
   font-size: 1rem;
-}/*# sourceMappingURL=loading.css.map */
+} /*# sourceMappingURL=loading.css.map */

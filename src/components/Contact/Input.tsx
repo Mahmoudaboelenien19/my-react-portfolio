@@ -1,28 +1,30 @@
 /* eslint-disable react/jsx-no-undef */
-import React from "react";
+
 import { useFormContext } from "react-hook-form";
 import { opacityVariant } from "../../assets/Utils/MianVariants";
 import { AnimatePresence, motion } from "framer-motion";
+import clsx from "clsx";
 
 const Input = ({
   placeholder,
-  type,
+
   name,
-  err,
 }: {
   placeholder: string;
-  type?: string;
   name: string;
-  err?: string;
 }) => {
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  const err = errors && errors[name]?.message?.toString();
 
   return (
-    <div className={`inp-par ${type === "textarea" ? "inp-text" : ""}`}>
+    <div className={clsx("inp-par", name === "message" && "inp-text")}>
       <div className="placeholder">
-        your {placeholder} <span style={{ color: "var(--scroll)" }}>*</span>
+        your {placeholder} <span style={{ color: "var(--main-clr)" }}>*</span>
       </div>
-      {type === "textarea" ? (
+      {placeholder === "message" ? (
         <textarea {...register(name)} />
       ) : (
         <input type="text" {...register(name)} />
@@ -31,11 +33,10 @@ const Input = ({
         {err && (
           <motion.span
             className="err-form"
-            variants={opacityVariant}
             transition={{ duration: 0.4 }}
-            initial="start"
-            animate="end"
-            exit="exit"
+            initial={{ opacity: 0, scale: 0.8, height: 0 }}
+            exit={{ opacity: 0, scale: 0.8, height: 0 }}
+            animate={{ opacity: [0.2, 0.7], scale: 1, height: 20 }}
           >
             {err}
           </motion.span>

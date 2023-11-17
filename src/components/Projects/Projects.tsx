@@ -1,69 +1,47 @@
-import React, {
-  CSSProperties,
-  useEffect,
-  useState,
-  useTransition,
-} from "react";
+import { useEffect, useRef } from "react";
 import Header from "../widgets/Header";
 import { projects } from "../../assets/Utils/Arr";
 import Figure from "./Figure";
-import Filters from "./Filters";
-import Grid from "react-spinners/GridLoader";
 import Container from "../widgets/Container";
-import FadeINWrapper from "../widgets/FadeINWrapper";
+import { useScroll } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "green",
-};
 const Projects = () => {
-  const filters = ["all", ...new Set(projects.map((ob) => ob.tags).flat())];
-  const [isPending, startTransition] = useTransition();
-  const [filter, setfilter] = useState("all");
-  const [dataShown, setDataShown] = useState(projects);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: projectsRef,
+    offset: ["start start", "end end"],
+  });
 
   useEffect(() => {
-    if (filter === "all") {
-      startTransition(() => {
-        setDataShown(projects);
-      });
-    } else {
-      startTransition(() => {
-        setDataShown(projects.filter((ob) => ob.tags.includes(filter)));
-      });
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
-  }, [filter]);
+
+    requestAnimationFrame(raf);
+  });
+
   return (
     <Container id="projects-home">
       <Header head="Portfolio" title="some of my recent works" />
+      <section className="fig-parent" ref={projectsRef}>
+        {projects.map((ob, i) => {
+          const targetScale = 1 - 5 * 0.05;
 
-      <Filters filters={filters} filter={filter} setFilter={setfilter} />
-      <section className="fig-parent">
-        <>
-          {!isPending ? (
-            <>
-              {dataShown.map((ob, i) => {
-                return (
-                  <FadeINWrapper key={i} ind={i}>
-                    <Figure {...ob} />
-                  </FadeINWrapper>
-                );
-              })}
-            </>
-          ) : (
-            <div className="grid-loader">
-              <Grid
-                color="var(--scroll)"
-                cssOverride={override}
-                loading={isPending}
-                size={5}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </div>
-          )}
-        </>
+          return (
+            <Figure
+              key={i}
+              progress={scrollYProgress}
+              range={[i * 0.2, 1 + i * 0.1]}
+              targetScale={targetScale}
+              i={i}
+              {...ob}
+            />
+          );
+        })}
       </section>
     </Container>
   );

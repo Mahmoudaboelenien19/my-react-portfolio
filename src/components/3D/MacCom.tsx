@@ -1,6 +1,6 @@
 import { OrbitControls, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import Mac from "./Mac";
 import Loader from "./Loader";
 const MacCom = () => {
@@ -12,7 +12,7 @@ const MacCom = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<Loader />}>
-      <Mac />
+        <Mac />
       </Suspense>
       <OrbitControls
         enableZoom={false}

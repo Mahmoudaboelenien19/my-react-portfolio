@@ -1,4 +1,3 @@
-import React from "react";
 import svg from "../../../assets/Svg/OOP.svg";
 import { ReactSVG } from "react-svg";
 import useIsMobile from "../../customComponents/useIsMobile";

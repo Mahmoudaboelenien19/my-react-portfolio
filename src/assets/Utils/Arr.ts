@@ -143,7 +143,7 @@ export const skillsArr = [
       "Mastered the use of TypeScript for building scalable and maintainable web applications.",
     ],
     link: "https://drive.google.com/file/d/1pzpOyIutGuuWckFfQ20r9-O6fqIr3NAE/view",
-    linkDes: " Advanced Full-Stack Web Development program.",
+    linkDes: " Advanced FullStack Web Development .",
   },
   {
     head: "Main Portfolio Projects",
@@ -165,67 +165,57 @@ export const skillsArr = [
 ];
 
 export const skillsIconsArr = [
+  { clr: " #339933", Icon: IoLogoNodejs, name: "node js" },
   {
-    backend: [
-      { clr: " #339933", Icon: IoLogoNodejs, name: "node js" },
-      {
-        Icon: SiExpress,
-        clr: "#fff",
-        name: "ExpressJs",
-      },
-      {
-        Icon: SiGraphql,
-        clr: "#E10098",
-        name: "GraphQL",
-      },
-      { name: "PostgresQl", Icon: SiPostgresql, clr: "#336791" },
-      {
-        name: "MongoDb",
-        Icon: DiMongodb,
-        clr: "#4DB33D",
-      },
-      {
-        name: "RestFul API",
-        clr: "black",
-        Icon: TbApi,
-      },
-    ],
+    Icon: SiExpress,
+    clr: "#fff",
+    name: "ExpressJs",
   },
   {
-    frontend: [
-      {
-        name: "nextJS",
-        Icon: TbBrandNextjs,
-        clr: "var(--third)",
-      },
-      {
-        name: "HTML 5",
-        clr: "#E34F26",
-        Icon: AiFillHtml5,
-      },
-      { Icon: DiCss3Full, clr: "#2965f1", name: "CSS3" },
-      { Icon: SiTailwindcss, clr: "#48C2F8", name: "tailwind css" },
+    Icon: SiGraphql,
+    clr: "#E10098",
+    name: "GraphQL",
+  },
+  { name: "PostgresQl", Icon: SiPostgresql, clr: "#336791" },
+  {
+    name: "MongoDb",
+    Icon: DiMongodb,
+    clr: "#4DB33D",
+  },
 
-      { clr: "#f7df1e", Icon: DiJavascript1, name: "JavaScript" },
-      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
-
-      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      {
-        clr: "black",
-        Icon: SiThealgorithms,
-        name: " Algorithm",
-      },
-    ],
+  {
+    name: "nextJS",
+    Icon: TbBrandNextjs,
+    clr: "var(--third)",
   },
   {
-    essentials: [
-      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
-      { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
-      { clr: "#F05032", Icon: BsGit, name: "Git" },
-      { clr: "", Icon: FigmaIcon, name: "figma" },
-      { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
-      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
-    ],
+    name: "HTML 5",
+    clr: "#E34F26",
+    Icon: AiFillHtml5,
+  },
+  { Icon: DiCss3Full, clr: "#2965f1", name: "CSS3" },
+  { Icon: SiTailwindcss, clr: "#48C2F8", name: "tailwind css" },
+
+  { clr: "#f7df1e", Icon: DiJavascript1, name: "JavaScript" },
+  { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+
+  { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+
+  { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+  { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
+  { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
+  {
+    clr: "black",
+    Icon: SiThealgorithms,
+    name: " Algorithm",
+  },
+  { clr: "#F05032", Icon: BsGit, name: "Git" },
+  { clr: "", Icon: FigmaIcon, name: "figma" },
+  { clr: "", Icon: CLoudinarySvg, name: "cloudinary" },
+  {
+    name: "RestFul API",
+    clr: "black",
+    Icon: TbApi,
   },
 ];
 
@@ -242,11 +232,7 @@ export const projects = [
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
       { clr: "#635BFF", name: "Stripe", Icon: BsStripe },
       { Icon: SiPassport, name: "PassportJS", clr: "var(--third)" },
-      {
-        name: "RestFul API",
-        clr: "var(--third)",
-        Icon: TbApi,
-      },
+
       {
         Icon: SiGraphql,
         clr: "#E10098",

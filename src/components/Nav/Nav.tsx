@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 import Logo from "../widgets/Svgs/Logo";
@@ -58,58 +58,54 @@ const Nav = () => {
     }
   }, [isMobile]);
   return (
-    <>
-      <motion.nav variants={parVar} initial="start" animate="end">
-        <motion.div variants={opacityVariant} className="logo">
-          <Link to="main-page" smooth spy>
-            <Logo />
-          </Link>
-        </motion.div>
-        <span className="theme-par">
-          <AnimatePresence>
-            {!isMidScreen ? (
-              <>
-                <LinksComponent />
-              </>
-            ) : (
-              <AnimatePresence mode="wait">
-                {ShowMenu && (
-                  <motion.aside
-                    key="aside-mobile"
-                    variants={AsideMobile}
-                    initial="start"
-                    animate="end"
-                    exit="exit"
-                  >
-                    <LinksComponent setShowMenu={setShowMenu} />
-                  </motion.aside>
-                )}
-              </AnimatePresence>
-            )}
-          </AnimatePresence>
+    <motion.nav variants={parVar} initial="start" animate="end">
+      <motion.div variants={opacityVariant} className="logo">
+        <Link to="main-page" smooth spy>
+          <Logo />
+        </Link>
+      </motion.div>
+      <span className="theme-par">
+        <AnimatePresence>
+          {!isMidScreen ? (
+            <LinksComponent />
+          ) : (
+            <AnimatePresence mode="wait">
+              {ShowMenu && (
+                <motion.aside
+                  key="aside-mobile"
+                  variants={AsideMobile}
+                  initial="start"
+                  animate="end"
+                  exit="exit"
+                >
+                  <LinksComponent setShowMenu={setShowMenu} />
+                </motion.aside>
+              )}
+            </AnimatePresence>
+          )}
+        </AnimatePresence>
 
-          <motion.span
-            className="theme-par"
-            style={{
-              justifyContent: "space-between",
-              height: "100%",
-              alignItems: "center",
-            }}
-            variants={opacityVariant}
+        <motion.span
+          className="theme-par"
+          style={{
+            justifyContent: "space-between",
+            height: "100%",
+            alignItems: "center",
+          }}
+          variants={opacityVariant}
+        >
+          <Title
+            title={theme === "light" ? "apply dark mode" : "apply light mode"}
           >
-            <Title
-              title={theme === "light" ? "apply dark mode" : "apply light mode"}
-            >
-              <ThemeToggle />
-            </Title>
+            <ThemeToggle />
+          </Title>
 
-            {isMidScreen && (
-              <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
-            )}
-          </motion.span>
-        </span>
-      </motion.nav>
-    </>
+          {isMidScreen && (
+            <NavToggler ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
+          )}
+        </motion.span>
+      </span>
+    </motion.nav>
   );
 };
 

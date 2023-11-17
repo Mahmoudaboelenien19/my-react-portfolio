@@ -1,4 +1,3 @@
-import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 interface Props {
@@ -30,7 +29,7 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
         background: "var(--forth)",
       }}
     >
-      <h3>{head}</h3>
+      <h3 className="itim">{head}</h3>
       <ul className="timeline-list">
         {content.map((sentence, i) => {
           return <li key={i}>{sentence}</li>;
@@ -47,7 +46,7 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
         >
           <div className="detail">link to certificate : </div>
 
-          <a href={link} target="_balnk" style={{ color: "var(--scroll)" }}>
+          <a href={link} target="_balnk" className="itim clr">
             {linkDes}
           </a>
         </div>

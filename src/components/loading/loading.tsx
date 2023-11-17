@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+
 const Loading = () => {
   const opaciyVariant = {
     start: { opacity: 0, y: 40 },
@@ -12,7 +12,6 @@ const Loading = () => {
   return (
     <div className="loading">
       <motion.svg
-
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2 }}
@@ -64,7 +63,7 @@ const Loading = () => {
             y2="49"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.325581" stopColor="var(--scroll)" />
+            <stop offset="0.325581" stopColor="var(--main-clr)" />
             <stop offset="0.976744" stopColor="#010E00" stopOpacity="0" />
           </linearGradient>
         </defs>

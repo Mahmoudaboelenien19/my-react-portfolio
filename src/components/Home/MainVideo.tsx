@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import MainV from "../../assets/videos/main.mp4";
 import { MotionValue, motion } from "framer-motion";
 import { MainAnimationContext } from "./Home";

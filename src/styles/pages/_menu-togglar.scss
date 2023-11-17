@@ -23,7 +23,7 @@
     .toggle-line {
       height: 2px;
       border-radius: 10px;
-      background: linear-gradient(210deg, var(--svg), var(--scroll));
+      background: linear-gradient(210deg, var(--svg), var(--main-clr));
     }
   }
 
@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-evenly;
     .closing-line {
-      background: linear-gradient(210deg, var(--svg), var(--scroll));
+      background: linear-gradient(210deg, var(--svg), var(--main-clr));
       width: 2px;
       border-radius: 10px;
 

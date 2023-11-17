@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Messages from "./Messages";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";

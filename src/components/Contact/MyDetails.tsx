@@ -1,4 +1,3 @@
-import React from "react";
 import { BsFillMapFill, BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";

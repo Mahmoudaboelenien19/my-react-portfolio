@@ -5,22 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: "Kyiv Sans";
-  src: url("/fonts/Kyiv-sans.woff2") format("woff2-variations");
-  font-weight: 100 1000;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fexien Sans";
-  src: url("/fonts/studio-feixen-sans-variable.woff2") format("woff2");
-  font-weight: 400 1000;
-  font-display: swap;
-}
 
 body {
-  @include kyiv(500, -600);
+  font-family: "Poppins", sans-serif;
   height: fit-content;
   width: 100%;
   background-color: var(--secondary);
@@ -30,6 +17,9 @@ body {
 }
 
 body {
+  // --main-clr: rgb(112, 128, 144);
+  // --main-clr: rgb(0, 128, 128);
+  --main-clr: rgb(255, 127, 80);
   --secondary: rgb(247, 246, 246);
   --third: #000;
   --main: #f4ece6;
@@ -45,7 +35,6 @@ body.dark {
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 @media (max-width: 599px) {
@@ -54,33 +43,23 @@ a {
   }
 }
 
-#home.grey {
-  --scroll: var(--grey);
-}
-#home.blue {
-  --scroll: var(--blue);
-}
-#home.aqua {
-  --scroll: var(--aqua);
-}
-#home.red {
-  --scroll: var(--red);
-}
-#home.lavender {
-  --scroll: var(--lavender);
-}
 *::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 4px var(--third);
   padding: 0 5px;
 }
 
 *::-webkit-scrollbar {
   width: 6px;
-  border-radius: 2px;
+  border-radius: 100vh;
   margin: 2px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--scroll);
-  border-radius: 4px;
+  background: rgba(255, 128, 82, 0.7);
+  border-radius: 100vh;
+  margin: 2px;
+
+  transition: 0.3s;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 128, 82);
 }
