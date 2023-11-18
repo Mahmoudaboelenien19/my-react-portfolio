@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 
 interface themeContextInterface {
-  theme: string;
-  toggleTheme: () => void;
+  isDark: boolean;
+  toggleTheme: (checked: boolean) => void;
 }
 
 interface Props {
@@ -11,11 +11,12 @@ interface Props {
 export const themeContext = createContext({} as themeContextInterface);
 
 const ThemContext = ({ children }: Props) => {
-  const localstorageTheme = localStorage.getItem("portfolio-theme");
-  const [theme, setTheme] = useState(localstorageTheme || "light");
+  const localstorageTheme =
+    localStorage.getItem("portfolio-theme") === "light" ? false : true;
+  const [isDark, setiIDark] = useState(localstorageTheme || false);
 
   useEffect(() => {
-    if (theme == "light") {
+    if (!isDark) {
       localStorage.setItem("portfolio-theme", "light");
       document.body.classList.remove("dark");
     } else {
@@ -23,11 +24,13 @@ const ThemContext = ({ children }: Props) => {
 
       localStorage.setItem("portfolio-theme", "dark");
     }
-  }, [theme]);
-  const toggleTheme = () =>
-    setTheme((cur) => (cur === "light" ? "dark" : "light"));
+  }, [isDark]);
+  const toggleTheme = (checked: boolean) => {
+    setiIDark(checked);
+  };
+
   return (
-    <themeContext.Provider value={{ toggleTheme, theme }}>
+    <themeContext.Provider value={{ toggleTheme, isDark }}>
       {children}
     </themeContext.Provider>
   );

@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import { SkillInterface } from "../../assets/Utils/interfaces";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import MainBtn from "../widgets/MainBtn";
 import { BiDesktop } from "react-icons/bi";
 import { DiGithubBadge } from "react-icons/di";
@@ -88,12 +86,11 @@ const Figure = ({
             </ul>
             <div className="projects-links">
               <a href={demo} target="_blank" rel="noreferrer">
-                {/* <MainBtn Icon={BiDesktop} btn="Demo" /> */}
-                demo
+                <MainBtn Icon={BiDesktop} btn="Demo" />
               </a>
+
               <a href={code} target="_blank" rel="noreferrer">
-                code
-                {/* <MainBtn Icon={DiGithubBadge} btn="code" /> */}
+                <MainBtn Icon={DiGithubBadge} btn="code" />
               </a>
             </div>
           </div>

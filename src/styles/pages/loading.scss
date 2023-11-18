@@ -10,6 +10,8 @@
   align-items: center;
   gap: 12px;
   svg {
+    height: 80px;
+    width: min(180px, 40vw);
     filter: drop-shadow(1px 0.5px 0.5px black);
     path:nth-child(1) {
       stroke: var(--main-clr);
@@ -18,8 +20,8 @@
   }
   .loading-content {
     letter-spacing: 1px;
-    color: var(--main-clr);
-    font-weight: bold;
+    color: var(--third);
+    font-weight: 500;
     font-size: 1rem;
   }
 }

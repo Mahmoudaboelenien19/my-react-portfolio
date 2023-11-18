@@ -26,7 +26,7 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
       icon={<Icon />}
       iconStyle={{
         color: clr,
-        background: "var(--forth)",
+        background: "var(--secondary)",
       }}
     >
       <h3 className="itim">{head}</h3>

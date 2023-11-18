@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import MacCom from "../3D/MacCom";
 import Header from "../widgets/Header";
 import MainBtn from "../widgets/MainBtn";
@@ -7,38 +6,43 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Container from "../widgets/Container";
-const parVariant = {
-  initial: {},
-  view: {},
-};
+import { parVariant } from "@/assets/Utils/MianVariants";
+
 const textVariant = {
   initial: { opacity: 0 },
-  view: { x: [100, 0], opacity: [0, 0.3, 0.7] },
+  view: { x: [100, 0], opacity: [0, 0.3, 0.5] },
 };
 
 const btnVariant = {
   initial: { opacity: 0 },
   view: { opacity: [0, 0.4, 0.6, 1] },
 };
+const macVariant = {
+  start: { opacity: 0 },
+  view: { opacity: [0, 0.2, 0.5, 1] },
+};
 const About = () => {
-  const ref = useRef<null | HTMLDivElement>(null);
-
   return (
     <Container id="about">
       <Header head="About Me" title="let me introduce myself" />
-      <div className="about">
-        <div className="mac" ref={ref}>
-          <MacCom />
-        </div>
+      <motion.div
+        className="about"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={parVariant}
+        initial="start"
+        whileInView={"view"}
+        transition={{ staggerChildren: 0.9, delay: 0.6 }}
+      >
         <motion.div
-          className="about-content"
-          viewport={{ once: false }}
-          variants={parVariant}
-          initial="start"
-          whileInView={"view"}
-          transition={{ staggerChildren: 0.9 }}
+          className="mac"
+          variants={macVariant}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
+          <MacCom />
+        </motion.div>
+        <div className="about-content">
           <motion.p
+            style={{ opacity: 0 }}
             transition={{ duration: 0.3, delay: 0.5, ease: "easeInOut" }}
             variants={textVariant}
           >
@@ -65,21 +69,17 @@ const About = () => {
                 download="cv.pdf"
                 className="cv-link"
               >
-                <MainBtn btn={"resume"} Icon={FaDownload}>
-                  <></>
-                </MainBtn>
+                <MainBtn btn={"resume"} Icon={FaDownload} />
               </a>
             </div>
             <>
               <Link to="contact" smooth className="contact-link">
-                <MainBtn btn={"contact me"} Icon={BsFillArrowRightCircleFill}>
-                  <></>
-                </MainBtn>
+                <MainBtn btn={"contact me"} Icon={BsFillArrowRightCircleFill} />
               </Link>
             </>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </Container>
   );
 };

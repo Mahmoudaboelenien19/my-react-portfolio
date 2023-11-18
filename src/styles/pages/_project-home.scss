@@ -118,15 +118,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 120px;
+      width: 200px;
       margin: 0 auto;
+      .btn {
+        font-size: 0.8rem;
+      }
       a {
-        text-decoration: underline;
-        color: var(--third);
-        text-decoration-color: var(--main-clr);
-        text-transform: capitalize;
-        letter-spacing: 1px;
-        text-decoration-thickness: 2px;
+        // text-decoration: underline;
+        // color: var(--third);
+        // text-decoration-color: var(--main-clr);
+        // text-transform: capitalize;
+        // letter-spacing: 1px;
+        // text-decoration-thickness: 2px;
       }
     }
   }

@@ -11,9 +11,8 @@ nav {
   align-items: center;
   width: 100vw;
   height: 50px;
-  background: var(--main);
   z-index: 100;
-  box-shadow: 1px 0.5px 2px black;
+  // transition: 0.3s;
   .theme-par {
     height: 30px;
     align-items: center;
@@ -37,7 +36,7 @@ nav {
       color: var(--third);
       text-transform: capitalize;
       transition: 0.3s;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       text-align: left;
       cursor: pointer;
     }
@@ -51,8 +50,8 @@ nav {
     .active-link {
       position: absolute;
       top: -20%;
-      left: -10%;
-      width: 120%;
+      left: -15%;
+      width: 130%;
       height: 140%;
       border-radius: 4000px;
       background-color: white;
@@ -78,9 +77,10 @@ nav {
 }
 
 .logo-svg {
-  filter: drop-shadow(1px 0.5px 0.25px black);
+  margin-top: 8px;
+  filter: drop-shadow(1px 0.25px 0.25px black);
   path {
-    stroke: black;
+    stroke: rgba(128, 128, 128, 0.537);
   }
 }
 

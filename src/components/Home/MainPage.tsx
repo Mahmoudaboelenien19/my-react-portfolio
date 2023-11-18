@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { textVariant } from "@/assets/Utils/MianVariants";
 import Major from "./Major";
 import MainVideo from "./MainVideo";
 import Icons from "./Icons";
+import HoverAnimation from "../widgets/animation/HoverAnimation";
 
 const MainPage = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -41,17 +42,27 @@ const MainPage = () => {
         animate="end"
         className="home-content"
       >
-        <motion.h2 className="myname-head my-name" variants={opacityVariant}>
-          Hello I&apos;m <span> Mahmoud. </span>
+        <motion.h2
+          className="myname-head itim greeting"
+          variants={opacityVariant}
+        >
+          Hello I&apos;m{" "}
+          <>
+            {"Mahmoud".split("").map((letter, index) => {
+              return <HoverAnimation key={index} letter={letter} />;
+            })}
+          </>
+          <span> .</span>
         </motion.h2>
         {/* <Major /> */}
-        <motion.p variants={textVariant(0.6)} className="message">
-          Welcome to my portfolio where I show my projects and skills in web
-          development.
+        <motion.p variants={textVariant(0.7)} className="message">
+          <span className="my-major">MERN stack developer</span> proficient in
+          creating user-friendly web applications with a focus on efficiency and
+          seamless experiences.{" "}
         </motion.p>
         <Icons />
       </motion.div>
-      {/* <MainVideo width={width} /> */}
+      <MainVideo width={width} />
     </section>
   );
 };

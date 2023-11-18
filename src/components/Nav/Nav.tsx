@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-scroll";
 import Logo from "../widgets/Svgs/Logo";
 import ThemeToggle from "../Theme/ThemeToggle";
@@ -14,7 +14,7 @@ import useIsMobile from "../customComponents/useIsMobile";
 const Nav = () => {
   const { isMobile, isMidScreen } = useIsMobile();
   const [ShowMenu, setShowMenu] = useState(false);
-  const { theme } = useContext(themeContext);
+  const { isDark } = useContext(themeContext);
   const AsideMobile = {
     start: { width: 0 },
     end: {
@@ -57,10 +57,32 @@ const Nav = () => {
       document.body.style.overflow = "auto";
     }
   }, [isMobile]);
+
+  const navRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: navRef,
+    offset: ["start start", "end start"],
+  });
+  const boxShadow = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [" 0 0 0 000", "1px .5px 1px #000"]
+  );
+  const background = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    ["var(--secondary)", "var(--main)"]
+  );
   return (
-    <motion.nav variants={parVar} initial="start" animate="end">
+    <motion.nav
+      style={{ boxShadow, background }}
+      variants={parVar}
+      initial="start"
+      animate="end"
+      ref={navRef}
+    >
       <motion.div variants={opacityVariant} className="logo">
-        <Link to="main-page" smooth spy>
+        <Link to="main-page" smooth spy className="logo-link">
           <Logo />
         </Link>
       </motion.div>
@@ -94,9 +116,7 @@ const Nav = () => {
           }}
           variants={opacityVariant}
         >
-          <Title
-            title={theme === "light" ? "apply dark mode" : "apply light mode"}
-          >
+          <Title title={!isDark ? "apply dark mode" : "apply light mode"}>
             <ThemeToggle />
           </Title>
 

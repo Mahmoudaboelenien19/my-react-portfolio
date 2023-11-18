@@ -114,7 +114,10 @@
       position: relative;
 
       &.inp-text {
-        height: 120px;
+        min-height: 120px;
+        textarea {
+          min-height: 120px;
+        }
       }
       &.inp-send {
         display: flex;
@@ -129,7 +132,8 @@
         width: 100%;
         text-align: center;
         font-size: 0.8rem;
-        color: var(--third);
+        color: var(--main-clr);
+        opacity: 0.7;
         height: 20px;
       }
       input,
@@ -184,8 +188,8 @@
 
 .contact-svg {
   position: absolute;
-
   width: 100%;
-  height: 100%;
+  height: 80%;
+
   z-index: 2;
 }

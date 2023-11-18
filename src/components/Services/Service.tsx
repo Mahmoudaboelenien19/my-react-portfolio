@@ -35,13 +35,15 @@ const Service = ({
         setIsHoverStarted(false);
       }}
     >
-      <Icon />
-      <h2
-        style={{ color: isHoverStarted ? "var(--third)" : clr }}
-        className="service-title itim"
-      >
-        {title}
-      </h2>
+      <div className="service-head">
+        <Icon />
+        <h2
+          style={{ color: isHoverStarted ? "var(--third)" : clr }}
+          className="service-title itim"
+        >
+          {title}
+        </h2>
+      </div>
       <p style={{ color: !isHoverStarted ? "var(--third)" : clr }}>
         {description}
       </p>

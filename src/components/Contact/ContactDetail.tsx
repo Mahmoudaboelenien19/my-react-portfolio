@@ -1,11 +1,21 @@
+import { opacityVariant } from "@/assets/Utils/MianVariants";
+import { motion } from "framer-motion";
+
 interface Props {
   Icon: React.ComponentType;
   detail: string;
   value: string;
+  i: number;
 }
-const ContactDetail = ({ Icon, detail, value }: Props) => {
+const ContactDetail = ({ Icon, detail, value, i }: Props) => {
   return (
-    <div className="contact-detail">
+    <motion.div
+      className="contact-detail"
+      variants={opacityVariant}
+      initial="start"
+      animate="end"
+      transition={{ delay: 0.2 + 0.1 * i }}
+    >
       <div className="contact-shape">
         <div className="circle">
           {" "}
@@ -17,7 +27,7 @@ const ContactDetail = ({ Icon, detail, value }: Props) => {
         <div className="contact-detail">{detail}</div>
         <div className="contact-value">{value}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

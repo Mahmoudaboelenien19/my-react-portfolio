@@ -25,7 +25,7 @@ export const fontVariant = {
 
 export const textVariant = (opacity = 1) => ({
   start: { opacity: 0, x: 40 },
-  end: { opacity: opacity, x: 0 },
+  end: { opacity: [0, 0.2, opacity], x: 0 },
 });
 
 export const opacityVariant = {
@@ -56,4 +56,11 @@ export const MajorVariant = {
   start: { opacity: 0 },
   end: { opacity: 1, transition: { duration: 0.4, delay: 0.9 } },
   exit: { opacity: 0, transition: { duration: 0.4, delay: 0 } },
+};
+
+export const parVariant = {
+  initial: {},
+  view: {},
+  end: {},
+  exit: {},
 };

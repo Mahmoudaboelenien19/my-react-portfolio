@@ -1,6 +1,6 @@
-import svg from "../../../assets/Svg/OOP.svg";
+import svg from "@/assets/Svg/OOP.svg";
+import useIsMobile from "@/components/customComponents/useIsMobile";
 import { ReactSVG } from "react-svg";
-import useIsMobile from "../../customComponents/useIsMobile";
 
 const OOPSVG = () => {
   const { isMobile, isMidScreen } = useIsMobile();

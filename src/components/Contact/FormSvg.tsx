@@ -1,37 +1,47 @@
-import { AnimatePresence, motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+const pathVariant = {
+  start: { pathLength: 0, pathOffset: 1, opacity: 1 },
+  end: {
+    pathLength: 1,
+    pathOffset: 0,
+    opacity: [1, 0],
+    transition: {
+      duration: 2.8,
+      delay: 0.2,
+      ease: "easeInOut",
+      opacity: { delay: 3.2, duratuion: 0.2 },
+    },
+  },
+};
+
 const FormSvg = () => {
   const [isAnimationEnd, setIsAnimationEnd] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: "some" });
+
   return (
     <AnimatePresence mode="wait">
       {!isAnimationEnd && (
-        <div key="phone-svg" ref={ref}>
-          {inView && (
-            <motion.svg
-              exit={{ opacity: [1, 0] }}
-              transition={{ duration: 0.3 }}
-              fill="none"
-              stroke="green"
-              height="800px"
-              width="800px"
-              version="1.1"
-              id="Capa_1"
-              viewBox="0 0 473.806 473.806"
-              className="contact-svg"
-            >
+        <div key="phone-svg">
+          <svg
+            key={"svg"}
+            fill="none"
+            stroke="green"
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="Capa_1"
+            viewBox="0 0 473.806 473.806"
+            className="contact-svg"
+          >
+            <g>
               <g>
-                <g>
-                  <motion.path
-                    initial={{ pathLength: 0, pathOffset: 1 }}
-                    animate={{ pathLength: 1, pathOffset: 0 }}
-                    transition={{ duration: 2, delay: 1, ease: "easeInOut" }}
-                    onAnimationComplete={() => setIsAnimationEnd(true)}
-                    fill="none"
-                    strokeWidth={2}
-                    stroke="green"
-                    d="M374.456,293.506c-9.7-10.1-21.4-15.5-33.8-15.5c-12.3,0-24.1,5.3-34.2,15.4l-31.6,31.5c-2.6-1.4-5.2-2.7-7.7-4
+                <motion.path
+                  variants={pathVariant}
+                  onAnimationComplete={() => setIsAnimationEnd(true)}
+                  fill="none"
+                  strokeWidth={2}
+                  stroke="var(--main-clr)"
+                  d="M374.456,293.506c-9.7-10.1-21.4-15.5-33.8-15.5c-12.3,0-24.1,5.3-34.2,15.4l-31.6,31.5c-2.6-1.4-5.2-2.7-7.7-4
 			c-3.6-1.8-7-3.5-9.9-5.3c-29.6-18.8-56.5-43.3-82.3-75c-12.5-15.8-20.9-29.1-27-42.6c8.2-7.5,15.8-15.3,23.2-22.8
 			c2.8-2.8,5.6-5.7,8.4-8.5c21-21,21-48.2,0-69.2l-27.3-27.3c-3.1-3.1-6.3-6.3-9.3-9.5c-6-6.2-12.3-12.6-18.8-18.6
 			c-9.7-9.6-21.3-14.7-33.5-14.7s-24,5.1-34,14.7c-0.1,0.1-0.1,0.1-0.2,0.2l-34,34.3c-12.8,12.8-20.1,28.4-21.7,46.5
@@ -47,11 +57,10 @@ const FormSvg = () => {
 			c4.1,2.6,8.3,4.7,12.3,6.7c3.6,1.8,7,3.5,9.9,5.3c0.4,0.2,0.8,0.5,1.2,0.7c3.4,1.7,6.6,2.5,9.9,2.5c8.3,0,13.5-5.2,15.2-6.9
 			l34.2-34.2c3.4-3.4,8.8-7.5,15.1-7.5c6.2,0,11.3,3.9,14.4,7.3c0.1,0.1,0.1,0.1,0.2,0.2l55.1,55.1
 			C420.456,377.706,420.456,388.206,410.256,398.806z"
-                  />
-                </g>
+                />
               </g>
-            </motion.svg>
-          )}
+            </g>
+          </svg>
         </div>
       )}
     </AnimatePresence>

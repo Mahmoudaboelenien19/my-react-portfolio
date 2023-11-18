@@ -1,13 +1,10 @@
 /* eslint-disable react/jsx-no-undef */
-
 import { useFormContext } from "react-hook-form";
-import { opacityVariant } from "../../assets/Utils/MianVariants";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 
 const Input = ({
   placeholder,
-
   name,
 }: {
   placeholder: string;

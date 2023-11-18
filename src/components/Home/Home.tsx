@@ -8,29 +8,39 @@ import RotateText from "../widgets/Svgs/RotateText";
 import MainPage from "./MainPage";
 import Nav from "../Nav/Nav";
 import Testimonials from "../reviews/Testimonials";
-import { Suspense } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Loading from "../loading/loading";
-
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <Suspense fallback={<Loading />}>
-      <Nav />
-      <MainPage />
-      <Services />
-      <Projects />
+    <Fragment>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Fragment>
+          <Nav />
+          <MainPage />
+          <Services />
+          <Projects />
 
-      <About />
+          <About />
 
-      <Skills />
-      <Bot />
-      <RotateText />
-      {/* <Testimonials /> */}
-      <Contact />
-    </Suspense>
+          <Skills />
+          <Bot />
+          <RotateText />
+          {/* <Testimonials /> */}
+          <Contact />
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 
 export default Home;
-
-// {/* {isMainAnimationCompleted && ( */}
-// // )}

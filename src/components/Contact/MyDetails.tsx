@@ -2,23 +2,17 @@ import { BsFillMapFill, BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
 import ContactDetail from "./ContactDetail";
-import FadeINWrapper from "../widgets/FadeINWrapper";
+const arr = [
+  { Icon: FaUserAlt, detail: "name", value: "Mahmoud Abo Elenien" },
+  { Icon: MdEmail, detail: "email", value: "m.aboelenien19019@gmail.com" },
+  { Icon: BsTelephoneFill, detail: "phone", value: "+201503636395" },
+  { Icon: BsFillMapFill, detail: "address", value: "Mansoura Egypt" },
+];
 const MyDetails = () => {
-  const arr = [
-    { Icon: FaUserAlt, detail: "name", value: "Mahmoud Abo Elenien" },
-    { Icon: MdEmail, detail: "email", value: "m.aboelenien20020@gmail.com" },
-    { Icon: BsTelephoneFill, detail: "phone", value: "+201503636395" },
-    { Icon: BsFillMapFill, detail: "address", value: "Mansoura Egypt" },
-  ];
-
   return (
     <div className="my-details">
       {arr.map((obj, i) => {
-        return (
-          <FadeINWrapper ind={i} key={i}>
-            <ContactDetail {...obj} />
-          </FadeINWrapper>
-        );
+        return <ContactDetail {...obj} key={i} i={i} />;
       })}
     </div>
   );

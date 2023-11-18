@@ -5,7 +5,6 @@
 .container {
   min-height: calc(100vh - 50px);
   padding: 20px 0;
-  background-color: var(--secondary);
   max-width: 1250px;
   margin: 0 auto;
 }
@@ -50,7 +49,6 @@
   border: 0;
   letter-spacing: 1.2px;
   border-radius: 4px;
-  text-shadow: 0.5px 0.5px 0.75px black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,14 +58,13 @@
   white-space: nowrap;
   background: var(--main-clr);
   transition: 0.3s;
-  color: var(--third);
+  color: white;
   padding: 12px 14px;
   svg {
     transition: 0.3s;
   }
   &:hover {
     background: var(--third);
-    color: var(--main);
     svg {
       color: var(--main-clr);
     }
@@ -105,13 +102,12 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
   text-transform: lowercase;
   position: absolute;
   top: 115%;
   width: fit-content;
   z-index: 10;
-  padding: 4px 6px;
+  padding: 8px 6px;
   background: var(--secondary);
   color: var(--third);
   white-space: nowrap;
@@ -143,4 +139,9 @@
   .main-background p {
     font-size: 6rem;
   }
+}
+
+.splited-word {
+  display: flex;
+  margin: -0.2rem;
 }

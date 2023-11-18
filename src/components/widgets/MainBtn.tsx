@@ -1,17 +1,18 @@
+import { ButtonHTMLAttributes } from "react";
 import { IconType } from "react-icons/lib";
 
-interface Props {
+type Props = {
   btn: string;
   Icon: IconType;
-  type?: "button" | "submit";
-  children?: React.ReactNode;
-}
 
-const MainBtn = ({ children, btn, Icon, type = "button" }: Props) => {
+  children?: React.ReactNode;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
+const MainBtn = ({ children, btn, Icon, ...props }: Props) => {
   return (
-    <button className={`btn `} type={type}>
+    <button className={`btn `} {...props}>
       {btn}
-      {children}
+      {children && children}
       <Icon />
     </button>
   );
