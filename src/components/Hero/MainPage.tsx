@@ -1,38 +1,36 @@
-import { Fragment, useRef } from "react";
-
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { textVariant } from "@/assets/Utils/MianVariants";
-import Major from "./Major";
+import { textVariant } from "@/assets/Utils/MainVariants";
 import MainVideo from "./MainVideo";
 import Icons from "./Icons";
 import HoverAnimation from "../widgets/animation/HoverAnimation";
+import useLens from "../customComponents/useLens";
+const opacityVariant = {
+  start: { opacity: 0, x: [10, 0], y: 30 },
+  end: { opacity: 1, x: 0, y: 0 },
+};
 
+const ContentPar = {
+  start: { height: 0 },
+  end: {
+    height: "50vh",
+    marginTop: 20,
+    transition: {
+      duration: 0.4,
+      delay: 0.1,
+      when: "beforeChildren",
+      staggerChildren: 0.18,
+    },
+  },
+};
 const MainPage = () => {
+  useLens();
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
   const width = useTransform(scrollYProgress, [0, 1], ["100%", "140%"]);
-
-  const opacityVariant = {
-    start: { opacity: 0, x: [10, 0], y: 30 },
-    end: { opacity: 1, x: 0, y: 0 },
-  };
-
-  const ContentPar = {
-    start: { height: 0 },
-    end: {
-      height: "50vh",
-      marginTop: 20,
-      transition: {
-        duration: 0.4,
-        delay: 1.8,
-        when: "beforeChildren",
-        staggerChildren: 0.18,
-      },
-    },
-  };
 
   return (
     <section id="main-page" ref={ref}>
@@ -46,19 +44,28 @@ const MainPage = () => {
           className="myname-head itim greeting"
           variants={opacityVariant}
         >
-          Hello I&apos;m{" "}
-          <>
+          Hi , I&apos;m{" "}
+          <span className="first">
             {"Mahmoud".split("").map((letter, index) => {
               return <HoverAnimation key={index} letter={letter} />;
             })}
-          </>
-          <span> .</span>
+          </span>
+          <span className="clr"> .</span>
         </motion.h2>
-        {/* <Major /> */}
+
         <motion.p variants={textVariant(0.7)} className="message">
-          <span className="my-major">MERN stack developer</span> proficient in
-          creating user-friendly web applications with a focus on efficiency and
-          seamless experiences.{" "}
+          <span className="my-major">
+            MERN stack developer
+            <motion.span
+              initial={{ width: "0%" }}
+              whileInView={{ width: "90%" }}
+              transition={{ delay: 2.5, duration: 0.3 }}
+              viewport={{ once: true }}
+              className="bg"
+            />
+          </span>{" "}
+          proficient in creating user-friendly web applications with a focus on
+          efficiency and seamless experiences.{" "}
         </motion.p>
         <Icons />
       </motion.div>

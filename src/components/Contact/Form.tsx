@@ -3,13 +3,13 @@ import emailjs from "@emailjs/browser";
 import Input from "./Input";
 import { toast } from "react-hot-toast";
 import { IoSend } from "react-icons/io5";
-import MainBtn from "../widgets/MainBtn";
+import MainBtn from "../widgets/shared/MainBtn";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import FormSvg from "./FormSvg";
 import { motion } from "framer-motion";
-import { parVariant } from "@/assets/Utils/MianVariants";
+import { parVariant } from "@/assets/Utils/MainVariants";
 const schema = yup.object().shape({
   user_name: yup
     .string()

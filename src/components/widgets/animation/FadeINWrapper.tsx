@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 type Props = {
   children: React.ReactNode;
   className?: string;
-  ind: number;
+  ind?: number;
   delay?: number;
 };
-const FadeINWrapper = ({ children, className, ind, delay }: Props) => {
+const FadeINWrapper = ({ children, className, ind = 0, delay }: Props) => {
   return (
     <motion.div
       style={{

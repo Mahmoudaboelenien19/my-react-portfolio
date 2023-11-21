@@ -1,4 +1,4 @@
-import Title from "../widgets/CustomTitle";
+import Title from "../widgets/shared/CustomTitle";
 import { SkillInterface } from "../../assets/Utils/interfaces.js";
 
 const Skill = ({ clr, name, Icon }: SkillInterface) => {

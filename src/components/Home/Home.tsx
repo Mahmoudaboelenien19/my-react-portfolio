@@ -5,7 +5,7 @@ import Projects from "../Projects/Projects";
 import Services from "../Services/Services";
 import Skills from "../Skills/Experience";
 import RotateText from "../widgets/Svgs/RotateText";
-import MainPage from "./MainPage";
+import MainPage from "../Hero/MainPage";
 import Nav from "../Nav/Nav";
 import Testimonials from "../reviews/Testimonials";
 import { Fragment, useEffect, useState } from "react";
@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2700);
 
     return () => clearTimeout(timer);
   }, []);
@@ -27,6 +27,7 @@ const Home = () => {
         <Fragment>
           <Nav />
           <MainPage />
+
           <Services />
           <Projects />
 

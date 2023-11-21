@@ -1,9 +1,8 @@
 import { iconsArr } from "@/assets/Utils/Arr";
-import { opacityVariant } from "@/assets/Utils/MianVariants";
+import { opacityVariant } from "@/assets/Utils/MainVariants";
 import { motion } from "framer-motion";
-
-import Title from "../widgets/CustomTitle";
-import MagnaticWrapper from "../widgets/MagnaticWrapper";
+import Title from "../widgets/shared/CustomTitle";
+import MagnaticWrapper from "../widgets/animation/MagnaticWrapper";
 
 const Icons = () => {
   return (

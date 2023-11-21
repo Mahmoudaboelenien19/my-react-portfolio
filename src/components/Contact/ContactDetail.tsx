@@ -1,4 +1,4 @@
-import { opacityVariant } from "@/assets/Utils/MianVariants";
+import { opacityVariant } from "@/assets/Utils/MainVariants";
 import { motion } from "framer-motion";
 
 interface Props {

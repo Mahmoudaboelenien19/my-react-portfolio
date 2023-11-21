@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "../widgets/Header";
+import Header from "../widgets/shared/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import image1 from "@/assets/images/reviews/1.jpg";
@@ -12,7 +12,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import Review from "./Review";
-import Container from "../widgets/Container";
+import Container from "../widgets/shared/Container";
 
 const arr = [
   {

@@ -106,19 +106,16 @@ const Chat = () => {
           },
           ...botArr[ChosenQuestionInd].ans.map((e, i) => {
             count = i + 2;
-            return { msg: e, cls: "chat-ans", id: 0, delay: count }; //why this count is 5  I need it 0
+            return { msg: e, cls: "chat-ans", id: 0, delay: count };
           }),
-          ...botArr
-            // .filter((e, i) => i != ChosenQuestionInd)
-            .map((e, i) => ({
-              msg: e.question!,
-              cls: "chat-av-q",
-              id: e.id,
-              delay: ++count,
-            })),
+          ...botArr.map((e, i) => ({
+            msg: e.question!,
+            cls: "chat-av-q",
+            id: e.id,
+            delay: ++count,
+          })),
         ])
       );
-      // botArr.splice(ChosenQuestionInd, 1);
     }
 
     return () => {

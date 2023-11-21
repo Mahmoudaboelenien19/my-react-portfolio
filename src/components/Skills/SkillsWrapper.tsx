@@ -1,14 +1,16 @@
 import { skillsIconsArr } from "@/assets/Utils/Arr";
 import Skills from "./Skills";
-import Container from "../widgets/Container";
 import useIsMobile from "../customComponents/useIsMobile";
+import useLens from "../customComponents/useLens";
 
 const SkillsWrapper = () => {
   const { isMobile } = useIsMobile();
+  useLens();
+
   return (
-    <Container id="skills">
+    <div id="skills">
       <div className="desktop-skills">
-        <Skills target="left" arr={skillsIconsArr} translate={"-30%"} />{" "}
+        <Skills target="left" arr={skillsIconsArr} translate={"-15%"} />{" "}
       </div>
       <div className="mobile-skills">
         <p className="text itim">skills</p>
@@ -24,7 +26,7 @@ const SkillsWrapper = () => {
           translate={"10%"}
         />
       </div>
-    </Container>
+    </div>
   );
 };
 

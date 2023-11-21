@@ -30,45 +30,45 @@
       }
     }
   }
+}
+.skills {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
 
-  .skills {
-    overflow: hidden;
-    position: relative;
-    height: 200px;
+  .skills-wrapper {
+    position: absolute;
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    .skills-wrapper {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      &.right {
-        justify-content: flex-end;
-      }
-      &.left {
-        justify-content: flex-start;
-      }
-      gap: 5px;
+    &.right {
+      justify-content: flex-end;
     }
-    .skill-icon {
-      min-height: min(10.5vw, 80px);
-      min-width: min(10.5vw, 80px);
-      border-radius: 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--svg);
-      position: relative;
-      box-shadow: var(--secondary-shadow);
+    &.left {
+      justify-content: flex-start;
+    }
+    gap: 5px;
+  }
+  .skill-icon {
+    min-height: min(10.5vw, 80px);
+    min-width: min(10.5vw, 80px);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--svg);
+    position: relative;
+    box-shadow: var(--secondary-shadow);
 
-      svg {
-        font-size: min(6vw, 40px);
-        filter: drop-shadow(0px 0px 0.7px black);
-        &:hover {
-          mix-blend-mode: normal !important;
-        }
+    svg {
+      font-size: min(6vw, 40px);
+      filter: drop-shadow(var(--svg-shadow));
+      &:hover {
+        mix-blend-mode: normal !important;
       }
     }
   }
@@ -85,6 +85,7 @@
 }
 .mobile-skills {
   display: none;
+  margin-bottom: 40px;
   .text {
     position: absolute;
     top: 0%;
@@ -93,12 +94,11 @@
     height: 100%;
     width: 100%;
     font-family: "Caveat", cursive;
-
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: var(--third);
-    font-size: 40rem;
+    font-size: 25rem;
   }
 }
 
@@ -121,4 +121,8 @@
   .mobile-skills {
     display: block;
   }
+}
+
+.vertical-timeline-element-icon svg {
+  filter: drop-shadow(var(--svg-shadow));
 }

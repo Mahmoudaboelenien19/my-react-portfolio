@@ -18,11 +18,13 @@
   }
 
   .chat {
-    width: 220px;
-    height: 280px;
+    width: 300px;
+    height: 350px;
     border-radius: 5px;
     background: var(--main);
     box-shadow: 2px 2px 4px black;
+    position: relative;
+    z-index: 10;
   }
   .head-chat {
     display: flex;
@@ -46,14 +48,13 @@
       flex-direction: column;
       gap: 2px;
       .chat-name {
-        font-size: 10px;
+        font-size: 12px;
         letter-spacing: 0.8px;
-        font-weight: 700;
+        font-weight: bold;
       }
       .ask {
-        opacity: 0.8;
-        font-family: "caveat";
-        font-size: 12px;
+        opacity: 0.7;
+        font-size: 10px;
       }
     }
     .img-par {
@@ -74,12 +75,11 @@
     }
   }
   .chat-messages {
-    padding: 5px;
-    padding-bottom: 10px;
+    padding: 5px 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 4px;
+    gap: 8px;
     overflow: auto;
     height: calc(100% - 50px);
     & > * {

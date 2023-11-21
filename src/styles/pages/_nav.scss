@@ -7,12 +7,12 @@ nav {
   left: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 2vw;
+  padding: 0 25px;
   align-items: center;
   width: 100vw;
   height: 50px;
   z-index: 100;
-  // transition: 0.3s;
+
   .theme-par {
     height: 30px;
     align-items: center;
@@ -55,7 +55,6 @@ nav {
       height: 140%;
       border-radius: 4000px;
       background-color: white;
-
       mix-blend-mode: exclusion;
     }
   }
@@ -64,105 +63,57 @@ nav {
   }
 }
 
-.clr-icon-parent {
-  width: fit-content;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-left: 40px;
-  svg {
-    font-size: 18px;
-  }
-}
-
 .logo-svg {
   margin-top: 8px;
+  margin-left: -8px;
   filter: drop-shadow(1px 0.25px 0.25px black);
   path {
     stroke: rgba(128, 128, 128, 0.537);
   }
 }
 
-@media (min-width: 600px) and (max-width: 850px) {
+@media (max-width: 850px) {
   aside {
     position: fixed;
-    top: 50px;
+    top: 0px;
     right: 0;
-    height: calc(100vh - 50px);
+    height: 100vh;
+    z-index: -1;
     width: 100%;
+    background: var(--main);
     .links {
       position: relative;
-      padding: 20px;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      background-color: var(--forth);
+      align-items: center;
+      justify-content: center;
       box-shadow: 2px 1px 4px black;
-      height: 100%;
-      justify-content: flex-start;
-      padding-top: 120px;
-      width: 100%;
 
+      li.link-par {
+        .active-link {
+          display: none;
+        }
+      }
       a {
         width: fit-content;
-        font-size: 2rem;
-        &:before {
-          content: initial;
+        font-size: 1.5rem;
+
+        &.active {
+          color: var(--main-clr);
         }
       }
       svg {
         display: none;
-      }
-      .clr-icon-parent {
-        position: absolute;
-        height: fit-content;
-        width: 100%;
-        top: 10px;
-        left: 0;
-        margin: 0 auto;
       }
     }
   }
 }
 
-@media (max-width: 599px) {
-  aside {
-    position: fixed;
-    top: 50px;
-    right: 0;
-    height: calc(100vh - 50px);
-    width: 100%;
-    .links {
-      position: relative;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-color: var(--forth);
-      box-shadow: 2px 1px 4px black;
-      height: 100%;
-      padding-top: 120px;
-      width: 100%;
-
-      a {
-        width: fit-content;
-        font-size: 2rem;
-        &:before {
-          content: initial;
-        }
-      }
-      svg {
-        display: none;
-      }
-      .clr-icon-parent {
-        position: absolute;
-        height: fit-content;
-        width: 100%;
-        height: 40px;
-        top: 10px;
-        left: 0;
-        margin: 0;
-      }
-    }
+.menu {
+  .title-par .custom-title {
+    right: 20px;
+    top: 40px;
   }
 }

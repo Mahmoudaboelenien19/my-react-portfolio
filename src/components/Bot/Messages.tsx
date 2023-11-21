@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { opacityVariant } from "../../assets/Utils/MianVariants";
+import { opacityVariant } from "../../assets/Utils/MainVariants";
 import ReactAudioPlayer from "react-audio-player";
 // import BotAns from "../../assets/audios/botAns.mp3";
 // import Botasks from "../../assets/audios/defaultQuestions.mp3";

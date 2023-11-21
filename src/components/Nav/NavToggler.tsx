@@ -1,54 +1,66 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { parVar } from "../../assets/Utils/MianVariants";
-import CloseToggler from "./CloseToggler";
-import Aside from "./Aside";
-import Title from "../widgets/CustomTitle";
-interface Props {
-  ShowMenu: boolean;
-  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}
-const NavToggler = ({ ShowMenu, setShowMenu }: Props) => {
-  const lineVar = {
-    start: { width: 0 },
-    end: (i: number) => ({
-      width: i === 1 ? 14 : 20,
-      transition: { type: "spring" },
-    }),
-    exit: { width: 0 },
-  };
+import { Squash as Hamburger } from "hamburger-react";
+import Title from "../widgets/shared/CustomTitle";
+import { motion, AnimatePresence } from "framer-motion";
+import LinksComponent from "./Links";
+import { Fragment, useState } from "react";
+const AsideMobile = {
+  start: { width: 20, boxShadow: "0 0 0 #000" },
+  end: {
+    width: 300,
+    height: "100%",
+    boxShadow: "2px 2px 5px #000",
+    transition: {
+      boxShadow: { duration: 0.4 },
+      duration: 0.7,
+      when: "beforeChildren",
+      staggerChildren: 0.05,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  exit: {
+    width: 0,
+    boxShadow: "0 0 0 #000",
+    transition: {
+      duration: 0.7,
+      boxShadow: {
+        duration: 0.4,
+      },
+      ease: [0.76, 0, 0.24, 1],
+      when: "afterChildren",
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+  },
+};
 
-  //   const [ShowMenu, setShowMenu] = useState(false);
+const NavToggler = () => {
+  const [ShowMenu, setShowMenu] = useState(false);
   return (
-    <Title title={ShowMenu ? "hide nav" : "show nav"}>
-      <div className="menu-togglar" onClick={() => setShowMenu(!ShowMenu)}>
-        <AnimatePresence mode="wait">
-          {!ShowMenu ? (
-            <motion.div
-              key="show-toggler"
-              className="nav-toggle"
-              variants={parVar}
-              initial={"start"}
-              animate="end"
-              exit="exit"
-            >
-              {[...Array(3)].map((_, i) => {
-                return (
-                  <motion.div
-                    variants={lineVar}
-                    className="toggle-line"
-                    key={i}
-                    custom={i}
-                  ></motion.div>
-                );
-              })}
-            </motion.div>
-          ) : (
-            <CloseToggler key={"close"} />
-          )}
-        </AnimatePresence>
+    <Fragment>
+      <div className="menu">
+        <Title title={ShowMenu ? "hide nav" : "show nav"}>
+          <Hamburger
+            color="var(--third)"
+            size={20}
+            toggled={ShowMenu}
+            toggle={setShowMenu}
+          />
+        </Title>
       </div>
-    </Title>
+      <AnimatePresence mode="wait">
+        {ShowMenu && (
+          <motion.aside
+            key="aside-mobile"
+            variants={AsideMobile}
+            initial="start"
+            animate="end"
+            exit="exit"
+          >
+            <LinksComponent setShowMenu={setShowMenu} />
+          </motion.aside>
+        )}
+      </AnimatePresence>
+    </Fragment>
   );
 };
 

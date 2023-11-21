@@ -1,18 +1,20 @@
 import { useRef } from "react";
 import { SkillInterface } from "../../assets/Utils/interfaces";
-import MainBtn from "../widgets/MainBtn";
+import MainBtn from "../widgets/shared/MainBtn";
 import { BiDesktop } from "react-icons/bi";
 import { DiGithubBadge } from "react-icons/di";
-import Title from "../widgets/CustomTitle";
-import { useTransform, motion, useScroll } from "framer-motion";
+import Title from "../widgets/shared/CustomTitle";
+import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
 interface Props {
+  i: number;
   img: string;
   demo: string;
   head: string;
   code: string;
+  progress: MotionValue;
+  range: number[];
+  targetScale: number;
   skillsUsed: SkillInterface[];
-  msgOne: string;
-  msgTwo: string;
 }
 const Figure = ({
   i,
@@ -24,9 +26,8 @@ const Figure = ({
   code,
   demo,
   head,
-}: any) => {
+}: Props) => {
   const scale = useTransform(progress, range, [1, targetScale]);
-
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,

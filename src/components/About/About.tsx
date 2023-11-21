@@ -1,12 +1,12 @@
 import MacCom from "../3D/MacCom";
-import Header from "../widgets/Header";
-import MainBtn from "../widgets/MainBtn";
+import Header from "../widgets/shared/Header";
+import MainBtn from "../widgets/shared/MainBtn";
 import { FaDownload } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
-import Container from "../widgets/Container";
-import { parVariant } from "@/assets/Utils/MianVariants";
+import Container from "../widgets/shared/Container";
+import { parVariant } from "@/assets/Utils/MainVariants";
 
 const textVariant = {
   initial: { opacity: 0 },

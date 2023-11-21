@@ -1,28 +1,29 @@
-import Header from "../widgets/Header";
+import Header from "../widgets/shared/Header";
 import { VerticalTimeline } from "react-vertical-timeline-component";
-import { skillsArr, skillsIconsArr } from "../../assets/Utils/Arr.js";
 import TimeLine from "./TimeLine";
 import "react-vertical-timeline-component/style.min.css";
-import Skills from "./Skills.js";
-import { motion } from "framer-motion";
-import Container from "../widgets/Container";
+import Container from "../widgets/shared/Container";
 import SkillsWrapper from "./SkillsWrapper";
+import { Fragment } from "react";
+import { skillsArr } from "@/assets/Utils/Arr";
 const Experience = () => {
   return (
-    <Container id="experience">
-      <Header head="Experience" title="" />
-      <VerticalTimeline
-        animate
-        className="timeline-par"
-        lineColor="grey"
-        layout={"2-columns"}
-      >
-        {skillsArr?.map((obj, i) => {
-          return <TimeLine key={i} {...obj} />;
-        })}
-      </VerticalTimeline>
+    <Fragment>
+      <Container id="experience">
+        <Header head="Experience" title="" />
+        <VerticalTimeline
+          animate
+          className="timeline-par"
+          lineColor="grey"
+          layout={"2-columns"}
+        >
+          {skillsArr?.map((obj, i) => {
+            return <TimeLine key={i} {...obj} />;
+          })}
+        </VerticalTimeline>
+      </Container>
       <SkillsWrapper />
-    </Container>
+    </Fragment>
   );
 };
 

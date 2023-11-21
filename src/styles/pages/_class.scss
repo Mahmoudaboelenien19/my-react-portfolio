@@ -60,11 +60,10 @@
   transition: 0.3s;
   color: white;
   padding: 12px 14px;
-  svg {
-    transition: 0.3s;
-  }
+
   &:hover {
     background: var(--third);
+    color: var(--main-clr);
     svg {
       color: var(--main-clr);
     }
@@ -144,4 +143,17 @@
 .splited-word {
   display: flex;
   margin: -0.2rem;
+}
+
+.cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background: white;
+  mix-blend-mode: difference;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
 }

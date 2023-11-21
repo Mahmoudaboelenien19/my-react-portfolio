@@ -52,11 +52,7 @@ export const parVar = {
   },
 };
 
-export const MajorVariant = {
-  start: { opacity: 0 },
-  end: { opacity: 1, transition: { duration: 0.4, delay: 0.9 } },
-  exit: { opacity: 0, transition: { duration: 0.4, delay: 0 } },
-};
+
 
 export const parVariant = {
   initial: {},

@@ -73,16 +73,17 @@
 }
 
 @media (max-width: 850px) {
-  .about {
+  #about .about {
     flex-direction: column;
     width: 100%;
 
     .mac {
       padding: 20px 0;
-      width: 100% !important;
+      width: 100%;
     }
     .about-content {
-      width: 100% !important;
+      width: 70ch;
+      margin: 0 auto;
     }
   }
 }

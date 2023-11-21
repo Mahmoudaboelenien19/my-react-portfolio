@@ -15,7 +15,7 @@ const ChatHead = () => {
         <img src={myImg} />
       </div>
       <div className="chat-content">
-        <div className="chat-name">Mahmoud Abo Elenien</div>
+        <div className="chat-name itim">Mahmoud Abo Elenien</div>
         <div className="ask">ask me a question</div>
       </div>
     </div>

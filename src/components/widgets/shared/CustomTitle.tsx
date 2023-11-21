@@ -6,16 +6,16 @@ interface Props {
   abs?: boolean;
   children: React.ReactNode;
 }
+const variant = {
+  start: { opacity: 0, y: 10 },
+  end: { opacity: [0.2, 0.5, 1], y: 0, transition: { duration: 0.1 } },
+  exit: {
+    opacity: 0,
+    y: 10,
+    transition: { duration: 0.1 },
+  },
+};
 const Title = ({ title, dir, children, abs }: Props) => {
-  const variant = {
-    start: { opacity: 0, y: 10 },
-    end: { opacity: [0.2, 0.5, 1], y: 0, transition: { duration: 0.1 } },
-    exit: {
-      opacity: 0,
-      y: 10,
-      transition: { duration: 0.1 },
-    },
-  };
   const [showTitle, setShowTitle] = useState(false);
   const show = () => setShowTitle(true);
   const hide = () => setShowTitle(false);

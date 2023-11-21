@@ -2,14 +2,13 @@ import "@/styles/pages/App.scss";
 import ThemContext from "@/components/context/ThemeContext";
 import { Toaster } from "react-hot-toast";
 import Home from "@/components/Home/Home";
-import { Suspense } from "react";
-import Loading from "./components/loading/loading";
+import Cursor from "./components/customComponents/Cursor";
 
 const App = () => {
   return (
     <ThemContext>
+      <Cursor />
       <Home />
-
       <Toaster
         position="bottom-left"
         reverseOrder={false}

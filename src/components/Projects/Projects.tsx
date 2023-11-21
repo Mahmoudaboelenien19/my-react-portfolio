@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
-import Header from "../widgets/Header";
-import { projects } from "../../assets/Utils/Arr";
+import { useRef } from "react";
+import Header from "../widgets/shared/Header";
 import Figure from "./Figure";
-import Container from "../widgets/Container";
+import Container from "../widgets/shared/Container";
 import { useScroll } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
+import useLens from "../customComponents/useLens";
+import { projects } from "@/assets/Utils/Arr";
 
 const Projects = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -13,16 +13,7 @@ const Projects = () => {
     offset: ["start start", "end end"],
   });
 
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  });
+  useLens();
 
   return (
     <Container id="projects-home">
