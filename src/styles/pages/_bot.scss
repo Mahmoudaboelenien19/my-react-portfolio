@@ -25,6 +25,7 @@
     box-shadow: 2px 2px 4px black;
     position: relative;
     z-index: 10;
+    scrollbar-gutter: stable;
   }
   .head-chat {
     display: flex;
@@ -78,13 +79,20 @@
     padding: 5px 10px;
     display: flex;
     flex-direction: column;
+    overflow-anchor: none;
     width: 100%;
-    gap: 8px;
     overflow: auto;
     height: calc(100% - 50px);
-    & > * {
-      box-shadow: 0.5px 0.5px 1px black;
+
+    .msg-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: fit-content;
+      gap: 4px;
+      overflow-anchor: auto;
     }
+
     .chat-q,
     .chat-av-q {
       align-self: flex-end;
@@ -101,7 +109,8 @@
     }
     .chat-ans {
       align-self: flex-start;
-      background-color: var(--forth);
+
+      background-color: var(--secondary);
       border-radius: 20px;
       width: fit-content;
       max-width: 90%;
@@ -131,4 +140,11 @@
       height: 100vh;
     }
   }
+}
+
+.chat-par {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const ar = ["Hello", "Hola", "Bonjour", "Ciao", "Ola"];
+const ar = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallo"];
 const Loading = () => {
   const [index, setindex] = useState(0);
   useEffect(() => {

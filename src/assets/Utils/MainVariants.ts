@@ -52,8 +52,6 @@ export const parVar = {
   },
 };
 
-
-
 export const parVariant = {
   initial: {},
   view: {},
