@@ -2,6 +2,7 @@ import { Fragment, useRef } from "react";
 import { motion } from "framer-motion";
 import { botArr } from "@/assets/Utils/Arr.js";
 import { opacityVariant } from "@/assets/Utils/MainVariants";
+import FadeINWrapper from "../widgets/animation/FadeINWrapper";
 const playAudio = (audio: string) => new Audio(audio).play();
 export const parVar = {
   start: {},
@@ -24,7 +25,7 @@ const Messages = ({ selectedMsg, setSelectedMsg }: Props) => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const AnimationComplete = () => chatContainerRef.current?.scrollBy(0, 60);
   return (
-    <motion.div className="chat-messages" ref={chatContainerRef}>
+    <div className="chat-messages" ref={chatContainerRef}>
       <div className="msg-container">
         <Questions addMsg={addMsg} />
 
@@ -79,7 +80,7 @@ const Messages = ({ selectedMsg, setSelectedMsg }: Props) => {
           );
         })}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

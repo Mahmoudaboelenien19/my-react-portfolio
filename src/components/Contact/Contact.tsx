@@ -18,7 +18,7 @@ const Contact = () => {
   const height = useTransform(scrollYProgress, [0, 0.8], [15, 0]);
   const y = useTransform(scrollYProgress, [0, 0.8], [-300, 0]);
   return (
-    <div className="contact-wrapper">
+    <div className="contact-wrapper" id="contact">
       <motion.div
         className="circle-container"
         ref={container}
@@ -27,7 +27,7 @@ const Contact = () => {
         <div className="circle-animation" />
       </motion.div>
       <motion.div style={{ y }}>
-        <Container id="contact">
+        <Container id="">
           <Header head="Contact Me" title="how to reach me" />
           <div className="contact-data" ref={containerRef}>
             {inView && (

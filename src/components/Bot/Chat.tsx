@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import Messages from "./Messages";
-import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import ChatHead from "./ChatHead";
+import FadeINWrapper from "../widgets/animation/FadeINWrapper";
 
 const Chat = () => {
   const [selectedMsg, setSelectedMsg] = useState<number[]>([]);
@@ -21,25 +21,23 @@ const Chat = () => {
     }
   }, []);
 
-  const ref = useRef<HTMLDivElement | null>(null);
-  const InView = useInView(ref, { amount: "all", once: true });
   return (
     <motion.div
       key={"chat-key"}
       className="chat"
-      ref={ref}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.8, opacity: 0 }}
-      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ height: 350, opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      initial={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
+      onWheel={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }}
     >
       <ChatHead />
-
-      <>
-        {InView && (
-          <Messages selectedMsg={selectedMsg} setSelectedMsg={setSelectedMsg} />
-        )}
-      </>
+      <FadeINWrapper delay={0.4} key="chat">
+        <Messages selectedMsg={selectedMsg} setSelectedMsg={setSelectedMsg} />
+      </FadeINWrapper>
     </motion.div>
   );
 };

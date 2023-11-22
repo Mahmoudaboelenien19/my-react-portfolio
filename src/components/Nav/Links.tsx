@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { opacityVariant } from "@/assets/Utils/MainVariants.js";
 import useIsMobile from "../customComponents/useIsMobile.js";
-import FadeINWrapper from "../widgets/animation/FadeINWrapper.js";
 
 interface Props {
   setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,6 +29,7 @@ const LinksComponent = ({ setShowMenu }: Props) => {
             <Link
               to={id}
               smooth
+              offset={-40}
               spy
               activeClass="active"
               onClick={() => {

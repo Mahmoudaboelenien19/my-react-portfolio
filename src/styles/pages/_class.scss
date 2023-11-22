@@ -3,10 +3,10 @@
 @import "../globals/mixins";
 
 .container {
-  min-height: calc(100vh - 50px);
   padding: 20px 0;
   max-width: 1250px;
   margin: 0 auto;
+  min-height: calc(100vh - 50px);
 }
 .itim {
   font-family: "Itim", cursive;

@@ -6,15 +6,10 @@
   background: var(--svg);
 }
 #contact {
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
-  padding-top: 20px;
-  margin-top: 20px;
-
   .contact-data {
     position: relative;
-
     z-index: 4 !important;
     display: flex;
     justify-content: space-between;

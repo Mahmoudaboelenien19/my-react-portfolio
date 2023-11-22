@@ -2,15 +2,14 @@
 @import "../globals/globals";
 @import "../globals/mixins";
 #main-page {
-  width: 100%;
   background: var(--secondary);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  margin-top: 50px;
   & > * {
     text-shadow: 0.5px 0.5px 1px black;
   }
