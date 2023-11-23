@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 import Scroll from "react-scroll";
 import { ReactSVG } from "react-svg";
 import rotateSvg from "../../../assets/Svg/RotatedText.svg";
+import CursorDimensionWhenHover from "../animation/CursorDimensionWhenHover";
 const RotateText = () => {
   const { scrollYProgress } = useScroll();
   const [scrollY, setScrollY] = useState(0);
@@ -19,7 +20,9 @@ const RotateText = () => {
   const scroll = Scroll.animateScroll;
 
   return (
-    <motion.div
+    <CursorDimensionWhenHover
+      scale={0.2}
+      Element="div"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -36,7 +39,7 @@ const RotateText = () => {
           svg.classList.add("rotate-svg");
         }}
       />
-    </motion.div>
+    </CursorDimensionWhenHover>
   );
 };
 

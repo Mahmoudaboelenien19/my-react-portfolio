@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { opacityVariant } from "@/assets/Utils/MainVariants.js";
 import useIsMobile from "../customComponents/useIsMobile.js";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover.js";
 
 interface Props {
   setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +22,9 @@ const LinksComponent = ({ setShowMenu }: Props) => {
     <ul className="links">
       {linkArr.map(({ id, link }, i) => {
         return (
-          <motion.li
+          <CursorDimensionWhenHover
+            scale={0.2}
+            Element="li"
             className="link-par"
             key={i}
             variants={isMidScreen ? smallScreenVariant : opacityVariant}
@@ -55,7 +58,7 @@ const LinksComponent = ({ setShowMenu }: Props) => {
                 className="active-link"
               />
             )}
-          </motion.li>
+          </CursorDimensionWhenHover>
         );
       })}
     </ul>

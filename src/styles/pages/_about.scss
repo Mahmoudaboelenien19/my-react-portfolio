@@ -32,6 +32,7 @@
       align-self: flex-end;
       .special {
         font-weight: bold;
+        opacity: 1;
       }
       .about-btns {
         display: flex;
@@ -64,6 +65,7 @@
         color: var(--third);
         font-weight: normal;
         margin-bottom: 30px;
+        opacity: 0.5;
         &::first-letter {
           margin-left: 25px;
         }
@@ -82,7 +84,10 @@
       width: 100%;
     }
     .about-content {
-      width: 70ch;
+      padding: 0 20px;
+      text-wrap: balance;
+
+      width: clamp(25ch, 100%, 70ch);
       margin: 0 auto;
     }
   }

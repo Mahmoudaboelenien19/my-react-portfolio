@@ -1,13 +1,19 @@
 import Title from "../widgets/shared/CustomTitle";
 import { SkillInterface } from "../../assets/Utils/interfaces.js";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 
 const Skill = ({ clr, name, Icon }: SkillInterface) => {
   return (
-    <div className="skill-icon" style={{ color: clr }}>
+    <CursorDimensionWhenHover
+      scale={0.2}
+      Element="div"
+      className="skill-icon"
+      style={{ color: clr }}
+    >
       <Title title={name}>
         <Icon />
       </Title>
-    </div>
+    </CursorDimensionWhenHover>
   );
 };
 

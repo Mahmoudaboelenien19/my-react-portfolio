@@ -7,8 +7,8 @@ import Cursor from "./components/customComponents/Cursor";
 const App = () => {
   return (
     <ThemContext>
-      <Cursor />
       <Home />
+      <Cursor />
       <Toaster
         position="bottom-left"
         reverseOrder={false}

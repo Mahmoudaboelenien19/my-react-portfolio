@@ -19,7 +19,7 @@ const Projects = () => {
     <Container id="projects-home">
       <Header head="Portfolio" title="some of my recent works" />
       <section className="fig-parent" ref={projectsRef}>
-        {projects.map((ob, i) => {
+        {projects.slice(0, 4).map((ob, i) => {
           const targetScale = 1 - 5 * 0.05;
 
           return (

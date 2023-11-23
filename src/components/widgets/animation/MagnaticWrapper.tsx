@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import CursorDimensionWhenHover from "./CursorDimensionWhenHover";
 
 export default function MagnaticWrapper({
   children,
@@ -15,9 +15,10 @@ export default function MagnaticWrapper({
 
   const { x, y } = position;
   return (
-    <motion.div
+    <CursorDimensionWhenHover
+      scale={0.2}
+      Element="div"
       style={{ position: "relative" }}
-      ref={ref}
       onMouseMove={(e) => {
         const { clientX, clientY } = e;
         if (ref.current) {
@@ -35,10 +36,10 @@ export default function MagnaticWrapper({
         stiffness: 250,
         mass: 0.8,
         damping: 18,
-        ease: [0.76, 0, 0.24, 1],
+        ease: [7, 1.9, 0.5],
       }}
     >
-      {children}
-    </motion.div>
+      <span ref={ref}>{children}</span>
+    </CursorDimensionWhenHover>
   );
 }

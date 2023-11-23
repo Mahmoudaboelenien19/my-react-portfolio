@@ -1,5 +1,6 @@
 import { opacityVariant } from "@/assets/Utils/MainVariants";
 import { motion } from "framer-motion";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 
 interface Props {
   Icon: React.ComponentType;
@@ -16,16 +17,28 @@ const ContactDetail = ({ Icon, detail, value, i }: Props) => {
       animate="end"
       transition={{ delay: 0.2 + 0.1 * i }}
     >
-      <div className="contact-shape">
+      <CursorDimensionWhenHover
+        scale={0.2}
+        Element="div"
+        className="contact-shape"
+      >
         <div className="circle">
           {" "}
           <Icon />
         </div>
         <div className="line"></div>
-      </div>
+      </CursorDimensionWhenHover>
       <div className="contact-detail-data">
-        <div className="contact-detail">{detail}</div>
-        <div className="contact-value">{value}</div>
+        <CursorDimensionWhenHover
+          scale={0.2}
+          Element="div"
+          className="contact-detail"
+        >
+          {detail}
+        </CursorDimensionWhenHover>
+        <CursorDimensionWhenHover Element="div" className="contact-value">
+          {value}
+        </CursorDimensionWhenHover>
       </div>
     </motion.div>
   );

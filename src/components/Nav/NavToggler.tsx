@@ -3,6 +3,7 @@ import Title from "../widgets/shared/CustomTitle";
 import { motion, AnimatePresence } from "framer-motion";
 import LinksComponent from "./Links";
 import { Fragment, useState } from "react";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 const AsideMobile = {
   start: { width: 20, boxShadow: "0 0 0 #000" },
   end: {
@@ -37,7 +38,7 @@ const NavToggler = () => {
   const [ShowMenu, setShowMenu] = useState(false);
   return (
     <Fragment>
-      <div className="menu">
+      <CursorDimensionWhenHover Element="span" scale={1.5} className="menu">
         <Title title={ShowMenu ? "hide nav" : "show nav"}>
           <Hamburger
             color="var(--third)"
@@ -46,7 +47,7 @@ const NavToggler = () => {
             toggle={setShowMenu}
           />
         </Title>
-      </div>
+      </CursorDimensionWhenHover>
       <AnimatePresence mode="wait">
         {ShowMenu && (
           <motion.aside

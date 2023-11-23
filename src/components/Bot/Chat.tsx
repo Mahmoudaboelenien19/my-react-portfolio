@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import Messages from "./Messages";
 import { motion } from "framer-motion";
 import ChatHead from "./ChatHead";
-import FadeINWrapper from "../widgets/animation/FadeINWrapper";
 
 const Chat = () => {
   const [selectedMsg, setSelectedMsg] = useState<number[]>([]);
@@ -35,9 +34,7 @@ const Chat = () => {
       }}
     >
       <ChatHead />
-      <FadeINWrapper delay={0.4} key="chat">
-        <Messages selectedMsg={selectedMsg} setSelectedMsg={setSelectedMsg} />
-      </FadeINWrapper>
+      <Messages selectedMsg={selectedMsg} setSelectedMsg={setSelectedMsg} />
     </motion.div>
   );
 };

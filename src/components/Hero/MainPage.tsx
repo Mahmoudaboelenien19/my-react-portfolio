@@ -5,6 +5,7 @@ import MainVideo from "./MainVideo";
 import Icons from "./Icons";
 import HoverAnimation from "../widgets/animation/HoverAnimation";
 import useLens from "../customComponents/useLens";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 const opacityVariant = {
   start: { opacity: 0, x: [10, 0], y: 30 },
   end: { opacity: 1, x: 0, y: 0 },
@@ -45,17 +46,25 @@ const MainPage = () => {
           variants={opacityVariant}
         >
           Hi , I&apos;m{" "}
-          <span className="first">
+          <CursorDimensionWhenHover
+            Element="span"
+            className="first"
+            scale={0.2}
+          >
             {"Mahmoud".split("").map((letter, index) => {
               return <HoverAnimation key={index} letter={letter} />;
             })}
-          </span>
+          </CursorDimensionWhenHover>
           <span className="clr"> .</span>
         </motion.h2>
 
         <motion.p variants={textVariant(0.7)} className="message">
-          <span className="my-major">
-            MERN stack developer
+          <CursorDimensionWhenHover
+            className="my-major"
+            scale={0.2}
+            Element="span"
+          >
+            MERN stack developer &nbsp;
             <motion.span
               initial={{ width: "0%" }}
               whileInView={{ width: "90%" }}
@@ -63,10 +72,13 @@ const MainPage = () => {
               viewport={{ once: true }}
               className="bg"
             />
-          </span>{" "}
-          proficient in creating user-friendly web applications with a focus on
-          efficiency and seamless experiences.{" "}
+          </CursorDimensionWhenHover>
+          <CursorDimensionWhenHover Element="span">
+            proficient in creating user-friendly web applications with a focus
+            on efficiency and seamless experiences.
+          </CursorDimensionWhenHover>
         </motion.p>
+
         <Icons />
       </motion.div>
       <MainVideo width={width} />

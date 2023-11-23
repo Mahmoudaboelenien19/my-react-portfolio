@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { createContext, useState } from "react";
 import { BsFillChatFill } from "react-icons/bs";
 import Chat from "./Chat";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 
 interface BotContextInterface {
   setShowChat: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,10 +22,12 @@ const Bot = () => {
       >
         <AnimatePresence mode="wait">
           {!showChat ? (
-            <BsFillChatFill
-              key={"bot-icon"}
-              onClick={() => setShowChat(true)}
-            />
+            <CursorDimensionWhenHover scale={0.2} Element="span">
+              <BsFillChatFill
+                key={"bot-icon"}
+                onClick={() => setShowChat(true)}
+              />
+            </CursorDimensionWhenHover>
           ) : (
             <Chat key="chat" />
           )}

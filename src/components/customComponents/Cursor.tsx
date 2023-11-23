@@ -1,16 +1,21 @@
 import { useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
+import { useAppSelector } from "@/redux/reduxType";
 const Cursor = () => {
   const { x, y } = usePosition();
+  const { scale } = useAppSelector((st) => st.cursor);
   return (
     <motion.div
       className="cursor"
+      animate={{
+        scale,
+      }}
+      transition={{ duration: 0.5, ease: "backOut" }}
       style={{
         x,
         y,
         transition: ".5s  cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       }}
-      //   transition={{ ease: "backOut" }}
     />
   );
 };

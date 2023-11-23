@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const ar = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallo"];
+const ar = ["As-salamu alaykum", "Hello", "Bonjour", "Olà", "やあ", "Hallo"];
 const Loading = () => {
   const [index, setindex] = useState(0);
   useEffect(() => {
@@ -29,6 +29,7 @@ const Loading = () => {
             delay: 2,
           },
         }}
+        
       >
         <motion.div
           initial={{ height: 15 }}

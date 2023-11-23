@@ -2,7 +2,7 @@ import { Fragment, useRef } from "react";
 import { motion } from "framer-motion";
 import { botArr } from "@/assets/Utils/Arr.js";
 import { opacityVariant } from "@/assets/Utils/MainVariants";
-import FadeINWrapper from "../widgets/animation/FadeINWrapper";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 const playAudio = (audio: string) => new Audio(audio).play();
 export const parVar = {
   start: {},
@@ -39,7 +39,9 @@ const Messages = ({ selectedMsg, setSelectedMsg }: Props) => {
               key={botArr[msg]?.question + i}
             >
               <>
-                <motion.div
+                <CursorDimensionWhenHover
+                  scale={0.2}
+                  Element="div"
                   className="chat-q"
                   variants={opacityVariant}
                   key={botArr[msg]?.question + i}
@@ -49,14 +51,16 @@ const Messages = ({ selectedMsg, setSelectedMsg }: Props) => {
                   }}
                 >
                   {botArr[msg]?.question}
-                </motion.div>
+                </CursorDimensionWhenHover>
                 <motion.div variants={opacityVariant} />
               </>
               <>
                 {botArr[msg]?.ans.map((answer, i) => {
                   return (
                     <Fragment key={answer + i}>
-                      <motion.div
+                      <CursorDimensionWhenHover
+                        scale={0.2}
+                        Element="div"
                         className="chat-ans"
                         variants={opacityVariant}
                         onAnimationComplete={() => {
@@ -65,7 +69,7 @@ const Messages = ({ selectedMsg, setSelectedMsg }: Props) => {
                         }}
                       >
                         {answer}
-                      </motion.div>
+                      </CursorDimensionWhenHover>
                       <motion.div variants={opacityVariant} />
                     </Fragment>
                   );
@@ -95,7 +99,9 @@ const Questions = ({ addMsg, AnimationComplete }: QuestionProps) => (
     {botArr.slice(1).map(({ id }, i) => {
       return (
         <Fragment key={botArr[i]?.question + i + "question"}>
-          <motion.div
+          <CursorDimensionWhenHover
+            scale={0.2}
+            Element="div"
             className="chat-av-q"
             variants={opacityVariant}
             onClick={() => addMsg(id)}
@@ -107,7 +113,7 @@ const Questions = ({ addMsg, AnimationComplete }: QuestionProps) => (
             }}
           >
             {botArr[id]?.question}
-          </motion.div>
+          </CursorDimensionWhenHover>
           <motion.div variants={opacityVariant} />
         </Fragment>
       );

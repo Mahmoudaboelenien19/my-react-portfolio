@@ -12,18 +12,19 @@
 
 .fig-parent {
   margin: 0 auto;
-  padding-top: 20px;
+
   justify-content: space-between;
   align-content: center;
   gap: 20px;
   position: relative;
   .fig-wrapper {
-    height: 100vh;
+    min-height: 75vh;
     width: 100%;
     position: sticky;
-    top: 10vh;
+    top: 15vh;
   }
   figure {
+    padding-top: 15px;
     position: relative;
     transform-origin: top;
     background-color: var(--main);
@@ -54,18 +55,11 @@
       overflow: hidden;
       width: 60%;
       height: 100%;
-
-      picture {
-        width: 100%;
-        height: 100%;
-      }
     }
     .img-par {
       width: 100%;
       height: 100%;
       border-radius: 10px;
-      border: 1px solid rgba(128, 128, 128, 0.29);
-
       overflow: hidden;
       img {
         width: 100%;
@@ -165,10 +159,12 @@
     figure {
       .content {
         padding: 10px;
+        gap: 10px;
         flex-direction: column;
         .project-data {
           width: 100%;
           padding: 4px 0;
+          gap: 10px;
         }
         .pic-wrapper {
           width: 100%;

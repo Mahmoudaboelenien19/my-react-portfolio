@@ -10,15 +10,18 @@
   position: relative;
   overflow: hidden;
   margin-top: 50px;
+  min-height: calc(100vh - 50px);
   & > * {
     text-shadow: 0.5px 0.5px 1px black;
   }
-
+  .video-wrapper {
+    width: 100vw;
+  }
   video {
     padding: 0;
     margin: 0;
     object-fit: cover;
-    width: 100%;
+    width: 100vw;
     z-index: 3;
     -webkit-mask-image: linear-gradient(
       to bottom,

@@ -10,6 +10,7 @@ import { opacityVariant } from "../../assets/Utils/MainVariants";
 import Title from "../widgets/shared/CustomTitle";
 import { themeContext } from "../context/ThemeContext";
 import useIsMobile from "../customComponents/useIsMobile";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 const parVar = {
   start: { opacity: 0 },
   end: {
@@ -45,30 +46,35 @@ const Nav = () => {
       animate="end"
       ref={navRef}
     >
-      <motion.div variants={opacityVariant} className="logo">
+      <CursorDimensionWhenHover
+        scale={0.2}
+        variants={opacityVariant}
+        className="logo"
+        Element="span"
+      >
         <Link to="main-page" smooth spy className="logo-link">
           <Logo />
         </Link>
-      </motion.div>
+      </CursorDimensionWhenHover>
       <span className="theme-par">
         <AnimatePresence>{!isMidScreen && <LinksComponent />}</AnimatePresence>
 
-        <motion.span
-          className="theme-par"
-          style={{
-            justifyContent: "space-between",
-            height: "100%",
-            alignItems: "center",
-            padding: "0 20px",
-          }}
-          variants={opacityVariant}
-        >
-          <Title title={!isDark ? "apply dark mode" : "apply light mode"}>
+        <Title title={!isDark ? "apply dark mode" : "apply light mode"}>
+          <CursorDimensionWhenHover
+            scale={0.2}
+            Element="span"
+            className="theme-par"
+            style={{
+              height: "100%",
+              alignItems: "center",
+            }}
+            variants={opacityVariant}
+          >
             <ThemeToggle />
-          </Title>
+          </CursorDimensionWhenHover>
+        </Title>
 
-          {isMidScreen && <NavToggler />}
-        </motion.span>
+        {isMidScreen && <NavToggler />}
       </span>
     </motion.nav>
   );

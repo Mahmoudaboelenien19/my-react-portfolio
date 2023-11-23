@@ -95,10 +95,11 @@
       text-align: center;
       font-size: 0.9rem;
     }
-    h2 {
+    h3 {
       font-size: 2rem;
       text-align: center;
-
+      width: fit-content;
+      margin: 0 auto;
       color: var(--third);
     }
 
@@ -121,8 +122,11 @@
         display: flex;
         align-items: center;
         min-height: fit-content;
+        width: 25%;
+        margin: 0 auto;
+
         button {
-          width: 25%;
+          width: 100%;
         }
       }
       .err-form {

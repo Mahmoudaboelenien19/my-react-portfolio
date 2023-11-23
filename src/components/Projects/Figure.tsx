@@ -1,10 +1,11 @@
 import { useRef } from "react";
-import { SkillInterface } from "../../assets/Utils/interfaces";
 import MainBtn from "../widgets/shared/MainBtn";
 import { BiDesktop } from "react-icons/bi";
 import { DiGithubBadge } from "react-icons/di";
 import Title from "../widgets/shared/CustomTitle";
 import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
+import { SkillInterface } from "@/assets/Utils/interfaces";
 interface Props {
   i: number;
   img: string;
@@ -43,16 +44,26 @@ const Figure = ({
           top: `calc(5vh + ${i * 25}px)`,
         }}
       >
-        <h3 className="itim">{head} .</h3>
+        <CursorDimensionWhenHover Element="h3" scale={0.2} className="itim">
+          {head} .
+        </CursorDimensionWhenHover>
         <div className="content">
-          <div className="pic-wrapper">
+          <CursorDimensionWhenHover
+            Element="div"
+            scale={0.2}
+            className="pic-wrapper"
+          >
             <motion.div style={{ scale: imageScale }} className="img-par">
               <img src={img} alt="" />
             </motion.div>
-          </div>
+          </CursorDimensionWhenHover>
 
           <div className="project-data">
-            <div className="skills-project-par">
+            <CursorDimensionWhenHover
+              Element="div"
+              scale={0.2}
+              className="skills-project-par"
+            >
               {skillsUsed.map(({ clr, name, Icon }, i) => {
                 return (
                   <span
@@ -65,27 +76,34 @@ const Figure = ({
                   </span>
                 );
               })}
-            </div>
+            </CursorDimensionWhenHover>
 
             <ul>
-              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-              <li>
+              <CursorDimensionWhenHover Element="li" scale={1.8}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing
+                ecursorDimensionWhenHovert.
+              </CursorDimensionWhenHover>
+              <CursorDimensionWhenHover Element="li" scale={1.8}>
                 Sed porro quas eum iusto expedita, assumenda voluptatibus.
-              </li>
-              <li>
-                Temporibus excepturi magni amet velit, explicabo provident
-                iusto?
-              </li>
-              <li>
+              </CursorDimensionWhenHover>
+              <CursorDimensionWhenHover Element="li" scale={1.8}>
+                Temporibus excepturi magni amet veCursorDimensionWhenHovert,
+                expCursorDimensionWhenHovercabo provident iusto?
+              </CursorDimensionWhenHover>
+              <CursorDimensionWhenHover Element="li" scale={1.8}>
                 Voluptatem, reprehenderit quae! Impedit doloribus quas culpa
                 quam.
-              </li>
-              <li>
+              </CursorDimensionWhenHover>
+              <CursorDimensionWhenHover Element="li" scale={1.8}>
                 Culpa consequuntur placeat quaerat magni necessitatibus nulla
                 quibusdam.
-              </li>
+              </CursorDimensionWhenHover>
             </ul>
-            <div className="projects-links">
+            <CursorDimensionWhenHover
+              className="projects-links"
+              scale={0.2}
+              Element="div"
+            >
               <a href={demo} target="_blank" rel="noreferrer">
                 <MainBtn Icon={BiDesktop} btn="Demo" />
               </a>
@@ -93,7 +111,7 @@ const Figure = ({
               <a href={code} target="_blank" rel="noreferrer">
                 <MainBtn Icon={DiGithubBadge} btn="code" />
               </a>
-            </div>
+            </CursorDimensionWhenHover>
           </div>
         </div>
       </motion.figure>

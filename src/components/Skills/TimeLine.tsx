@@ -1,4 +1,5 @@
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 
 interface Props {
   date: string;
@@ -23,16 +24,26 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
         borderRight: "5px solid var(--third)",
         filter: "drop-shadow(var(--secondary-shadow))",
       }}
-      icon={<Icon />}
+      icon={
+        <CursorDimensionWhenHover scale={0.2} Element="span">
+          <Icon />
+        </CursorDimensionWhenHover>
+      }
       iconStyle={{
         color: clr,
         background: "var(--main)",
       }}
     >
-      <h3 className="itim">{head}</h3>
+      <CursorDimensionWhenHover scale={0.2} Element="h3" className="itim">
+        {head}
+      </CursorDimensionWhenHover>
       <ul className="timeline-list">
         {content.map((sentence, i) => {
-          return <li key={i}>{sentence}</li>;
+          return (
+            <CursorDimensionWhenHover key={i} scale={1.5} Element="li">
+              {sentence}
+            </CursorDimensionWhenHover>
+          );
         })}
       </ul>
       {link && (
@@ -47,7 +58,9 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
           <div className="detail">link to certificate : </div>
 
           <a href={link} target="_balnk" className="itim clr">
-            {linkDes}
+            <CursorDimensionWhenHover scale={0.2} Element="span">
+              {linkDes}
+            </CursorDimensionWhenHover>
           </a>
         </div>
       )}

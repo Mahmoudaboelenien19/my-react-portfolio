@@ -14,18 +14,18 @@
 .heading {
   @extend .itim;
   font-weight: 900;
+  width: 100%;
   margin: 0 auto;
   text-align: start;
+
   position: relative;
-  padding: 20px 20px;
-  padding-top: 40px;
-  padding-bottom: 0;
+  padding: 40px 0 20px 0;
   font-size: 2.4rem;
   margin-bottom: 15px;
   color: var(--third);
   text-transform: capitalize;
-  width: 100%;
   text-align: center;
+
   .title {
     position: absolute;
     left: 0%;
@@ -156,4 +156,10 @@
   left: 0;
   border-radius: 50%;
   pointer-events: none;
+}
+
+@media (max-width: 500px) {
+  .cursor {
+    display: none;
+  }
 }

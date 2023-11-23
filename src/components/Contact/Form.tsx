@@ -10,6 +10,7 @@ import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import FormSvg from "./FormSvg";
 import { motion } from "framer-motion";
 import { parVariant } from "@/assets/Utils/MainVariants";
+import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
 const schema = yup.object().shape({
   user_name: yup
     .string()
@@ -105,17 +106,22 @@ const Form = () => {
           action="  
   "
         >
-          <h2 className="itim">Get in Touch</h2>
-          <p>
+          <CursorDimensionWhenHover Element="h3" scale={2} className="itim">
+            Get in Touch
+          </CursorDimensionWhenHover>
+          <CursorDimensionWhenHover scale={2} Element="p">
             Your message has been received. I will be in touch via email
             shortly. Looking forward to connecting with you!
-          </p>
+          </CursorDimensionWhenHover>
           {inputs.map((ob, i) => {
             return <Input key={i} {...ob} />;
           })}
 
-          {/* <Input placeholder="message" type="textarea" name="message" /> */}
-          <div className="inp-par inp-send">
+          <CursorDimensionWhenHover
+            Element="div"
+            scale={0.2}
+            className="inp-par inp-send"
+          >
             <MainBtn
               Icon={IoSend}
               btn={"send"}
@@ -123,7 +129,7 @@ const Form = () => {
               disabled={isSubmitting}
               style={{ opacity: isSubmitting ? 0.5 : 1 }}
             />
-          </div>
+          </CursorDimensionWhenHover>
         </motion.form>
       </FormProvider>
     </motion.div>

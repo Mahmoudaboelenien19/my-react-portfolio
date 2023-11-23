@@ -24,7 +24,7 @@ const Home = () => {
       {loading ? (
         <Loading />
       ) : (
-        <Fragment>
+        <>
           <Nav />
           <MainPage />
 
@@ -38,7 +38,7 @@ const Home = () => {
           <RotateText />
           {/* <Testimonials /> */}
           <Contact />
-        </Fragment>
+        </>
       )}
     </Fragment>
   );
