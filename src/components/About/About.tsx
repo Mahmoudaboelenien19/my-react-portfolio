@@ -8,7 +8,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Container from "../widgets/shared/Container";
 import { parVariant } from "@/assets/Utils/MainVariants";
 import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
-
+import CV from "@/assets/pdfs/mycv.pdf";
 const textVariant = {
   initial: { x: 300, opacity: 0 },
   view: {
@@ -73,8 +73,8 @@ const About = () => {
           >
             <div className="cv">
               <a
-                href={"/Mahmoud Abo Elenien.pdf"}
-                download="cv.pdf"
+                href={CV}
+                download="Mahmoud Abo Elenien.pdf"
                 className="cv-link"
               >
                 <CursorDimensionWhenHover scale={0.2} Element="span">
