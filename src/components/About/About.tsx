@@ -8,7 +8,8 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Container from "../widgets/shared/Container";
 import { parVariant } from "@/assets/Utils/MainVariants";
 import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
-import CV from "@/assets/pdfs/mycv.pdf";
+import cv from "@/assets/pdfs/cv.pdf";
+
 const textVariant = {
   initial: { x: 300, opacity: 0 },
   view: {
@@ -71,21 +72,14 @@ const About = () => {
             variants={btnVariant}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <div className="cv">
-              <a
-                href={CV}
-                download="Mahmoud Abo Elenien.pdf"
-                className="cv-link"
-              >
-                <CursorDimensionWhenHover scale={0.2} Element="span">
-                  <MainBtn btn={"resume"} Icon={FaDownload} />
-                </CursorDimensionWhenHover>
+            <CursorDimensionWhenHover scale={0.2} Element="div" className="cv">
+              <a href={"cv.pdf"} download="MahmoudAboELenienCv.pdf">
+                <MainBtn btn={"resume"} Icon={FaDownload} />
               </a>
-            </div>
+            </CursorDimensionWhenHover>
             <>
               <Link to="contact" smooth className="contact-link">
                 <CursorDimensionWhenHover scale={0.2} Element="span">
-                  {" "}
                   <MainBtn
                     btn={"contact me"}
                     Icon={BsFillArrowRightCircleFill}
