@@ -16,21 +16,21 @@ const portfolioServices = [
     Icon: FaReact,
     title: "Frontend Development",
     description:
-      "I excel at frontend development using TypeScript,  SCSS, and Apollo Client. I have a deep understanding of these technologies and utilize them effectively to build dynamic and responsive user interfaces.",
+      "I excel at frontend development using React, TypeScript,  SCSS, and Tailwindt. I have a deep understanding of these technologies and utilize them effectively to build dynamic and responsive user interfaces.",
     clr: " #61DAFB",
   },
   {
     Icon: IoLogoNodejs,
     title: "Backend Development",
     description:
-      "With my good knowledge in MERN stack, I specialize in backend development using Apollo Server, RESTful APIs, Express, GraphQL, and JWT. I leverage these technologies to build efficient and secure server-side applications.",
+      "With my good knowledge in MERN stack, I specialize in backend development using  RESTful APIs, Express, GraphQL, and JWT. I leverage these technologies to build efficient and secure server-side applications.",
     clr: " #339933",
   },
   {
     Icon: DiMongodb,
     title: "Database Management",
     description:
-      "I have a good command of databases, particularly PostgreSQL and MongoDB with Mongoose. I possess the skills to design, optimize, and manage database systems, ensuring data integrity and efficient querying.",
+      "I have a good command of databases, particularly PostgreSQL and MongoDB with Mongoose. I possess the skills to design and manage database systems, ensuring data integrity and efficient querying.",
     clr: "#4DB33D",
   },
 ];

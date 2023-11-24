@@ -16,6 +16,7 @@ interface Props {
   range: number[];
   targetScale: number;
   skillsUsed: SkillInterface[];
+  list: string[];
 }
 const Figure = ({
   i,
@@ -27,6 +28,7 @@ const Figure = ({
   code,
   demo,
   head,
+  list,
 }: Props) => {
   const scale = useTransform(progress, range, [1, targetScale]);
   const container = useRef<HTMLDivElement>(null);
@@ -79,7 +81,14 @@ const Figure = ({
             </CursorDimensionWhenHover>
 
             <ul>
-              <CursorDimensionWhenHover Element="li" scale={1.8}>
+              {list?.map((sentence, i) => {
+                return (
+                  <CursorDimensionWhenHover key={i} scale={1.8} Element="li">
+                    {sentence}
+                  </CursorDimensionWhenHover>
+                );
+              })}
+              {/* <CursorDimensionWhenHover Element="li" scale={1.8}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing
                 ecursorDimensionWhenHovert.
               </CursorDimensionWhenHover>
@@ -97,7 +106,7 @@ const Figure = ({
               <CursorDimensionWhenHover Element="li" scale={1.8}>
                 Culpa consequuntur placeat quaerat magni necessitatibus nulla
                 quibusdam.
-              </CursorDimensionWhenHover>
+              </CursorDimensionWhenHover> */}
             </ul>
             <CursorDimensionWhenHover
               className="projects-links"

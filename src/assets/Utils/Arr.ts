@@ -8,10 +8,11 @@ import { IoLogoNodejs } from "react-icons/io5";
 import typeScriptToDoImg from "../images/projects/frontend-todolist.jpg";
 import MernToDoImg from "../images/projects/mern todo.jpg.jpg";
 import CrudCastle from "../images/projects/crudCatle.jpg.jpg";
-import Zimart from "@/assets/images/projects/zimart.jpg";
 import wheatherEye from "../images/projects/wheatherEye.jpg.jpg";
 import CashFlow from "../images/projects/cashFLow.jpg.jpg";
 import CarLand from "@/assets/images/projects/carland.jpg";
+import todo from "@/assets/images/projects/todo.jpg";
+import Zimart from "@/assets/images/projects/zimart.png";
 import {
   SiExpress,
   SiGraphql,
@@ -49,14 +50,14 @@ export const botArr = [
   {
     id: 1,
     question: "👋 I just need to say Hello.",
-    ans: ["Hello There 😊.", "Do you enjoy my portfolio ?"],
+    ans: ["Hello There 😊.", "Do you enjoy my portfolio . ?"],
   },
   {
     id: 2,
     question: "Tell me about your most challenging project ?",
     ans: [
       "my most challenging project is my e-commerce app.",
-      "the reason is it was my first time using Graphql and Apollo.",
+      "the reason is it was my first time using Graphql .",
       "but it was interesting for me.",
     ],
   },
@@ -67,9 +68,9 @@ export const botArr = [
       "first I want to show that I'm an Engineer.but I didn't find my passion at that carrer.",
       "so ,I looked for a career I like and I find this at web development.",
       "as a MERN Stack I am good in both frontend and backend.",
-      "I am good at frontend,I am good at HTML5,CSS3,SASS,React,Vanila JAVASCRIPT.",
-      "for React I am good with usibg alot for package such as Apollo,React-hook-form ,react-router-dom , redux-Toolki ,query-client and the most prefered package for me Framer Motion ",
-      " In Backend I am good at express ,Graphql,RestFul Api ,JWT,I need to increase my skills at node's treatment with fileSystem.",
+      "I am good at frontend,I am good at React , Typescript , tailwind ,CSS3,SASS,React, JAVASCRIPT.",
+      "for React I am good with usibg alot for package such as React-hook-form ,react-router-dom , redux-Toolkit ,Apollo-client and the most prefered package for me Framer Motion ",
+      " In Backend I am good at express ,Graphql,RestFul Api and JWT.",
       "I am good for both PostgreSQL and MongoDB including Mongoose",
     ],
   },
@@ -78,7 +79,7 @@ export const botArr = [
     question: "What are your next plans ?",
     ans: [
       "This is my upcoming plan.",
-      "I need to increase my Framer-Motion skills",
+      "I love animations so, i need to increase my Framer-Motion skills to build more advanced animations",
       "I will start studing ThreeJs",
       "finally start Data Structure.",
     ],
@@ -221,8 +222,6 @@ export const skillsIconsArr = [
 
 export const projects = [
   {
-    msgOne: "MERN App",
-    msgTwo: "graphQL",
     head: "Zimart",
     img: Zimart,
     skillsUsed: [
@@ -232,7 +231,6 @@ export const projects = [
       { clr: "#CC6699", Icon: DiSass, name: "SASS" },
       { clr: "#635BFF", name: "Stripe", Icon: BsStripe },
       { Icon: SiPassport, name: "PassportJS", clr: "var(--third)" },
-
       {
         Icon: SiGraphql,
         clr: "#E10098",
@@ -253,12 +251,43 @@ export const projects = [
     ],
     code: "https://github.com/Mahmoudaboelenien19/mern-graphql-E-commerce",
     demo: "https://zimart-3deh.onrender.com/",
-    tags: ["MERN App", "graphQL", "Typescript", "sass", "React"],
+    list: [
+      "Users can securely sign up, log in, and access authorized features based on their roles.",
+      "Users have the ability to update their profile information and manage their data.",
+      "Users can add products to their cart, compare different products, and create a wishlist of desired items.",
+      "All users can access the dashboard to view relevant information and perform actions.",
+      "Administrators have additional capabilities such as adding and updating products, as well as changing user roles.",
+    ],
   },
-
   {
-    msgOne: "React",
-    msgTwo: "tailwind",
+    head: "ToDo",
+    img: todo,
+    skillsUsed: [
+      {
+        name: "nextJS",
+        Icon: TbBrandNextjs,
+        clr: "var(--third)",
+      },
+      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+      { Icon: SiTailwindcss, clr: "#48C2F8", name: "tailwind css" },
+
+      {
+        name: "MongoDb",
+        Icon: DiMongodb,
+        clr: "#4DB33D",
+      },
+    ],
+    code: "https://github.com/Mahmoudaboelenien19/next-mongoose-tailwind-framerMotion-todoList",
+    demo: "https://next-mongoose-todo.vercel.app/",
+    list: [
+      "To-Do List with API Routes (no server actions)",
+      "Implemented authentication using NextAuth.js",
+      "Utilized React Hook Form for sign-in and sign-up form validation",
+      "Supports login with Google account or custom credentials",
+      "Saved data using Mongoose for persistent storage",
+    ],
+  },
+  {
     head: "Carland",
     img: CarLand,
     skillsUsed: [
@@ -268,47 +297,15 @@ export const projects = [
     ],
     code: "https://github.com/Mahmoudaboelenien19/React_framer_tailwind",
     demo: "https://carland.onrender.com/",
-    tags: ["tailwind", "Typescript", "React"],
-  },
-
-  {
-    tags: ["MERN App", "Typescript", "sass"],
-    msgOne: "MERN App",
-    msgTwo: "sass",
-    head: "listify",
-    img: MernToDoImg,
-    skillsUsed: [
-      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
-      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
-      { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
-
-      {
-        name: "RestFul API",
-        clr: "var(--third)",
-        Icon: TbApi,
-      },
-
-      {
-        Icon: SiExpress,
-        clr: "var(--third)",
-
-        name: "ExpressJs",
-      },
-      {
-        name: "MongoDb",
-        Icon: DiMongodb,
-        clr: "#4DB33D",
-      },
+    list: [
+      "Snap scroll functionality implemented",
+      "Animations powered by Framer Motion",
+      "Carousel feature integrated using Swiper",
+      "Styled with Tailwind CSS",
+      "Developed with React and TypeScript",
     ],
-    code: "https://github.com/Mahmoudaboelenien19/Mern-toDoList",
-    demo: "https://mern-app-v44r.onrender.com/",
   },
   {
-    tags: ["Javascript", "PostgreSQL"],
-
-    msgOne: "Javascript",
-    msgTwo: "PostgreSQL",
     head: "CrudCastle",
     img: CrudCastle,
     skillsUsed: [
@@ -337,26 +334,56 @@ export const projects = [
     ],
     code: "https://github.com/Mahmoudaboelenien19/cruds",
     demo: "https://crudcastle.onrender.com/",
-  },
-
-  {
-    msgOne: "React",
-    msgTwo: "Sass",
-    head: "WeatherEye",
-    tags: ["React", "sass"],
-    img: wheatherEye,
-    skillsUsed: [
-      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+    list: [
+      "Users can register securely using a valid email and complex password. The data is stored safely in PostgreSQL.",
+      "The registration and login forms validate all required fields using vanilla JavaScript no packages used. ",
+      "Authenticated users can view and update their personalized profile.",
+      "built custom popup to display  messages.",
+      "users can see all products but delee or update their own products.",
     ],
-    code: "https://github.com/Mahmoudaboelenien19/WeatherEye",
-    demo: "https://weathereye.onrender.com/",
   },
-  {
-    tags: ["React", "sass"],
+  // {
+  //   head: "listify",
+  //   img: MernToDoImg,
+  //   skillsUsed: [
+  //     { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+  //     { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+  //     { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+  //     { Icon: TbBrandRedux, clr: "#7044B5", name: "Redux toolkit" },
 
-    msgOne: "React",
-    msgTwo: "Sass",
+  //     {
+  //       name: "RestFul API",
+  //       clr: "var(--third)",
+  //       Icon: TbApi,
+  //     },
+
+  //     {
+  //       Icon: SiExpress,
+  //       clr: "var(--third)",
+
+  //       name: "ExpressJs",
+  //     },
+  //     {
+  //       name: "MongoDb",
+  //       Icon: DiMongodb,
+  //       clr: "#4DB33D",
+  //     },
+  //   ],
+  //   code: "https://github.com/Mahmoudaboelenien19/Mern-toDoList",
+  //   demo: "https://mern-app-v44r.onrender.com/",
+  // },
+
+  // {
+  //   head: "WeatherEye",
+  //   img: wheatherEye,
+  //   skillsUsed: [
+  //     { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+  //     { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+  //   ],
+  //   code: "https://github.com/Mahmoudaboelenien19/WeatherEye",
+  //   demo: "https://weathereye.onrender.com/",
+  // },
+  {
     head: "CashFlow",
     img: CashFlow,
     skillsUsed: [
@@ -365,21 +392,23 @@ export const projects = [
     ],
     code: "https://github.com/Mahmoudaboelenien19/manage-budget",
     demo: "https://cashflow-2okh.onrender.com/",
-  },
-  {
-    tags: ["Typescript", "sass"],
-    msgOne: "Typescript",
-    msgTwo: "sass",
-    head: "advanced ToDo list",
-    img: typeScriptToDoImg,
-    skillsUsed: [
-      { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
-      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
+    list: [
+      "Build loading animation using frame-by-frame motion.",
+      "I built an app that tracks budgets, allowing users to input expenses and income to calculate the balance.",
     ],
-    code: "https://github.com/Mahmoudaboelenien19/Typescript-Oop-Scss-to-do-list",
-    demo: "https://mahmoudaboelenien19.github.io/Typescript-Oop-Scss-to-do-list/",
   },
+  // {
+  //   msgTwo: "sass",
+  //   head: "advanced ToDo list",
+  //   img: typeScriptToDoImg,
+  //   skillsUsed: [
+  //     { clr: "#007ACC", Icon: SiTypescript, name: "TypeScript" },
+  //     { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+  //     { clr: "var(--svg)", Icon: OOPSVG, name: "OOP" },
+  //   ],
+  //   code: "https://github.com/Mahmoudaboelenien19/Typescript-Oop-Scss-to-do-list",
+  //   demo: "https://mahmoudaboelenien19.github.io/Typescript-Oop-Scss-to-do-list/",
+  // },
 ];
 
 export const iconsArr = [

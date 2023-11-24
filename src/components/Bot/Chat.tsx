@@ -29,7 +29,6 @@ const Chat = () => {
       initial={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
       onWheel={(e) => {
-        e.preventDefault();
         e.stopPropagation();
       }}
     >
