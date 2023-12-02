@@ -12,7 +12,8 @@ const Skills = ({ target, arr, translate }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    // offset: ["start end", "end start"],
+    offset: ["start end", "start start"],
   });
   const xTransform = useTransform(
     scrollYProgress,

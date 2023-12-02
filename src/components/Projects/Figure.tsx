@@ -88,25 +88,6 @@ const Figure = ({
                   </CursorDimensionWhenHover>
                 );
               })}
-              {/* <CursorDimensionWhenHover Element="li" scale={1.8}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing
-                ecursorDimensionWhenHovert.
-              </CursorDimensionWhenHover>
-              <CursorDimensionWhenHover Element="li" scale={1.8}>
-                Sed porro quas eum iusto expedita, assumenda voluptatibus.
-              </CursorDimensionWhenHover>
-              <CursorDimensionWhenHover Element="li" scale={1.8}>
-                Temporibus excepturi magni amet veCursorDimensionWhenHovert,
-                expCursorDimensionWhenHovercabo provident iusto?
-              </CursorDimensionWhenHover>
-              <CursorDimensionWhenHover Element="li" scale={1.8}>
-                Voluptatem, reprehenderit quae! Impedit doloribus quas culpa
-                quam.
-              </CursorDimensionWhenHover>
-              <CursorDimensionWhenHover Element="li" scale={1.8}>
-                Culpa consequuntur placeat quaerat magni necessitatibus nulla
-                quibusdam.
-              </CursorDimensionWhenHover> */}
             </ul>
             <CursorDimensionWhenHover
               className="projects-links"

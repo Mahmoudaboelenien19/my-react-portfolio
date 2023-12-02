@@ -65,7 +65,11 @@
         color: var(--third);
         font-weight: normal;
         margin-bottom: 30px;
-        opacity: 0.5;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        // font-size: 2rem;
+        font-weight: bold;
         &::first-letter {
           margin-left: 25px;
         }

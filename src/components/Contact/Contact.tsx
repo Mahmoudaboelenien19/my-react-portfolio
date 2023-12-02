@@ -12,7 +12,7 @@ const Contact = () => {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end start"],
+    offset: ["start end", "start start"],
   });
   useLens();
   const height = useTransform(scrollYProgress, [0, 0.8], [15, 0]);
