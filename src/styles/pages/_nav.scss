@@ -111,6 +111,8 @@ nav {
 }
 
 .menu {
+  display: flex;
+  align-items: center;
   .title-par .custom-title {
     right: 20px;
     top: 40px;

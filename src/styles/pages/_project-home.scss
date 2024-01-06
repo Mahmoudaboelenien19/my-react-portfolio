@@ -135,14 +135,6 @@
       .btn {
         font-size: 0.8rem;
       }
-      a {
-        // text-decoration: underline;
-        // color: var(--third);
-        // text-decoration-color: var(--main-clr);
-        // text-transform: capitalize;
-        // letter-spacing: 1px;
-        // text-decoration-thickness: 2px;
-      }
     }
   }
 }
@@ -161,6 +153,7 @@
         padding: 10px;
         gap: 10px;
         flex-direction: column;
+        min-height: 55vh;
         .project-data {
           width: 100%;
           padding: 4px 0;

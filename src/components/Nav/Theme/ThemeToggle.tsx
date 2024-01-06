@@ -5,7 +5,14 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 const ThemeToggle = () => {
   const { toggleTheme, isDark } = useContext(themeContext);
 
-  return <DarkModeSwitch checked={isDark} onChange={toggleTheme} size={20} />;
+  return (
+    <DarkModeSwitch
+      checked={isDark}
+      onChange={toggleTheme}
+      size={20}
+      style={{ marginLeft: 20 }}
+    />
+  );
 };
 
 export default ThemeToggle;
