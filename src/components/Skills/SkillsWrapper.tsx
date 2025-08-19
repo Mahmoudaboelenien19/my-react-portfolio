@@ -13,7 +13,7 @@ const SkillsWrapper = () => {
         <Skills target="left" arr={skillsIconsArr} translate={"-15%"} />{" "}
       </div>
       <div className="mobile-skills">
-        <p className="text itim">skills</p>
+        {!isMobile && <p className="text itim">skills</p>}
         <Skills
           target="left"
           arr={skillsIconsArr.slice(0, Math.floor(skillsIconsArr.length / 2))}

@@ -383,20 +383,20 @@ export const projects = [
   //   code: "https://github.com/Mahmoudaboelenien19/WeatherEye",
   //   demo: "https://weathereye.onrender.com/",
   // },
-  {
-    head: "CashFlow",
-    img: CashFlow,
-    skillsUsed: [
-      { clr: "#CC6699", Icon: DiSass, name: "SASS" },
-      { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
-    ],
-    code: "https://github.com/Mahmoudaboelenien19/manage-budget",
-    demo: "https://cashflow-2okh.onrender.com/",
-    list: [
-      "Build loading animation using frame-by-frame motion.",
-      "I built an app that tracks budgets, allowing users to input expenses and income to calculate the balance.",
-    ],
-  },
+  // {
+  //   head: "CashFlow",
+  //   img: CashFlow,
+  //   skillsUsed: [
+  //     { clr: "#CC6699", Icon: DiSass, name: "SASS" },
+  //     { clr: "#61dafb", Icon: GrReactjs, name: "ReactJS" },
+  //   ],
+  //   code: "https://github.com/Mahmoudaboelenien19/manage-budget",
+  //   demo: "https://cashflow-2okh.onrender.com/",
+  //   list: [
+  //     "Build loading animation using frame-by-frame motion.",
+  //     "I built an app that tracks budgets, allowing users to input expenses and income to calculate the balance.",
+  //   ],
+  // },
   // {
   //   msgTwo: "sass",
   //   head: "advanced ToDo list",
