@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import useIsMobile from "./useIsMobile";
 
 const useLens = () => {
-  const { isMobile } = useIsMobile();
+  const { isMidScreen } = useIsMobile();
   useEffect(() => {
-    if (isMobile) return;
+    if (isMidScreen) return;
     const lenis = new Lenis();
 
     function raf(time: number) {
