@@ -1,10 +1,11 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { linkArr } from "@/assets/Utils/Arr.js";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { opacityVariant } from "@/assets/Utils/MainVariants.js";
 import useIsMobile from "../customComponents/useIsMobile.js";
 import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover.js";
+import { themeContext } from "../context/ThemeContext.js";
 
 interface Props {
   setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,6 +19,7 @@ const LinksComponent = ({ setShowMenu }: Props) => {
   const [activeLink, setActiveLink] = useState("home");
   const { isMidScreen } = useIsMobile();
   const initialRender = useRef(true);
+  const { isDark } = useContext(themeContext);
   return (
     <ul className="links">
       {linkArr.map(({ id, link }, i) => {
@@ -47,6 +49,7 @@ const LinksComponent = ({ setShowMenu }: Props) => {
 
             {link === activeLink && (
               <motion.div
+                style={{ mixBlendMode: isDark ? "difference" : "color" }}
                 //this color animation  is a temporay  solution  to fix mixBlendMode  bug  till i get the right solution
                 initial={
                   initialRender.current ? { background: "#00000000" } : {}
