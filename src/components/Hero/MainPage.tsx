@@ -6,6 +6,7 @@ import Icons from "./Icons";
 import HoverAnimation from "../widgets/animation/HoverAnimation";
 import useLens from "../customComponents/useLens";
 import CursorDimensionWhenHover from "../widgets/animation/CursorDimensionWhenHover";
+import useIsMobile from "../customComponents/useIsMobile";
 const opacityVariant = {
   start: { opacity: 0, x: [10, 0], y: 30 },
   end: { opacity: 1, x: 0, y: 0 },
@@ -26,6 +27,7 @@ const ContentPar = {
 };
 const MainPage = () => {
   useLens();
+  const { isMidScreen } = useIsMobile();
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -81,7 +83,7 @@ const MainPage = () => {
 
         <Icons />
       </motion.div>
-      <MainVideo width={width} />
+      {!isMidScreen && <MainVideo width={width} />}
     </section>
   );
 };
