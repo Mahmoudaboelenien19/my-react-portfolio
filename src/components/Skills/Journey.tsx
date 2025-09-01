@@ -6,11 +6,11 @@ import Container from "../widgets/shared/Container";
 import SkillsWrapper from "./SkillsWrapper";
 import { Fragment } from "react";
 import { skillsArr } from "@/assets/Utils/Arr";
-const Experience = () => {
+const Journey = () => {
   return (
     <Fragment>
-      <Container id="experience">
-        <Header head="Experience" title="" />
+      <Container id="journey">
+        <Header head="Learning Journey" title="How the journey Started" />
         <VerticalTimeline
           animate
           className="timeline-par"
@@ -27,4 +27,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Journey;

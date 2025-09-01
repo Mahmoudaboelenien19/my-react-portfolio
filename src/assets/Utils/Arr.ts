@@ -32,6 +32,7 @@ export const linkArr = [
   { link: "services", id: "service" },
   { link: "portfolio", id: "projects-home" },
   { link: "about", id: "about" },
+  { link: "journey", id: "journey" },
   { link: "experience", id: "experience" },
   // { link: "reviews", id: "testimonials" },
   { link: "contact", id: "contact" },

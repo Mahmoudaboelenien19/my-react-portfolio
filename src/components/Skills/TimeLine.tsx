@@ -18,6 +18,7 @@ const TimeLine = ({ linkDes, head, clr, date, Icon, content, link }: Props) => {
         background: "var(--main)",
         color: "var(--third)",
         boxShadow: "var(--main-shadow)",
+        paddingLeft: 24,
       }}
       date={date}
       contentArrowStyle={{

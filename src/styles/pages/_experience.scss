@@ -1,0 +1,86 @@
+@import "../globals/variables";
+@import "../globals/globals";
+@import "../globals/mixins";
+
+.experience-section {
+  min-height: unset !important;
+}
+
+.card {
+  box-shadow: 0.5px 0.5px 2px black;
+  border-radius: 5px;
+  padding: 24px;
+}
+.experience-section {
+  background-color: var(--main);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--third);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.experience-title {
+  margin: 20px 0 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.experience-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 720px;
+  width: 100%;
+  background: #1f1f1f;
+  padding: 24px;
+  margin-top: 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.experience-role {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.experience-date {
+  margin: 4px 0 16px;
+  color: var(--third);
+  font-size: 0.95rem;
+}
+
+.experience-summary {
+  margin: 0 0 16px;
+  color: var(--third);
+  font-size: 1rem;
+}
+
+.experience-projects h4,
+.experience-tech h4 {
+  margin: 16px 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.experience-projects ul {
+  list-style: disc inside;
+  margin: 0;
+  padding: 0;
+  color: var(--third);
+  font-size: 0.95rem;
+}
+
+.experience-projects li {
+  margin: 6px 0;
+}
+
+.experience-tech p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--third);
+}
